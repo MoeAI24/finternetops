@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Partner Onboarding • MBCC Finternet Ops Training</title>
+  <meta name="description" content="MBCC Finternet Ops Partner Onboarding: qualify, route to track, and start your certification path."/>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+  <link rel="stylesheet" href="assets/css/partner.css"/>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">MBCC</div>
+        <div>
+          <div class="brandName">Finternet Ops™ Training</div>
+          <div class="brandTag">Partner Enablement • Fortune-100 ready</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="navLink" href="index.html">Portal</a>
+        <a class="navLink active" href="partner-onboarding.html">Onboarding</a>
+        <a class="navLink" href="partner-dashboard.html">Partner Dashboard</a>
+        <a class="navLink" href="certification.html">Certification</a>
+        <a class="navLink" href="toolkit.html">Toolkit</a>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section class="hero">
+        <div class="heroInner">
+          <span class="badge">Phase 1 • Partner Onboarding Funnel</span>
+          <h1>0 → Certified: Route every buyer into the right track.</h1>
+          <p class="lead">
+            This onboarding qualifies intent, maps capability, and routes each partner into a track
+            (Operator / Consultant / Sales). The portal then enforces milestones before certification.
+          </p>
+          <div class="kpiGrid" style="margin-top:14px">
+            <div class="kpi"><div class="pill">Outcome</div><h3 style="margin:10px 0 6px">Track Assignment</h3><div class="small">Automatic routing based on capability + use-case.</div></div>
+            <div class="kpi"><div class="pill">Outcome</div><h3 style="margin:10px 0 6px">Delivery Readiness</h3><div class="small">Partners learn what to deploy, how to sell, and what not to claim.</div></div>
+            <div class="kpi"><div class="pill">Outcome</div><h3 style="margin:10px 0 6px">Certification Path</h3><div class="small">Modules → toolkit → exam → certification (no shortcuts).</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Partner application</h2>
+        <p class="small">We route you into the right track. Answers are stored locally for now (static GitHub portal).</p>
+        <hr class="soft"/>
+
+        <form id="appForm" class="formGrid" autocomplete="on">
+          <div class="f">
+            <label for="partnerName">Partner name</label>
+            <input id="partnerName" name="partnerName" placeholder="Your company / brand name" required />
+            <div class="help">What you want clients to recognize on proposals and deliverables.</div>
+          </div>
+          <div class="f">
+            <label for="contactEmail">Primary contact email</label>
+            <input id="contactEmail" name="contactEmail" type="email" placeholder="ops@yourcompany.com" required />
+          </div>
+
+          <div class="f">
+            <label for="partnerType">Partner type</label>
+            <select id="partnerType" name="partnerType" required>
+              <option value="" selected disabled>Select</option>
+              <option>Consulting / Advisory</option>
+              <option>Systems Integrator</option>
+              <option>Reseller / Channel</option>
+              <option>Enterprise Internal Team</option>
+              <option>Founder / Solo Operator</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="f">
+            <label for="primaryGoal">Primary goal</label>
+            <select id="primaryGoal" name="primaryGoal" required>
+              <option value="" selected disabled>Select</option>
+              <option value="deploy">Deploy & operate agents for clients</option>
+              <option value="advise">Advise exec teams (risk, compliance, strategy)</option>
+              <option value="sell">Sell / resell MBCC solutions</option>
+              <option value="internal">Train internal team for rollout</option>
+            </select>
+          </div>
+
+          <div class="f">
+            <label for="techLevel">Technical capability</label>
+            <select id="techLevel" name="techLevel" required>
+              <option value="" selected disabled>Select</option>
+              <option value="high">High (engineering team, APIs, cloud ops)</option>
+              <option value="mid">Medium (automation, dashboards, light coding)</option>
+              <option value="low">Low (sales/ops heavy, needs templates + guardrails)</option>
+            </select>
+          </div>
+
+          <div class="f">
+            <label for="clientType">Target clients</label>
+            <select id="clientType" name="clientType" required>
+              <option value="" selected disabled>Select</option>
+              <option>SMB / Mid-market</option>
+              <option>Enterprise (Fortune 2000)</option>
+              <option>Financial Services (banks, brokers, asset managers)</option>
+              <option>Public Sector</option>
+              <option>Mixed</option>
+            </select>
+          </div>
+
+          <div class="fFull">
+            <label for="useCases">Top 2–3 use cases you want to deliver</label>
+            <textarea id="useCases" name="useCases" placeholder="Example: settlement visibility, exception triage, compliance explainers, intraday liquidity stress, executive reporting..."></textarea>
+          </div>
+
+          <div class="f">
+            <label for="timeToMarket">Time-to-market</label>
+            <select id="timeToMarket" name="timeToMarket" required>
+              <option value="" selected disabled>Select</option>
+              <option value="now">0–30 days (need a pilot ASAP)</option>
+              <option value="soon">30–60 days</option>
+              <option value="later">60–90+ days</option>
+            </select>
+          </div>
+
+          <div class="f">
+            <label for="revenueGoal">90-day revenue goal</label>
+            <select id="revenueGoal" name="revenueGoal" required>
+              <option value="" selected disabled>Select</option>
+              <option value="10k">$10k–$25k</option>
+              <option value="50k">$25k–$75k</option>
+              <option value="100k">$75k–$150k</option>
+              <option value="250k">$150k+</option>
+            </select>
+          </div>
+
+          <div class="fFull">
+            <label for="constraints">Constraints / risks you want to avoid</label>
+            <textarea id="constraints" name="constraints" placeholder="Example: avoid regulated language, avoid financial advice claims, avoid retention risks, avoid hallucinations in executive reports..."></textarea>
+          </div>
+
+          <div class="fFull" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:6px">
+            <button class="btn btn-primary" type="submit">Submit & Route Me →</button>
+            <a class="btn" href="partner-dashboard.html">Go to Dashboard</a>
+          </div>
+        </form>
+      </section>
+
+      <section class="card" style="margin-top:18px">
+        <h2>Tracks</h2>
+        <p class="small">You get one primary track. Certification is tied to that track’s milestones.</p>
+        <div class="grid" style="margin-top:14px">
+          <div class="trackCard"><span class="badge">Track A</span><h3>Operator Track</h3><p class="small">Implementers. Focus: wiring, validation, daily ops.</p><a class="btn" href="tracks/operator.html">View →</a></div>
+          <div class="trackCard"><span class="badge">Track B</span><h3>Consultant Track</h3><p class="small">Advisory. Focus: governance, rollout plans, exec briefs.</p><a class="btn" href="tracks/consultant.html">View →</a></div>
+          <div class="trackCard"><span class="badge">Track C</span><h3>Sales / Channel Track</h3><p class="small">Resellers. Focus: packaging, objections, pilot/retainer motion.</p><a class="btn" href="tracks/sales.html">View →</a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="small">© 2026 MBCC Finternet Ops™ • Partner Enablement</div>
+      <div class="small"><a href="legal.html">Legal Boundary</a> • <a href="glossary.html">Glossary</a> • <a href="certification.html">Certification</a></div>
+    </footer>
+  </div>
+
+<script>
+(function(){
+  const form = document.getElementById('appForm');
+  const STORAGE_KEY = 'mbccPartnerProfile_v1';
+  function routeTrack(p){
+    const goal=p.primaryGoal, tech=p.techLevel;
+    if(goal==='deploy' || goal==='internal' || tech==='high') return 'operator';
+    if(goal==='advise') return 'consultant';
+    if(goal==='sell' || tech==='low') return 'sales';
+    return 'consultant';
+  }
+  function steps(track, p){
+    const s=[];
+    s.push('Complete Foundations module and pass quiz');
+    if(track==='operator') s.push('Complete Yield Sentinel + Settlement Watchdog modules');
+    if(track==='consultant') s.push('Complete Compliance Explainer + Executive Brief modules');
+    if(track==='sales') s.push('Complete Executive Brief + Toolkit packaging sections');
+    if(p.timeToMarket==='now') s.push('Start a 14-day pilot plan from the Toolkit');
+    s.push('Take Certification Exam (80% pass)');
+    return s;
+  }
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const data=Object.fromEntries(new FormData(form).entries());
+    data.createdAt=new Date().toISOString();
+    data.track=routeTrack(data);
+    data.firstSteps=steps(data.track, data);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    const progressKey='mbccPartnerProgress_v1';
+    const prog=JSON.parse(localStorage.getItem(progressKey) || '{}');
+    prog.profileComplete=true; prog.track=data.track; prog.updatedAt=new Date().toISOString();
+    localStorage.setItem(progressKey, JSON.stringify(prog));
+    window.location.href='partner-dashboard.html';
+  });
+})();
+</script>
+</body>
+</html>

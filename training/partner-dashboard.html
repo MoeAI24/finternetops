@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Partner Dashboard • MBCC Finternet Ops Training</title>
+  <meta name="description" content="Partner dashboard: track assignment, milestones, and certification readiness."/>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+  <link rel="stylesheet" href="assets/css/partner.css"/>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand"><div class="logo">MBCC</div><div><div class="brandName">Finternet Ops™ Training</div><div class="brandTag">Partner Dashboard</div></div></div>
+      <nav class="nav">
+        <a class="navLink" href="index.html">Portal</a>
+        <a class="navLink" href="partner-onboarding.html">Onboarding</a>
+        <a class="navLink active" href="partner-dashboard.html">Dashboard</a>
+        <a class="navLink" href="certification.html">Certification</a>
+        <a class="navLink" href="toolkit.html">Toolkit</a>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section class="hero"><div class="heroInner">
+        <span class="badge">Partner Control Center</span>
+        <h1 id="welcome">Welcome, Partner</h1>
+        <p class="lead" id="subtitle">Complete onboarding to get your track assignment and next actions.</p>
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="partner-onboarding.html">Complete / Update Onboarding →</a>
+          <a class="btn" href="certification.html">Certification</a>
+          <a class="btn" href="toolkit.html">Toolkit</a>
+        </div>
+      </div></section>
+
+      <section class="card">
+        <h2>Track assignment</h2>
+        <div class="grid" style="margin-top:12px">
+          <div class="trackCard">
+            <div class="pill">Primary track</div>
+            <h3 id="trackName" style="margin:10px 0 6px">Not assigned</h3>
+            <div class="small" id="trackDesc">Complete onboarding to route into Operator / Consultant / Sales.</div>
+            <div style="margin-top:10px" id="trackLinkWrap"></div>
+          </div>
+          <div class="trackCard">
+            <div class="pill">Readiness</div>
+            <h3 id="readiness" style="margin:10px 0 6px">0%</h3>
+            <div class="small">Based on quiz completions + exam status stored in your browser.</div>
+            <div style="margin-top:10px">
+              <div style="height:12px;border-radius:999px;background:rgba(247,243,233,.10);overflow:hidden;">
+                <div id="bar" style="height:100%;width:0%;background:rgba(212,175,55,.65)"></div>
+              </div>
+            </div>
+          </div>
+          <div class="trackCard">
+            <div class="pill">Certification</div>
+            <h3 id="certStatus" style="margin:10px 0 6px">Not started</h3>
+            <div class="small">Pass the exam (80%+) after completing required modules for your track.</div>
+            <div style="margin-top:10px"><a class="btn" href="certification.html">Open Exam →</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:18px">
+        <h2>Next actions</h2>
+        <ol id="nextActions" class="small" style="line-height:1.9; margin-top:10px"></ol>
+        <hr class="soft"/>
+        <h2>Partner profile</h2>
+        <pre id="profile" style="white-space:pre-wrap;background:rgba(11,11,11,.55);border:1px solid rgba(247,243,233,.12);border-radius:16px;padding:14px;color:rgba(247,243,233,.92);line-height:1.5"></pre>
+        <div class="small">This is static hosting—profile is saved locally. Add auth later to sync server-side.</div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="small">© 2026 MBCC Finternet Ops™ • Partner Enablement</div>
+      <div class="small"><a href="legal.html">Legal Boundary</a> • <a href="glossary.html">Glossary</a></div>
+    </footer>
+  </div>
+
+<script>
+(function(){
+  const profileKey='mbccPartnerProfile_v1';
+  const progressKey='mbccPartnerProgress_v1';
+  const quizKey='mbccQuizProgress_v1';
+  const examKey='mbccCertificationExam_v1';
+
+  const profile = JSON.parse(localStorage.getItem(profileKey) || 'null');
+  const progress = JSON.parse(localStorage.getItem(progressKey) || '{}');
+  const quiz = JSON.parse(localStorage.getItem(quizKey) || '{}');
+  const exam = JSON.parse(localStorage.getItem(examKey) || '{}');
+
+  const trackMap={
+    operator:{name:'Operator Track',desc:'Implement, wire signals, validate outputs, run daily ops.',href:'tracks/operator.html'},
+    consultant:{name:'Consultant Track',desc:'Discovery, governance framing, rollout plans, executive briefs.',href:'tracks/consultant.html'},
+    sales:{name:'Sales / Channel Track',desc:'Packaging, qualification, objections, pilot + retainer motion.',href:'tracks/sales.html'}
+  };
+
+  function set(id,val){ const el=document.getElementById(id); if(el) el.textContent=val; }
+  function setHTML(id,html){ const el=document.getElementById(id); if(el) el.innerHTML=html; }
+
+  if(profile){
+    set('welcome','Welcome, '+(profile.partnerName||'Partner'));
+    set('subtitle','Primary contact: '+(profile.contactEmail||'—')+' • Partner type: '+(profile.partnerType||'—'));
+    document.getElementById('profile').textContent = JSON.stringify(profile,null,2);
+  } else {
+    document.getElementById('profile').textContent='No profile saved yet. Complete onboarding to generate your partner profile.';
+  }
+
+  const track=(profile && profile.track) || progress.track;
+  if(track && trackMap[track]){
+    set('trackName',trackMap[track].name);
+    set('trackDesc',trackMap[track].desc);
+    setHTML('trackLinkWrap','<a class="btn" href="'+trackMap[track].href+'">Open Track →</a>');
+  }
+
+  const actions = (profile && profile.firstSteps) ? profile.firstSteps : [
+    'Complete Partner Onboarding to get routed into a track.',
+    'Start Foundations module and pass quiz.',
+    'Open Toolkit and pick your pilot package.'
+  ];
+  document.getElementById('nextActions').innerHTML = actions.map(a=>'<li>'+a+'</li>').join('');
+
+  const total=6;
+  let done=0;
+  if(progress.profileComplete) done+=1;
+  const qCount=Object.values(quiz||{}).filter(Boolean).length;
+  if(qCount>=2) done+=2;
+  if(qCount>=5) done+=1;
+  if(exam && exam.passed) done+=2;
+  const pct=Math.min(100, Math.round((done/total)*100));
+  set('readiness', pct+'%');
+  document.getElementById('bar').style.width=pct+'%';
+  set('certStatus', (exam && exam.passed) ? 'PASSED' : (exam && exam.score!=null ? ('In progress ('+exam.score+'%)') : 'Not started'));
+})();
+</script>
+</body>
+</html>
