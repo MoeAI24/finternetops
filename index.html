@@ -1,127 +1,159 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Dashboard | MBCC Finternet Ops™ Training</title>
-  <meta name="description" content="MBCC Finternet Ops training portal dashboard for white‑label partners."/>
-  <meta name="robots" content="index,follow"/>
-  <link rel="stylesheet" href="assets/site.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MBCC Finternet Ops™ — Agent Ops for tokenized finance: monitoring, explainability, compliance-ready reporting, and operational risk tooling." />
+  <meta name="robots" content="index,follow" />
+  <title>MBCC Finternet Ops™ | Agent Ops for Tokenized Finance</title>
+
+  <meta property="og:title" content="MBCC Finternet Ops™" />
+  <meta property="og:description" content="Agent Ops for tokenized finance — monitoring, explainability, compliance-ready reporting, and operational risk tooling." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="site.css">
 </head>
+
 <body>
-  <div class="topbar">
-    <div class="topbarInner">
-      <div class="brand">
-        <span class="logoDot"></span>
-        <div>
-          <div style="font-size:14px; line-height:1;">MBCC FINTERNET OPS™</div>
-          <div class="small" style="margin-top:2px;">White‑Label Partner Training Portal</div>
-        </div>
-      </div>
-      <span class="badge">Fortune‑100 Enablement • Agent Ops • Finternet Ops</span>
-      <div class="search">
-        <input data-search placeholder="Search modules, agents, terms…" aria-label="Search"/>
-      </div>
-      <a class="btn" href="certification.html">Certification</a>
-    </div>
-  </div>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="plaid" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
-  <div class="container layout">
-    <aside class="sidebar">
-      <p class="navTitle">Training Navigation</p>
-      <nav class="nav">
-        <a data-nav href="index.html"><span>Dashboard</span><span class="pill">Start</span></a>
-        <a data-nav href="foundations.html"><span>1) Foundations</span><span class="pill" data-module-id="m1">M1</span></a>
-        <a data-nav href="agent-yield-sentinel.html"><span>2) Yield Sentinel</span><span class="pill" data-module-id="m2">M2</span></a>
-        <a data-nav href="agent-settlement-watchdog.html"><span>3) Settlement Watchdog</span><span class="pill" data-module-id="m3">M3</span></a>
-        <a data-nav href="agent-compliance-explainer.html"><span>4) Compliance Explainer</span><span class="pill" data-module-id="m4">M4</span></a>
-        <a data-nav href="agent-liquidity-stress.html"><span>5) Liquidity Stress</span><span class="pill" data-module-id="m5">M5</span></a>
-        <a data-nav href="agent-anomaly-triage.html"><span>6) Anomaly Triage</span><span class="pill" data-module-id="m6">M6</span></a>
-        <a data-nav href="agent-executive-brief.html"><span>7) Executive Brief</span><span class="pill" data-module-id="m7">M7</span></a>
-        <a data-nav href="implementation.html"><span>8) Implementation</span><span class="pill" data-module-id="m8">M8</span></a>
-        <a data-nav href="toolkit.html"><span>Partner Toolkit</span><span class="pill">Ops</span></a>
-        <a data-nav href="glossary.html"><span>Glossary</span><span class="pill">Terms</span></a>
-        <a data-nav href="legal.html"><span>Legal Boundary</span><span class="pill">Safe</span></a>
-      </nav>
-
-      <div class="progressWrap">
-        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
-          <strong style="font-size:13px;">Your Progress</strong>
-          <span class="small" data-progress-count>0/0 complete</span>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <strong>MBCC FINTERNET OPS™</strong>
+            <span>Agent Ops for Tokenized Finance</span>
+          </div>
         </div>
-        <div class="bar" style="margin-top:8px;"><div data-progress-bar></div></div>
-        <div class="small" style="margin-top:8px;">
-          Progress saves in your browser (local storage). For enterprise SSO + team analytics, integrate later.
-        </div>
-      </div>
-    </aside>
-
-    <main>
-      
-<section class="card" data-search-item="dashboard overview start here finternet ops agent ops certification">
-  <div class="cardHeader">
-    <h1 class="h1">Training Dashboard</h1>
-    <p class="small">This portal trains white‑label partners to implement, integrate, consult, and scale <strong>MBCC Finternet Ops™</strong> at Fortune‑100 standards. Start with Foundations, then master each agent, then learn implementation and certification.</p>
-  </div>
-  <div class="cardBody">
-    <div class="twoCol">
-      <div class="content">
-        <h2>How to use this portal</h2>
-        <ol>
-          <li><strong>Complete modules in order.</strong> Each module ends with a short quiz (pass to mark complete).</li>
-          <li><strong>Speak the language.</strong> MBCC is Ops + Governance + Explainability. Not trading. Not custody. Not investment advice.</li>
-          <li><strong>Operate like enterprise.</strong> Use the Partner Toolkit for pilots, workshops, and client delivery.</li>
-        </ol>
-        <div class="callout">
-          <strong>Partner outcome:</strong> You can walk into an Ops, Risk, or Compliance meeting and explain what you do in plain English — with controls, deliverables, and a rollout plan.
-        </div>
-      </div>
-      <div class="content">
-        <h2>Program pillars</h2>
-        <table class="table">
-          <thead><tr><th>Pillar</th><th>What you learn</th><th>Deliverable mindset</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Foundations</strong></td><td>Finternet definitions, Agent Ops positioning, governance language</td><td>Executive‑safe clarity</td></tr>
-            <tr><td><strong>Agent mastery</strong></td><td>Every agent as a consulting product: signals → outputs → workflows</td><td>Repeatable client value</td></tr>
-            <tr><td><strong>Implementation</strong></td><td>Pilots, operationalization, scale, incident response, reporting</td><td>Enterprise rollout plan</td></tr>
-            <tr><td><strong>Certification</strong></td><td>Exams, rubrics, partner tiers, monetization playbooks</td><td>Defensible partner ecosystem</td></tr>
-          </tbody>
-        </table>
-        <div class="kpiRow">
-          <span class="pill">Pilot → Operate → Scale</span>
-          <span class="pill">Ops + Risk + Compliance</span>
-          <span class="pill">Explainability first</span>
-          <span class="pill">Board‑ready briefs</span>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="docs.html">Docs</a>
+          <a class="btn" href="agents.html">Agent Ops</a>
+          <a class="btn" href="pricing.html">Pricing</a>
+          <a class="btn btn-primary" href="pilot.html">Start Pilot</a>
         </div>
       </div>
     </div>
+  </header>
 
-    <hr class="sep"/>
+  <main>
+    <div class="container">
+      <div class="pill"><span class="dot"></span><span>Monitoring • Explainability • Compliance-ready reporting</span></div>
 
-    <div class="grid cols3" style="margin-top:12px;">
-      <a class="card" href="foundations.html" data-search-item="foundations finternet tokenization agent ops governance language module 1">
-        <div class="cardHeader"><h3 class="h2">Module 1: Foundations</h3><p class="small">Finternet definition, what tokenization changes, and why Agent Ops is the control layer.</p></div>
-        <div class="cardBody"><span class="btn">Start Module</span></div>
-      </a>
-      <a class="card" href="implementation.html" data-search-item="implementation pilot operationalization scale runbook reporting module 8">
-        <div class="cardHeader"><h3 class="h2">Module 8: Implementation</h3><p class="small">How to deploy pilots, design outputs, run workshops, and scale safely.</p></div>
-        <div class="cardBody"><span class="btn">View Model</span></div>
-      </a>
-      <a class="card" href="certification.html" data-search-item="certification exam partner levels practitioner consultant strategist">
-        <div class="cardHeader"><h3 class="h2">Certification</h3><p class="small">Pass the exam to earn MBCC partner status and unlock enterprise playbooks.</p></div>
-        <div class="cardBody"><span class="btn">Get Certified</span></div>
-      </a>
-    </div>
-  </div>
-</section>
+      <h1>Tokenized finance moves fast. Ops has to move faster.</h1>
+      <p class="lead">
+        MBCC Finternet Ops™ is the operations layer for tokenized assets: monitoring, anomaly triage, incident timelines,
+        governance narratives, and exportable reporting — built as “Agent Ops” so teams can scale without adding headcount.
+        <strong>Not custody. Not trading. Not investment advice.</strong>
+      </p>
 
-      <div class="footer">
-        © 2026 Moeai24.Live / Moe Community Cloud (MBCC). All rights reserved. • Training portal is enablement content, not investment advice.
+      <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="pilot.html">Request Pilot →</a>
+        <a class="btn" href="agents.html">Browse Agents</a>
+        <a class="btn" href="docs.html">Read Docs</a>
       </div>
-    </main>
-  </div>
 
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="assets/site.js"></script>
+      <div class="grid" style="margin-top:18px;">
+        <div class="card">
+          <div class="tag">⚙️ Agent Ops</div>
+          <div class="title">Deploy 1–3 agents in a pilot</div>
+          <p class="desc">
+            Start with monitoring + narratives. Add exec briefs, PDF reporting, and stress scenarios once signals are stable.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="pilot.html">Start Pilot →</a>
+            <a class="btn" href="agents.html">Agent Catalog</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="tag">🛡️ Compliance</div>
+          <div class="title">Explainability that governance can approve</div>
+          <p class="desc">
+            Turn noisy events into plain-English summaries with consistent structure: what happened, why it matters, what changed.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="docs.html#compliance">How it works →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="tag">📉 Risk</div>
+          <div class="title">Stress tests + response playbooks</div>
+          <p class="desc">
+            Run liquidity and settlement scenarios, then generate a decision-ready playbook for ops and leadership.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="docs.html#stress">Read stress docs →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="tag">📡 Monitoring</div>
+          <div class="title">Watch yields, spreads, settlement health</div>
+          <p class="desc">
+            Alerts + anomaly triage to reduce noise. Focus on what matters now, not a thousand charts.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="agents.html">See monitoring agents →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="tag">📄 Reporting</div>
+          <div class="title">Exportable outputs (PDF-ready)</div>
+          <p class="desc">
+            Weekly briefs, incident timelines, and governance artifacts — consistent formatting for audits and stakeholders.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="pricing.html">See packages →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="tag">🧱 Architecture</div>
+          <div class="title">Cloud-first, controls-first</div>
+          <p class="desc">
+            Designed for modern stacks (Vertex AI/Gemini optional later), with policy-first thinking and role-based outputs.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="docs.html">Docs →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="banner">
+        <strong>Important:</strong> MBCC Finternet Ops™ is software tooling and education. We do not custody assets,
+        execute trades, or provide investment advice. Outputs are operational and informational.
+      </div>
+
+      <div style="margin-top: 16px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="pilot.html">Start Pilot →</a>
+        <a class="btn" href="pricing.html">Pricing</a>
+        <a class="btn" href="docs.html">Docs</a>
+        <a class="btn" href="agents.html">Agents</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div>
+        © <span id="yr"></span> Moe Community Cloud (MBCC). All rights reserved.<br/>
+        MBCC Finternet Ops™ provides software tooling. Not a broker-dealer, custodian, or investment adviser.
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn" href="privacy.html">Privacy</a>
+        <a class="btn" href="terms.html">Terms</a>
+        <a class="btn" href="docs.html">Docs</a>
+        <a class="btn btn-primary" href="pilot.html">Pilot</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js" defer></script>
 </body>
 </html>
