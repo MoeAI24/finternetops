@@ -87,19 +87,34 @@
       background: rgba(0,0,0,.62);
       z-index:999; padding: 18px;
     }
-    .modalBox{
+        .modalBox{
       width:min(820px, 100%);
       border-radius: 18px;
-      background: linear-gradient(180deg, rgba(247,243,233,.08), rgba(247,243,233,.04));
-      border: 1px solid rgba(212,175,55,.28);
-      box-shadow: 0 22px 60px rgba(0,0,0,.7);
+
+      /* FIX: make the modal readable on all screens */
+      background: rgba(11,11,11,.92);
+      border: 1px solid rgba(212,175,55,.38);
+      box-shadow: 0 22px 60px rgba(0,0,0,.78);
       overflow:hidden;
+
+      /* keep the premium glass feel, but readable */
+      backdrop-filter: blur(18px);
     }
     .modalHead{
       padding: 16px 16px 0;
       display:flex; justify-content:space-between; gap: 12px; align-items:flex-start;
     }
     .modalBody{ padding: 14px 16px 16px; }
+
+    /* FIX: raise contrast for modal text */
+    .modalBox *{
+      color: rgba(247,243,233,.94);
+    }
+    .modalBox .miniBox div,
+    .modalBox .muted,
+    .modalBox small{
+      color: rgba(247,243,233,.82) !important;
+    }
     .modalTitle{
       font-size:20px; font-weight:950; letter-spacing:-.01em;
       margin:0;
@@ -217,7 +232,9 @@
         <a class="btn" href="privacy.html">Privacy</a>
         <a class="btn" href="terms.html">Terms</a>
         <a class="btn" href="docs.html">Docs</a>
-        <a class="btn btn-primary" href="pilot.html">Pilot</a>
+        
+  <a class="btn" href="training/certification.html">Certification</a>
+<a class="btn btn-primary" href="pilot.html">Pilot</a>
       </div>
     </div>
   </footer>
