@@ -44,5 +44,27 @@
       "category": "Executive \u2022 Reporting",
       "tier": "Consultant / Sales"
     }
+  ],
+  "install_pages": [
+    {
+      "slug": "install-index",
+      "path": "training/agents/install/index.html",
+      "tier": "Operator"
+    },
+    {
+      "slug": "operator-install",
+      "path": "training/agents/install/operator-install.html",
+      "tier": "Operator"
+    },
+    {
+      "slug": "integration-checklist",
+      "path": "training/agents/install/integration-checklist.html",
+      "tier": "Operator"
+    },
+    {
+      "slug": "deployment-readiness",
+      "path": "training/agents/install/deployment-readiness.html",
+      "tier": "Operator"
+    }
   ]
 }

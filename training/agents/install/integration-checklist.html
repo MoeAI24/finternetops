@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Integration Checklist (Partner-only) • MBCC Finternet Ops</title>
+<meta name="description" content="Integration checklist for licensed partners (soft-gated)."/>
+<link rel="stylesheet" href="../../assets/css/styles.css"/>
+<link rel="stylesheet" href="../../assets/css/partner.css"/>
+<link rel="stylesheet" href="gate.css"/>
+<script defer src="gate.js"></script>
+</head>
+<body>
+<div class="page">
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">MBCC</div>
+    <div>
+      <div class="brandName">Finternet Ops™ Training</div>
+      <div class="brandTag">Stage 3.5 • Operator Install</div>
+    </div>
+  </div>
+  
+    <nav class="nav">
+      <a class="navLink" href="../../index.html">Portal</a>
+      <a class="navLink" href="../../partner-dashboard.html">Partner Dashboard</a>
+      <a class="navLink" href="../../agents/index.html">Agent Library</a>
+      <a class="navLink" href="../../ip-notice.html">IP Notice</a>
+    </nav>
+    
+</header>
+
+<main class="content">
+
+<section class="hero"><div class="heroInner">
+  <span class="badge">Checklist</span>
+  <h1>Integration Checklist</h1>
+  <p class="lead">Use during discovery and before pilot kickoff. If any critical item is missing, pause.</p>
+  <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+    <a class="btn" href="index.html">Install Home</a>
+    <a class="btn btn-primary" href="operator-install.html">Operator Install</a>
+    <a class="btn" href="deployment-readiness.html">Readiness Scoring</a>
+  </div>
+</div></section>
+
+<section class="card">
+  <h2>Critical (must-have)</h2>
+  <ul class="small" style="line-height:1.9">
+    <li>Approved data sources + documented access</li>
+    <li>PII/secret handling + retention policy</li>
+    <li>Owner for each workflow (settlement, exceptions, liquidity)</li>
+    <li>Escalation matrix with named contacts</li>
+    <li>Approved distribution list for reports</li>
+  </ul>
+</section>
+
+<section class="card" style="margin-top:18px">
+  <h2>Recommended</h2>
+  <ul class="small" style="line-height:1.9">
+    <li>Historical labels to tune ranking (optional)</li>
+    <li>Baseline KPI measurements</li>
+    <li>Change control ticketing</li>
+    <li>Weekly governance sync</li>
+  </ul>
+</section>
+
+<section class="card" style="margin-top:18px">
+  <h2>Forbidden / red flags</h2>
+  <ul class="small" style="line-height:1.9">
+    <li>Requests for guaranteed outcomes or returns</li>
+    <li>Autonomous decisions without review</li>
+    <li>Inventing evidence or backfilling logs</li>
+    <li>Positioning as legal/regulatory advice</li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="small">© 2026 MBCC Finternet Ops™</div>
+  <div class="small"><a href="../../legal.html">Legal Boundary</a> • <a href="../../ip-notice.html">IP Notice</a></div>
+</footer>
+</div>
+
+<div id="gate" class="gateOverlay">
+  <div class="gateCard">
+    <span class="badge">Partner-only</span>
+    <h2>Operator Install Pages (Soft-Gated)</h2>
+    <p class="small" style="line-height:1.8">
+      These pages include implementation and integration details intended for licensed MBCC partners.
+      This is a <strong>deterrent gate</strong> (static sites can’t enforce real security). Do not redistribute.
+    </p>
+    <div class="gateRow">
+      <input id="gate-pass" class="gateInput" placeholder="Enter partner access phrase" />
+      <button id="gate-ok" class="btn btn-primary">I Agree & Continue</button>
+    </div>
+    <div class="small" style="margin-top:10px">Required tier: <strong id="gate-tier"></strong> • See <a href="../ip-notice.html">IP Notice</a></div>
+    <div id="gate-msg" class="gateWarn">Enter your partner access phrase (from MBCC onboarding).</div>
+  </div>
+</div>
+
+</body>
+</html>

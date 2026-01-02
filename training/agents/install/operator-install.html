@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Operator Install Guide (Partner-only) • MBCC Finternet Ops</title>
+<meta name="description" content="Operator install guide and deployment patterns for licensed partners (soft-gated)."/>
+<link rel="stylesheet" href="../../assets/css/styles.css"/>
+<link rel="stylesheet" href="../../assets/css/partner.css"/>
+<link rel="stylesheet" href="gate.css"/>
+<script defer src="gate.js"></script>
+</head>
+<body>
+<div class="page">
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">MBCC</div>
+    <div>
+      <div class="brandName">Finternet Ops™ Training</div>
+      <div class="brandTag">Stage 3.5 • Operator Install</div>
+    </div>
+  </div>
+  
+    <nav class="nav">
+      <a class="navLink" href="../../index.html">Portal</a>
+      <a class="navLink" href="../../partner-dashboard.html">Partner Dashboard</a>
+      <a class="navLink" href="../../agents/index.html">Agent Library</a>
+      <a class="navLink" href="../../ip-notice.html">IP Notice</a>
+    </nav>
+    
+</header>
+
+<main class="content">
+
+<section class="hero"><div class="heroInner">
+  <span class="badge">Operator</span>
+  <h1>Operator Install Guide</h1>
+  <p class="lead">Enterprise-friendly deployment path with auditability, human review, and change control.</p>
+  <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+    <a class="btn" href="index.html">Install Home</a>
+    <a class="btn" href="integration-checklist.html">Integration Checklist</a>
+    <a class="btn btn-primary" href="deployment-readiness.html">Deployment Readiness</a>
+  </div>
+</div></section>
+
+<section class="card">
+  <h2>0) Pre-flight (must-have)</h2>
+  <ul class="small" style="line-height:1.9">
+    <li>Signed SOW + data handling terms</li>
+    <li>Executive sponsor + operational owner + escalation contacts</li>
+    <li>Approved input sources (settlement status, exceptions, liquidity indicators)</li>
+    <li>Logging destination defined + audit trace requirements</li>
+  </ul>
+</section>
+
+<section class="card" style="margin-top:18px">
+  <h2>1) Deployment architecture (reference)</h2>
+  <ol class="small" style="line-height:1.9">
+    <li><strong>Ingest</strong>: pull approved feeds (batch or stream) into staging</li>
+    <li><strong>Normalize</strong>: map to consistent schema</li>
+    <li><strong>Analyze</strong>: run agents to summarize, rank, and report</li>
+    <li><strong>Review</strong>: human validation step (owner signs off)</li>
+    <li><strong>Publish</strong>: distribute briefs/queues to approved channels</li>
+    <li><strong>Trace</strong>: store evidence links + change logs</li>
+  </ol>
+  <div class="small">Implementation specifics (prompts/config/orchestration) remain gated by partner tier and delivery docs.</div>
+</section>
+
+<section class="card" style="margin-top:18px">
+  <h2>2) Minimum viable pilot bundle</h2>
+  <ul class="small" style="line-height:1.9">
+    <li><strong>Settlement Watchdog</strong> → breaks visibility</li>
+    <li><strong>Exception Triage</strong> → ranked queue</li>
+    <li><strong>Executive Brief</strong> → leadership clarity</li>
+  </ul>
+</section>
+
+<section class="card" style="margin-top:18px">
+  <h2>3) Change control rules</h2>
+  <ul class="small" style="line-height:1.9">
+    <li>All threshold/routing changes require owner + timestamp + reason</li>
+    <li>No silent changes — update audit log</li>
+    <li>Weekly false-positive review cadence</li>
+    <li>Rollback plan for major tuning</li>
+  </ul>
+</section>
+
+<section class="card" style="margin-top:18px">
+  <h2>4) Go-live checklist</h2>
+  <ul class="small" style="line-height:1.9">
+    <li>Least-privilege access verified</li>
+    <li>Logging enabled (who/what/when)</li>
+    <li>Human review documented</li>
+    <li>Incident response path defined</li>
+    <li>Client sign-off on reporting cadence</li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="small">© 2026 MBCC Finternet Ops™</div>
+  <div class="small"><a href="../../legal.html">Legal Boundary</a> • <a href="../../ip-notice.html">IP Notice</a></div>
+</footer>
+</div>
+
+<div id="gate" class="gateOverlay">
+  <div class="gateCard">
+    <span class="badge">Partner-only</span>
+    <h2>Operator Install Pages (Soft-Gated)</h2>
+    <p class="small" style="line-height:1.8">
+      These pages include implementation and integration details intended for licensed MBCC partners.
+      This is a <strong>deterrent gate</strong> (static sites can’t enforce real security). Do not redistribute.
+    </p>
+    <div class="gateRow">
+      <input id="gate-pass" class="gateInput" placeholder="Enter partner access phrase" />
+      <button id="gate-ok" class="btn btn-primary">I Agree & Continue</button>
+    </div>
+    <div class="small" style="margin-top:10px">Required tier: <strong id="gate-tier"></strong> • See <a href="../ip-notice.html">IP Notice</a></div>
+    <div id="gate-msg" class="gateWarn">Enter your partner access phrase (from MBCC onboarding).</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Deployment Readiness Scoring (Partner-only) • MBCC Finternet Ops</title>
+<meta name="description" content="Readiness scoring for deployments (soft-gated)."/>
+<link rel="stylesheet" href="../../assets/css/styles.css"/>
+<link rel="stylesheet" href="../../assets/css/partner.css"/>
+<link rel="stylesheet" href="gate.css"/>
+<script defer src="gate.js"></script>
+</head>
+<body>
+<div class="page">
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">MBCC</div>
+    <div>
+      <div class="brandName">Finternet Ops™ Training</div>
+      <div class="brandTag">Stage 3.5 • Operator Install</div>
+    </div>
+  </div>
+  
+    <nav class="nav">
+      <a class="navLink" href="../../index.html">Portal</a>
+      <a class="navLink" href="../../partner-dashboard.html">Partner Dashboard</a>
+      <a class="navLink" href="../../agents/index.html">Agent Library</a>
+      <a class="navLink" href="../../ip-notice.html">IP Notice</a>
+    </nav>
+    
+</header>
+
+<main class="content">
+
+<section class="hero"><div class="heroInner">
+  <span class="badge">Scoring</span>
+  <h1>Deployment Readiness Scoring</h1>
+  <p class="lead">Score Data, Governance, and Stakeholder Alignment. Two Reds = no deployment.</p>
+  <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+    <a class="btn" href="index.html">Install Home</a>
+    <a class="btn" href="integration-checklist.html">Integration Checklist</a>
+    <a class="btn btn-primary" href="operator-install.html">Operator Install</a>
+  </div>
+</div></section>
+
+<section class="card">
+  <h2>1) Data Readiness</h2>
+  <ul class="small" style="line-height:1.9">
+    <li><strong>Green</strong>: feeds available, consistent schema, history available</li>
+    <li><strong>Yellow</strong>: partial feeds, schema drift, limited history</li>
+    <li><strong>Red</strong>: no access, unclear ownership, unreliable exports</li>
+  </ul>
+</section>
+
+<section class="card" style="margin-top:18px">
+  <h2>2) Governance Readiness</h2>
+  <ul class="small" style="line-height:1.9">
+    <li><strong>Green</strong>: access controls + logging + change control defined</li>
+    <li><strong>Yellow</strong>: some controls, missing incident path</li>
+    <li><strong>Red</strong>: no logging expectations, no owners, no boundaries</li>
+  </ul>
+</section>
+
+<section class="card" style="margin-top:18px">
+  <h2>3) Stakeholder Alignment</h2>
+  <ul class="small" style="line-height:1.9">
+    <li><strong>Green</strong>: exec sponsor + ops owner + cadence agreed</li>
+    <li><strong>Yellow</strong>: sponsor exists, missing cadence or KPI baseline</li>
+    <li><strong>Red</strong>: no owner, no timeline, “try it and see”</li>
+  </ul>
+</section>
+
+<section class="card" style="margin-top:18px">
+  <h2>Decision rule</h2>
+  <p class="small" style="line-height:1.9">
+    <strong>Two Reds</strong> = stop and return to Discovery. <strong>One Red</strong> = proceed only with remediation plan + sponsor sign-off.
+  </p>
+  <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+    <a class="btn" href="../../playbooks/discovery.html">Discovery Playbook</a>
+    <a class="btn" href="../../playbooks/sow.html">SOW Playbook</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="small">© 2026 MBCC Finternet Ops™</div>
+  <div class="small"><a href="../../legal.html">Legal Boundary</a> • <a href="../../ip-notice.html">IP Notice</a></div>
+</footer>
+</div>
+
+<div id="gate" class="gateOverlay">
+  <div class="gateCard">
+    <span class="badge">Partner-only</span>
+    <h2>Operator Install Pages (Soft-Gated)</h2>
+    <p class="small" style="line-height:1.8">
+      These pages include implementation and integration details intended for licensed MBCC partners.
+      This is a <strong>deterrent gate</strong> (static sites can’t enforce real security). Do not redistribute.
+    </p>
+    <div class="gateRow">
+      <input id="gate-pass" class="gateInput" placeholder="Enter partner access phrase" />
+      <button id="gate-ok" class="btn btn-primary">I Agree & Continue</button>
+    </div>
+    <div class="small" style="margin-top:10px">Required tier: <strong id="gate-tier"></strong> • See <a href="../ip-notice.html">IP Notice</a></div>
+    <div id="gate-msg" class="gateWarn">Enter your partner access phrase (from MBCC onboarding).</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Operator Install (Partner-only) • MBCC Finternet Ops</title>
+<meta name="description" content="Partner-only operator install and integration pages (soft-gated)."/>
+<link rel="stylesheet" href="../../assets/css/styles.css"/>
+<link rel="stylesheet" href="../../assets/css/partner.css"/>
+<link rel="stylesheet" href="gate.css"/>
+<script defer src="gate.js"></script>
+</head>
+<body>
+<div class="page">
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">MBCC</div>
+    <div>
+      <div class="brandName">Finternet Ops™ Training</div>
+      <div class="brandTag">Stage 3.5 • Operator Install</div>
+    </div>
+  </div>
+  
+    <nav class="nav">
+      <a class="navLink" href="../../index.html">Portal</a>
+      <a class="navLink" href="../../partner-dashboard.html">Partner Dashboard</a>
+      <a class="navLink" href="../../agents/index.html">Agent Library</a>
+      <a class="navLink" href="../../ip-notice.html">IP Notice</a>
+    </nav>
+    
+</header>
+
+<main class="content">
+
+<section class="hero"><div class="heroInner">
+  <span class="badge">Stage 3.5</span>
+  <h1>Operator Install & Integration (Partner-only)</h1>
+  <p class="lead">Implementation checklists, integration patterns, and deployment readiness scoring for licensed partners.</p>
+  <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+    <a class="btn btn-primary" href="operator-install.html">Operator Install Guide →</a>
+    <a class="btn" href="integration-checklist.html">Integration Checklist</a>
+    <a class="btn" href="deployment-readiness.html">Deployment Readiness</a>
+  </div>
+</div></section>
+
+<section class="card">
+  <h2>Important</h2>
+  <ul class="small" style="line-height:1.9">
+    <li>These pages are <strong>soft-gated</strong> (static hosting). Do not redistribute. Enforcement is handled via contract and partner program.</li>
+    <li>Do not deploy without approved SOW + data handling terms.</li>
+    <li>Maintain human-in-the-loop boundaries and audit traces.</li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="small">© 2026 MBCC Finternet Ops™</div>
+  <div class="small"><a href="../../legal.html">Legal Boundary</a> • <a href="../../ip-notice.html">IP Notice</a></div>
+</footer>
+</div>
+
+<div id="gate" class="gateOverlay">
+  <div class="gateCard">
+    <span class="badge">Partner-only</span>
+    <h2>Operator Install Pages (Soft-Gated)</h2>
+    <p class="small" style="line-height:1.8">
+      These pages include implementation and integration details intended for licensed MBCC partners.
+      This is a <strong>deterrent gate</strong> (static sites can’t enforce real security). Do not redistribute.
+    </p>
+    <div class="gateRow">
+      <input id="gate-pass" class="gateInput" placeholder="Enter partner access phrase" />
+      <button id="gate-ok" class="btn btn-primary">I Agree & Continue</button>
+    </div>
+    <div class="small" style="margin-top:10px">Required tier: <strong id="gate-tier"></strong> • See <a href="../ip-notice.html">IP Notice</a></div>
+    <div id="gate-msg" class="gateWarn">Enter your partner access phrase (from MBCC onboarding).</div>
+  </div>
+</div>
+
+</body>
+</html>
