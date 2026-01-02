@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://finternetops.moecommunitycloud.com/</loc></url>
-  <url><loc>https://finternetops.moecommunitycloud.com/docs.html</loc></url>
-  <url><loc>https://finternetops.moecommunitycloud.com/agents.html</loc></url>
-  <url><loc>https://finternetops.moecommunitycloud.com/pricing.html</loc></url>
-  <url><loc>https://finternetops.moecommunitycloud.com/pilot.html</loc></url>
-  <url><loc>https://finternetops.moecommunitycloud.com/privacy.html</loc></url>
-  <url><loc>https://finternetops.moecommunitycloud.com/terms.html</loc></url>
+  <url><loc>https://finternetops.moecommunitycloud.com/index.html</loc></url>
+  <url><loc>https://finternetops.moecommunitycloud.com/foundations.html</loc></url>
+  <url><loc>https://finternetops.moecommunitycloud.com/agent-yield-sentinel.html</loc></url>
+  <url><loc>https://finternetops.moecommunitycloud.com/agent-settlement-watchdog.html</loc></url>
+  <url><loc>https://finternetops.moecommunitycloud.com/agent-compliance-explainer.html</loc></url>
+  <url><loc>https://finternetops.moecommunitycloud.com/agent-liquidity-stress.html</loc></url>
+  <url><loc>https://finternetops.moecommunitycloud.com/agent-anomaly-triage.html</loc></url>
+  <url><loc>https://finternetops.moecommunitycloud.com/agent-executive-brief.html</loc></url>
+  <url><loc>https://finternetops.moecommunitycloud.com/implementation.html</loc></url>
+  <url><loc>https://finternetops.moecommunitycloud.com/toolkit.html</loc></url>
+  <url><loc>https://finternetops.moecommunitycloud.com/glossary.html</loc></url>
+  <url><loc>https://finternetops.moecommunitycloud.com/legal.html</loc></url>
+  <url><loc>https://finternetops.moecommunitycloud.com/certification.html</loc></url>
+  <url><loc>https://finternetops.moecommunitycloud.com/exam.html</loc></url>
 </urlset>

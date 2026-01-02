@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Module 3: Settlement Watchdog | MBCC Finternet Ops™ Training</title>
+  <meta name="description" content="Settlement Watchdog training module for MBCC white‑label partners."/>
+  <meta name="robots" content="index,follow"/>
+  <link rel="stylesheet" href="assets/site.css"/>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbarInner">
+      <div class="brand">
+        <span class="logoDot"></span>
+        <div>
+          <div style="font-size:14px; line-height:1;">MBCC FINTERNET OPS™</div>
+          <div class="small" style="margin-top:2px;">White‑Label Partner Training Portal</div>
+        </div>
+      </div>
+      <span class="badge">Fortune‑100 Enablement • Agent Ops • Finternet Ops</span>
+      <div class="search">
+        <input data-search placeholder="Search modules, agents, terms…" aria-label="Search"/>
+      </div>
+      <a class="btn" href="certification.html">Certification</a>
+    </div>
+  </div>
+
+  <div class="container layout">
+    <aside class="sidebar">
+      <p class="navTitle">Training Navigation</p>
+      <nav class="nav">
+        <a data-nav href="index.html"><span>Dashboard</span><span class="pill">Start</span></a>
+        <a data-nav href="foundations.html"><span>1) Foundations</span><span class="pill" data-module-id="m1">M1</span></a>
+        <a data-nav href="agent-yield-sentinel.html"><span>2) Yield Sentinel</span><span class="pill" data-module-id="m2">M2</span></a>
+        <a data-nav href="agent-settlement-watchdog.html"><span>3) Settlement Watchdog</span><span class="pill" data-module-id="m3">M3</span></a>
+        <a data-nav href="agent-compliance-explainer.html"><span>4) Compliance Explainer</span><span class="pill" data-module-id="m4">M4</span></a>
+        <a data-nav href="agent-liquidity-stress.html"><span>5) Liquidity Stress</span><span class="pill" data-module-id="m5">M5</span></a>
+        <a data-nav href="agent-anomaly-triage.html"><span>6) Anomaly Triage</span><span class="pill" data-module-id="m6">M6</span></a>
+        <a data-nav href="agent-executive-brief.html"><span>7) Executive Brief</span><span class="pill" data-module-id="m7">M7</span></a>
+        <a data-nav href="implementation.html"><span>8) Implementation</span><span class="pill" data-module-id="m8">M8</span></a>
+        <a data-nav href="toolkit.html"><span>Partner Toolkit</span><span class="pill">Ops</span></a>
+        <a data-nav href="glossary.html"><span>Glossary</span><span class="pill">Terms</span></a>
+        <a data-nav href="legal.html"><span>Legal Boundary</span><span class="pill">Safe</span></a>
+      </nav>
+
+      <div class="progressWrap">
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+          <strong style="font-size:13px;">Your Progress</strong>
+          <span class="small" data-progress-count>0/0 complete</span>
+        </div>
+        <div class="bar" style="margin-top:8px;"><div data-progress-bar></div></div>
+        <div class="small" style="margin-top:8px;">
+          Progress saves in your browser (local storage). For enterprise SSO + team analytics, integrate later.
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      
+<section class="content" data-search-item="module 3 — settlement watchdog agent agent settlement watchdog tracks settlement latency, retry behavior, and failure rates across tokenized asset rails and their supporting systems. it exists to protect trust in near-real-time settlement by making reliability measurable and explainable. ops monitoring explainability reporting">
+  <h1>Module — Module 3 — Settlement Watchdog Agent</h1>
+  <p class="small"><strong>Goal:</strong> You can deploy, explain, and operationalize Module 3 — Settlement Watchdog Agent as a consulting product.</p>
+
+  <h2>What this agent is</h2>
+  <p>Settlement Watchdog tracks settlement latency, retry behavior, and failure rates across tokenized asset rails and their supporting systems. It exists to protect trust in near-real-time settlement by making reliability measurable and explainable.</p>
+
+  <h2>Core question it answers</h2>
+  <div class="callout"><strong>“Can we trust this settlement rail under normal load and under stress?”</strong></div>
+
+  <h2>Signals (what it watches)</h2>
+  <ul><li><strong>Latency thresholds:</strong> Measures time-to-settle vs agreed targets and alerts on drift.</li><li><strong>Failure/rollback flags:</strong> Detects failed settlements, cancellations, and rollbacks.</li><li><strong>Retry & queue buildup:</strong> Monitors retries, backlog growth, and timeouts.</li><li><strong>Dependency health:</strong> Correlates issues to upstream/downstream services (APIs, databases, messaging).</li></ul>
+
+  <h2>Outputs (what it produces)</h2>
+  <ul><li><strong>Reliability Alert:</strong> Immediate alert with scope, latency metrics, and affected workflows.</li><li><strong>Incident Timeline:</strong> Chronological narrative for ops + leadership + audit.</li><li><strong>Post‑Mortem Brief:</strong> Root-cause framing, mitigations, and next controls.</li><li><strong>SLA / SLO Report:</strong> Monthly reliability report with trend lines and control actions.</li></ul>
+
+  <h2>Operational workflow</h2>
+  <ol><li>Define settlement SLAs/SLOs and systems of record for measurement.</li><li>Instrument latency and failure events; unify into a single incident view.</li><li>On anomaly: create incident timeline automatically and assign severity.</li><li>Trigger Compliance Explainer to translate incident into governance language.</li><li>Complete post-mortem with corrective actions and prevention controls.</li></ol>
+
+  <h2>Client talk-track (enterprise safe)</h2>
+  <div class="callout">Settlement Watchdog proves reliability. We measure settlement performance, detect failures early, and produce a timeline and post‑mortem narrative that leadership and compliance can use immediately. This builds trust in faster rails without overstating capabilities.</div>
+
+  <h2>Module completion</h2>
+  <p>Pass the quiz (80%+) to complete this module.</p>
+
+  <div class="quiz" data-quiz="quiz_m3" data-module="m3" data-pass="80" data-quiz-key='[{"name": "q1", "correct": "Measure settlement reliability and explain incidents", "rationale": "This agent is about ops reliability, not markets or custody."}, {"name": "q2", "correct": "Can we trust settlement under load and stress?", "rationale": "Reliability and trust are the core focus."}, {"name": "q3", "correct": "Incident timeline and post\u2011mortem", "rationale": "Governance outputs are narratives and reports."}, {"name": "q4", "correct": "Monitoring + reporting; no trading/advice", "rationale": "Enterprise boundary remains operational tooling only."}]'>
+    <h3 style="margin:0">Module 3 — Settlement Watchdog Agent Quiz</h3>
+
+    <div class="qitem">
+      <strong>1) This agent’s primary purpose is:</strong>
+      <label><input type="radio" name="q1" value="Measure settlement reliability and explain incidents"> Measure settlement reliability and explain incidents</label><label><input type="radio" name="q1" value="Predict token prices"> Predict token prices</label><label><input type="radio" name="q1" value="Provide custody services"> Provide custody services</label>
+    </div>
+
+    <div class="qitem">
+      <strong>2) The most accurate “core question” framing is:</strong>
+      <label><input type="radio" name="q2" value="Can we trust settlement under load and stress?"> Can we trust settlement under load and stress?</label><label><input type="radio" name="q2" value="Which asset will outperform?"> Which asset will outperform?</label><label><input type="radio" name="q2" value="How can we avoid regulation?"> How can we avoid regulation?</label>
+    </div>
+
+    <div class="qitem">
+      <strong>3) A governance-ready output from this agent is:</strong>
+      <label><input type="radio" name="q3" value="Incident timeline and post‑mortem"> Incident timeline and post‑mortem</label><label><input type="radio" name="q3" value="Trade execution plan"> Trade execution plan</label><label><input type="radio" name="q3" value="Portfolio rebalance"> Portfolio rebalance</label>
+    </div>
+
+    <div class="qitem">
+      <strong>4) The correct enterprise boundary is:</strong>
+      <label><input type="radio" name="q4" value="Monitoring + reporting; no trading/advice"> Monitoring + reporting; no trading/advice</label><label><input type="radio" name="q4" value="Market making and execution"> Market making and execution</label><label><input type="radio" name="q4" value="Custody and clearing services"> Custody and clearing services</label>
+    </div>
+
+    <button class="btn" type="button" data-quiz-submit>Submit Quiz</button>
+    <div data-quiz-result class="small"></div>
+  </div>
+</section>
+
+      <div class="footer">
+        © 2026 Moeai24.Live / Moe Community Cloud (MBCC). All rights reserved. • Training portal is enablement content, not investment advice.
+      </div>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="assets/site.js"></script>
+</body>
+</html>
