@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Exception Triage Agent • Agent Profile • MBCC Finternet Ops</title>
+  <meta name="description" content="Ranks exceptions by impact, urgency, and evidence so analysts start with what matters most."/>
+  <link rel="stylesheet" href="../../assets/css/styles.css"/>
+  <link rel="stylesheet" href="../../assets/css/partner.css"/>
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">MBCC</div>
+      <div>
+        <div class="brandName">Finternet Ops™ Training</div>
+        <div class="brandTag">Agent Library • Enterprise-ready</div>
+      </div>
+    </div>
+    
+      <nav class="nav">
+        <a class="navLink" href="../../index.html">Portal</a>
+        <a class="navLink" href="../../partner-dashboard.html">Partner Dashboard</a>
+        <a class="navLink" href="../../playbooks/index.html">Playbooks</a>
+        <a class="navLink active" href="../../agents/index.html">Agent Library</a>
+        <a class="navLink" href="../../ip-notice.html">IP Notice</a>
+      </nav>
+    
+  </header>
+
+  <main class="content">
+    
+<section class="hero"><div class="heroInner">
+  <span class="badge">Ops • Exception Prioritization</span>
+  <h1>Exception Triage Agent</h1>
+  <p class="lead">Ranks exceptions by impact, urgency, and evidence so analysts start with what matters most.</p>
+  <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+    <span class="pill">Tier: Operator</span>
+    <span class="pill">Human-in-the-loop required</span>
+    <a class="btn" href="../index.html">Back to Catalog</a>
+  </div>
+</div></section>
+
+<section class="card">
+  <h2>What this agent does</h2>
+  <p class="small" style="line-height:1.9">“Exception Triage makes the queue manageable by ranking what matters first—with reasons your team can trust.”</p>
+  <hr class="soft"/>
+  <div class="grid">
+    <div class="trackCard">
+      <div class="pill">Best for</div>
+      <ul class="small" style="line-height:1.8; margin-top:10px"><li>High-volume exception queues</li><li>Shared services ops teams</li><li>Any workflow where ‘everything is urgent’</li></ul>
+    </div>
+    <div class="trackCard">
+      <div class="pill">Bad fit / walk-away</div>
+      <ul class="small" style="line-height:1.8; margin-top:10px"><li>Removing human review</li><li>No consistent exception data fields</li><li>Needing deterministic routing without policy inputs</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="card" style="margin-top:18px">
+  <h2>Inputs & outputs</h2>
+  <div class="grid" style="margin-top:12px">
+    <div class="trackCard">
+      <div class="pill">Inputs</div>
+      <ul class="small" style="line-height:1.8; margin-top:10px"><li>Exception queue export</li><li>Impact fields (amount, SLA, counterparty)</li><li>Policy rules (client-defined)</li><li>Historical resolution labels (optional)</li></ul>
+    </div>
+    <div class="trackCard">
+      <div class="pill">Outputs</div>
+      <ul class="small" style="line-height:1.8; margin-top:10px"><li>Ranked queue (Top/High/Medium/Low)</li><li>Explainable ranking reasons</li><li>Suggested next step template (not actions)</li><li>End-of-day triage report</li></ul>
+    </div>
+  </div>
+  <div class="small" style="margin-top:10px">Note: Implementation specifics (prompts/config/orchestration) are gated by partner tier and certification (see IP Notice).</div>
+</section>
+
+<section class="card" style="margin-top:18px">
+  <h2>KPIs this agent improves</h2>
+  <ul class="small" style="line-height:1.9"><li>Average time-to-first-touch</li><li>SLA breach reduction</li><li>Queue size reduction</li><li>Analyst throughput</li></ul>
+</section>
+
+<section class="card" style="margin-top:18px">
+  <h2>Human-in-the-loop boundaries</h2>
+  <ul class="small" style="line-height:1.9"><li>Does not close exceptions.</li><li>Does not contact counterparties.</li><li>Human decides and records resolution.</li></ul>
+  <div class="small" style="margin-top:10px">Approved language: “flags”, “surfaces”, “summarizes”, “supports review”. Avoid “decides”, “executes”, “guarantees”.</div>
+</section>
+
+<section class="card" style="margin-top:18px">
+  <h2>Where it fits (pilot → production)</h2>
+  <ul class="small" style="line-height:1.9"><li>Pilot: ranking + explainability review</li><li>Production: ranking + daily rollups + KPI tracking</li><li>Audit: rationale stored with each ranking</li></ul>
+  <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+    <a class="btn" href="../../playbooks/pilot.html">Pilot Playbook</a>
+    <a class="btn" href="../../playbooks/runbook.html">Ops Runbook</a>
+    <a class="btn btn-primary" href="../../partner-dashboard.html">Partner Dashboard</a>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="small">© 2026 MBCC Finternet Ops™</div>
+    <div class="small"><a href="../../legal.html">Legal Boundary</a> • <a href="../../ip-notice.html">IP Notice</a> • <a href="../../glossary.html">Glossary</a></div>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{
+  "version": "v1",
+  "generated": "2026-01-02T19:25:42.504752",
+  "agents": [
+    {
+      "slug": "yield-sentinel",
+      "name": "Yield Sentinel",
+      "category": "Market Ops \u2022 Yield Monitoring",
+      "tier": "Operator / Consultant"
+    },
+    {
+      "slug": "settlement-watchdog",
+      "name": "Settlement Watchdog",
+      "category": "Post-Trade Ops \u2022 Settlement",
+      "tier": "Operator"
+    },
+    {
+      "slug": "liquidity-radar",
+      "name": "Liquidity Radar",
+      "category": "Risk Ops \u2022 Intraday Liquidity",
+      "tier": "Consultant / Operator"
+    },
+    {
+      "slug": "exception-triage",
+      "name": "Exception Triage Agent",
+      "category": "Ops \u2022 Exception Prioritization",
+      "tier": "Operator"
+    },
+    {
+      "slug": "compliance-explainer",
+      "name": "Compliance Explainer",
+      "category": "Governance \u2022 Explainability",
+      "tier": "Consultant"
+    },
+    {
+      "slug": "audit-trace-assistant",
+      "name": "Audit Trace Assistant",
+      "category": "Governance \u2022 Auditability",
+      "tier": "Operator / Consultant"
+    },
+    {
+      "slug": "executive-brief",
+      "name": "Executive Brief Generator",
+      "category": "Executive \u2022 Reporting",
+      "tier": "Consultant / Sales"
+    }
+  ]
+}
