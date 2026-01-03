@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Stage 7 Setup • MBCC Finternet Ops</title>
+<meta name="description" content="Stage 7 hard gating setup options for enterprise deployments."/>
+<link rel="stylesheet" href="../assets/css/styles.css"/>
+<link rel="stylesheet" href="../assets/css/partner.css"/>
+<script src="../assets/js/auth.js"></script>
+</head>
+<body>
+<div class="page">
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">MBCC</div>
+    <div>
+      <div class="brandName">Finternet Ops™ Training</div>
+      <div class="brandTag">Stage 7 • Hard Gating</div>
+    </div>
+  </div>
+  <nav class="nav">
+    <a class="navLink" href="index.html">Portal</a>
+    <a class="navLink" href="partner-dashboard.html">Partner Dashboard</a>
+    <a class="navLink" href="login.html">Login</a>
+  </nav>
+</header>
+
+<main class="content">
+  <section class="hero"><div class="heroInner">
+    <span class="badge">Stage 7</span>
+    <h1>Hard Gating & Entitlements</h1>
+    <p class="lead">Best practice: enforce access at the edge. This site also includes a portable client-side guard for static hosting.</p>
+  </div></section>
+
+  <section class="card">
+    <h2>Option A (Recommended): Cloudflare Access</h2>
+    <ol class="small" style="line-height:1.9">
+      <li>Put <strong>finternetops.moecommunitycloud.com</strong> behind Cloudflare.</li>
+      <li>Create an <strong>Access Application</strong> for <code>/training/*</code>.</li>
+      <li>Require identity provider login (Google Workspace / Okta / Azure AD).</li>
+      <li>Use group rules for roles (Associate / Operator / Partner).</li>
+      <li>Result: true gate, no copy-paste tokens.</li>
+    </ol>
+  </section>
+
+  <section class="card" style="margin-top:18px">
+    <h2>Option B: Firebase Auth + Hosting</h2>
+    <ol class="small" style="line-height:1.9">
+      <li>Host on Firebase Hosting (or Cloud Run + IAP).</li>
+      <li>Use Firebase Auth and custom claims for roles.</li>
+      <li>Protect routes with rewrites / middleware.</li>
+    </ol>
+  </section>
+
+  <section class="card" style="margin-top:18px">
+    <h2>Option C: Included Client-Side Guard (Static Hosting)</h2>
+    <p class="small" style="line-height:1.9">
+      Included: <code>/assets/js/auth.js</code> + <code>/assets/js/guard.js</code>.
+      Protected pages call the guard to require a token and enforce minimum role.
+      This is stronger than soft gating, but not equivalent to edge enforcement.
+    </p>
+    <div class="gateRow">
+      <button class="btn btn-primary" id="cfgSave">Enable Manual Mode</button>
+      <button class="btn" id="cfgReset">Reset Defaults</button>
+    </div>
+    <div class="small" id="cfgMsg" style="margin-top:10px"></div>
+  </section>
+
+  <section class="card" style="margin-top:18px">
+    <h2>Entitlement Rules (current)</h2>
+    <ul class="small" style="line-height:1.9">
+      <li><strong>Associate+</strong>: Partner Dashboard, Onboarding, Toolkit, Agents, Licensing, Enterprise Proof</li>
+      <li><strong>Operator+</strong>: Operator Install pages (<code>/training/agents/install/</code>)</li>
+      <li><strong>Public</strong>: Certification remains public for recruitment (tighten later if desired)</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="small">© 2026 MBCC Finternet Ops™</div>
+  <div class="small"><a href="legal.html">Legal Boundary</a> • <a href="ip-notice.html">IP Notice</a></div>
+</footer>
+</div>
+
+<script>
+(function(){
+  const msg = document.getElementById('cfgMsg');
+  document.getElementById('cfgSave').onclick = () => {
+    const cfg = window.MBCCAuth.getCfg();
+    cfg.provider = "manual";
+    window.MBCCAuth.setCfg(cfg);
+    msg.textContent = "Saved. Manual mode enabled for token-based access on static hosting.";
+  };
+  document.getElementById('cfgReset').onclick = () => {
+    window.MBCCAuth.setCfg({});
+    msg.textContent = "Reset to defaults.";
+  };
+})();
+</script>
+</body>
+</html>

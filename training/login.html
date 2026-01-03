@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Login • MBCC Finternet Ops</title>
+<meta name="description" content="Partner login for protected training pages."/>
+<link rel="stylesheet" href="../assets/css/styles.css"/>
+<link rel="stylesheet" href="../assets/css/partner.css"/>
+<script src="../assets/js/auth.js"></script>
+</head>
+<body>
+<div class="page">
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">MBCC</div>
+    <div>
+      <div class="brandName">Finternet Ops™ Training</div>
+      <div class="brandTag">Stage 7 • Access</div>
+    </div>
+  </div>
+  <nav class="nav">
+    <a class="navLink" href="index.html">Portal</a>
+    <a class="navLink" href="certification/index.html">Certification</a>
+    <a class="navLink" href="ip-notice.html">IP Notice</a>
+  </nav>
+</header>
+
+<main class="content">
+  <section class="hero"><div class="heroInner">
+    <span class="badge">Protected Access</span>
+    <h1>Partner Login</h1>
+    <p class="lead">Enter your MBCC access token to unlock protected training pages.</p>
+  </div></section>
+
+  <section class="card">
+    <h2>Access Token</h2>
+    <p class="small" style="line-height:1.9">Paste the token provided during onboarding. For enterprise deployments, enforce access at the edge (Cloudflare Access / Firebase).</p>
+    <textarea id="tok" class="gateInput" style="min-height:140px; width:100%; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;" placeholder="Paste token here"></textarea>
+    <div class="gateRow" style="margin-top:12px">
+      <button id="save" class="btn btn-primary">Save & Continue</button>
+      <button id="clear" class="btn">Logout</button>
+      <a class="btn" href="stage7-setup.html">Stage 7 Setup</a>
+    </div>
+    <div id="msg" class="small" style="margin-top:10px; display:none;"></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="small">© 2026 MBCC Finternet Ops™</div>
+  <div class="small"><a href="legal.html">Legal Boundary</a> • <a href="ip-notice.html">IP Notice</a></div>
+</footer>
+</div>
+
+<script>
+(function(){
+  const qs = new URLSearchParams(location.search);
+  const next = qs.get('next') || 'partner-dashboard.html';
+  const tok = document.getElementById('tok');
+  const msg = document.getElementById('msg');
+
+  document.getElementById('save').onclick = () => {
+    const t = (tok.value||'').trim();
+    const cfg = window.MBCCAuth.getCfg();
+    const val = window.MBCCAuth.tokenLooksValid(cfg, t);
+    if(!val.ok){
+      msg.style.display='block';
+      msg.textContent = 'Token rejected: ' + val.reason;
+      return;
+    }
+    window.MBCCAuth.saveToken(t);
+    location.href = decodeURIComponent(next);
+  };
+
+  document.getElementById('clear').onclick = () => {
+    window.MBCCAuth.clearToken();
+    msg.style.display='block';
+    msg.textContent = 'Logged out.';
+  };
+})();
+</script>
+</body>
+</html>

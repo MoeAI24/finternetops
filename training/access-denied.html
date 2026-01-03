@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Access Denied • MBCC Finternet Ops</title>
+<meta name="description" content="Access denied for protected training pages."/>
+<link rel="stylesheet" href="../assets/css/styles.css"/>
+<link rel="stylesheet" href="../assets/css/partner.css"/>
+<script src="../assets/js/auth.js"></script>
+</head>
+<body>
+<div class="page">
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">MBCC</div>
+    <div>
+      <div class="brandName">Finternet Ops™ Training</div>
+      <div class="brandTag">Stage 7 • Access</div>
+    </div>
+  </div>
+  <nav class="nav">
+    <a class="navLink" href="index.html">Portal</a>
+    <a class="navLink" href="login.html">Login</a>
+    <a class="navLink" href="ip-notice.html">IP Notice</a>
+  </nav>
+</header>
+
+<main class="content">
+  <section class="hero"><div class="heroInner">
+    <span class="badge">Denied</span>
+    <h1>Access Denied</h1>
+    <p class="lead">Your current entitlement does not meet the required level for this page.</p>
+  </div></section>
+
+  <section class="card">
+    <h2>Details</h2>
+    <div class="small" id="details" style="line-height:1.9"></div>
+    <div class="gateRow" style="margin-top:12px">
+      <a class="btn btn-primary" href="login.html">Login</a>
+      <a class="btn" href="partner-dashboard.html">Partner Dashboard</a>
+      <a class="btn" href="stage7-setup.html">Stage 7 Setup</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="small">© 2026 MBCC Finternet Ops™</div>
+  <div class="small"><a href="legal.html">Legal Boundary</a> • <a href="ip-notice.html">IP Notice</a></div>
+</footer>
+</div>
+
+<script>
+(function(){
+  const qs = new URLSearchParams(location.search);
+  const need = qs.get('need') || 'Associate';
+  const have = qs.get('have') || 'Unknown';
+  const next = qs.get('next') || '';
+  const id = (window.MBCCAuth && window.MBCCAuth.getIdentity) ? (window.MBCCAuth.getIdentity()||{}) : {};
+  document.getElementById('details').innerHTML =
+    '<ul>' +
+      '<li><strong>Required:</strong> ' + need + '</li>' +
+      '<li><strong>You have:</strong> ' + have + '</li>' +
+      '<li><strong>Identity:</strong> ' + (id.who||'') + '</li>' +
+      '<li><strong>Requested:</strong> ' + next + '</li>' +
+    '</ul>' +
+    '<p class="small">If you believe this is an error, contact MBCC support and request entitlement upgrade.</p>';
+})();
+</script>
+</body>
+</html>
