@@ -2,153 +2,168 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Partner Dashboard • MBCC Finternet Ops Training</title>
-  <meta name="description" content="Partner dashboard: track assignment, milestones, and certification readiness."/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Partner Dashboard for MBCC FinternetOps Training: onboarding, track assignment, certification readiness, and implementation actions."/>
   <meta name="theme-color" content="#0b0b0b"/>
-<link rel="stylesheet" href="assets/site.css">
+  <title>Partner Dashboard • MBCC Finternet Ops Training</title>
+  <link rel="stylesheet" href="assets/site.css"/>
 </head>
-<body>
-  <div class="page">
-    <header class="topbar">
-      <div class="brand"><div class="logo">MBCC</div><div><div class="brandName">Finternet Ops™ Training</div><div class="brandTag">Partner Dashboard</div></div></div>
-      <nav class="nav">
-      <a class="navLink" href="login.html">Login</a>
-      <a class="navLink" href="enterprise-proof/index.html">Enterprise Proof</a>
-      <a class="navLink" href="licensing/index.html">Licensing</a>
-      <a class="navLink" href="certification/index.html">Certification</a>
-        <a class="navLink" href="agents/index.html">Agent Library</a>
-        <a class="navLink" href="ip-notice.html">IP Notice</a>
-        <a class="navLink" href="index.html">Portal</a>
-        <a class="navLink" href="partner-onboarding.html">Onboarding</a>
-        <a class="navLink active" href="partner-dashboard.html">Dashboard</a>
-        <a class="navLink" href="certification.html">Certification</a>
-        <a class="navLink" href="toolkit.html">Toolkit</a>
+<body class="trainingPortal">
+  <div class="tpTop">
+    <div class="tpWrap tpTopInner">
+      <a class="tpBrand" href="../index.html" aria-label="Back to FinternetOps home">
+        <div class="tpMark">MB</div>
+        <div class="tpBrandText">
+          <b>MBCC FinternetOps</b>
+          <span>Training & Partner Enablement</span>
+        </div>
+      </a>
+      <nav class="tpTopNav" aria-label="Training navigation">
+        <a class="tpLink" href="../agents.html">Agents</a>
+        <a class="tpLink" href="index.html">Portal</a>
+        <a class="tpLink" href="partner-onboarding.html">Onboarding</a>
+        <a class="tpLink" href="certification/index.html">Certification</a>
+        <a class="tpLink" href="licensing/index.html">Licensing</a>
+        <a class="tpLink" href="enterprise-proof/index.html">Enterprise Proof</a>
+        <a class="tpLink primary" href="partner-dashboard.html" aria-current="page">Partner Dashboard</a>
       </nav>
-    </header>
-
-    <main class="content">
-      <section class="hero"><div class="heroInner">
-        <span class="badge">Partner Control Center</span>
-        <h1 id="welcome">Welcome, Partner</h1>
-        <p class="lead" id="subtitle">Complete onboarding to get your track assignment and next actions.</p>
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="partner-onboarding.html">Complete / Update Onboarding →</a>
-          <a class="btn" href="certification.html">Certification</a>
-          <a class="btn" href="toolkit.html">Toolkit</a>
-        </div>
-      </div></section>
-
-      <section class="card">
-        <h2>Track assignment</h2>
-        <div class="grid" style="margin-top:12px">
-          <div class="trackCard">
-            <div class="pill">Primary track</div>
-            <h3 id="trackName" style="margin:10px 0 6px">Not assigned</h3>
-            <div class="small" id="trackDesc">Complete onboarding to route into Operator / Consultant / Sales.</div>
-            <div style="margin-top:10px" id="trackLinkWrap"></div>
-          </div>
-          <div class="trackCard">
-            <div class="pill">Readiness</div>
-            <h3 id="readiness" style="margin:10px 0 6px">0%</h3>
-            <div class="small">Based on quiz completions + exam status stored in your browser.</div>
-            <div style="margin-top:10px">
-              <div style="height:12px;border-radius:999px;background:rgba(247,243,233,.10);overflow:hidden;">
-                <div id="bar" style="height:100%;width:0%;background:rgba(212,175,55,.65)"></div>
-              </div>
-            </div>
-          </div>
-          <div class="trackCard">
-            <div class="pill">Certification</div>
-            <h3 id="certStatus" style="margin:10px 0 6px">Not started</h3>
-            <div class="small">Pass the exam (80%+) after completing required modules for your track.</div>
-            <div style="margin-top:10px"><a class="btn" href="certification.html">Open Exam →</a></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="card" style="margin-top:18px">
-        <h2>Next actions</h2>
-        <ol id="nextActions" class="small" style="line-height:1.9; margin-top:10px"></ol>
-        <hr class="soft"/>
-        <h2>Partner profile</h2>
-        <pre id="profile" style="white-space:pre-wrap;background:rgba(11,11,11,.55);border:1px solid rgba(247,243,233,.12);border-radius:16px;padding:14px;color:rgba(247,243,233,.92);line-height:1.5"></pre>
-        <div class="small">This is static hosting—profile is saved locally. Add auth later to sync server-side.</div>
-      </section>
-    
-      <section class="card" style="margin-top:18px">
-        <h2>Stage 3.5 — Operator Install (Partner-only)</h2>
-        <p class="small">Implementation checklists and readiness scoring for licensed partners. These pages are soft-gated on static hosting and enforced via your partner agreement.</p>
-        <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="agents/install/index.html">Open Operator Install →</a>
-          <a class="btn" href="agents/install/integration-checklist.html">Integration Checklist</a>
-          <a class="btn" href="agents/install/deployment-readiness.html">Readiness Scoring</a>
-        </div>
-      </section>
-
-    </main>
-
-    <footer class="footer">
-      <div class="small">© 2026 MBCC Finternet Ops™ • Partner Enablement</div>
-      <div class="small"><a href="legal.html">Legal Boundary</a> • <a href="glossary.html">Glossary</a></div>
-    </footer>
+    </div>
   </div>
 
-<script>
-(function(){
-  const profileKey='mbccPartnerProfile_v1';
-  const progressKey='mbccPartnerProgress_v1';
-  const quizKey='mbccQuizProgress_v1';
-  const examKey='mbccCertificationExam_v1';
+  <main class="tpWrap" style="padding-top:22px;">
+    <section class="tpHero" style="padding-top:8px;">
+      <div class="tpHeroGrid">
+        <div class="tpHeroCard">
+          <div class="tpHeroInner">
+            <div class="tpKicker">Partner Control Center • Page-Based • Readable</div>
+            <h1 class="tpTitle" style="margin-bottom:6px;">Partner Dashboard</h1>
+            <p class="tpSub">Complete onboarding to get your track assignment and next actions. Progress is stored locally (static hosting) until auth is enabled.</p>
+            <div class="tpCtas">
+              <a class="tpBtn primary" href="partner-onboarding.html">Complete / Update Onboarding →</a>
+              <a class="tpBtn" href="certification/index.html">Certification</a>
+              <a class="tpBtn" href="playbooks/index.html">Toolkit / Playbooks</a>
+            </div>
+          </div>
+        </div>
 
-  const profile = JSON.parse(localStorage.getItem(profileKey) || 'null');
-  const progress = JSON.parse(localStorage.getItem(progressKey) || '{}');
-  const quiz = JSON.parse(localStorage.getItem(quizKey) || '{}');
-  const exam = JSON.parse(localStorage.getItem(examKey) || '{}');
+        <div class="tpStats" aria-label="Partner status">
+          <div class="tpStat"><b>Primary track</b><span id="pdTrack">Not assigned</span></div>
+          <div class="tpStat"><b>Readiness</b><span id="pdReady">0%</span></div>
+          <div class="tpStat"><b>Certification</b><span id="pdCert">Not started</span></div>
+          <div class="tpStat"><b>Mode</b><span>Static hosting (local profile)</span></div>
+        </div>
+      </div>
+    </section>
 
-  const trackMap={
-    operator:{name:'Operator Track',desc:'Implement, wire signals, validate outputs, run daily ops.',href:'tracks/operator.html'},
-    consultant:{name:'Consultant Track',desc:'Discovery, governance framing, rollout plans, executive briefs.',href:'tracks/consultant.html'},
-    sales:{name:'Sales / Channel Track',desc:'Packaging, qualification, objections, pilot + retainer motion.',href:'tracks/sales.html'}
-  };
+    <section class="tpGrid" aria-label="Next actions" style="padding-top:0;">
+      <article class="tpCard" data-cat="partner">
+        <div class="tpCardTop">
+          <div>
+            <div class="tpTag">Step 1</div>
+            <h3>Onboarding</h3>
+          </div>
+        </div>
+        <p>Complete onboarding to route into Operator / Consultant / Sales tracks and unlock your recommended learning path.</p>
+        <div class="tpActions">
+          <a class="tpAction primary" href="partner-onboarding.html">Open Onboarding</a>
+          <a class="tpAction" href="ip-notice.html">IP Notice</a>
+        </div>
+      </article>
 
-  function set(id,val){ const el=document.getElementById(id); if(el) el.textContent=val; }
-  function setHTML(id,html){ const el=document.getElementById(id); if(el) el.innerHTML=html; }
+      <article class="tpCard" data-cat="partner operator">
+        <div class="tpCardTop">
+          <div>
+            <div class="tpTag">Step 2</div>
+            <h3>Certification Exam</h3>
+          </div>
+        </div>
+        <p>Pass the exam (80%+) after completing required modules. Your score helps set readiness and delivery authorization.</p>
+        <div class="tpActions">
+          <a class="tpAction primary" href="certification/index.html">Open Exam →</a>
+          <a class="tpAction" href="index.html">Back to Portal</a>
+        </div>
+      </article>
 
-  if(profile){
-    set('welcome','Welcome, '+(profile.partnerName||'Partner'));
-    set('subtitle','Primary contact: '+(profile.contactEmail||'—')+' • Partner type: '+(profile.partnerType||'—'));
-    document.getElementById('profile').textContent = JSON.stringify(profile,null,2);
-  } else {
-    document.getElementById('profile').textContent='No profile saved yet. Complete onboarding to generate your partner profile.';
-  }
+      <article class="tpCard" data-cat="proof operator">
+        <div class="tpCardTop">
+          <div>
+            <div class="tpTag">Step 3</div>
+            <h3>Enterprise Proof</h3>
+          </div>
+        </div>
+        <p>Controls evidence, audit-friendly checklists, implementation proof packets—everything you need to sell and deliver enterprise-ready.</p>
+        <div class="tpActions">
+          <a class="tpAction primary" href="enterprise-proof/index.html">Open Enterprise Proof</a>
+          <a class="tpAction" href="licensing/index.html">Licensing</a>
+        </div>
+      </article>
 
-  const track=(profile && profile.track) || progress.track;
-  if(track && trackMap[track]){
-    set('trackName',trackMap[track].name);
-    set('trackDesc',trackMap[track].desc);
-    setHTML('trackLinkWrap','<a class="btn" href="'+trackMap[track].href+'">Open Track →</a>');
-  }
+      <article class="tpCard" data-cat="partner">
+        <div class="tpCardTop">
+          <div>
+            <div class="tpTag">Partner-only</div>
+            <h3>Operator Install</h3>
+          </div>
+        </div>
+        <p>Implementation checklists and readiness scoring for licensed partners. (Hard gating can be enabled later.)</p>
+        <div class="tpActions">
+          <a class="tpAction primary" href="operator-install/index.html">Open Operator Install</a>
+          <a class="tpAction" href="operator-install/checklist.html">Integration Checklist</a>
+        </div>
+      </article>
 
-  const actions = (profile && profile.firstSteps) ? profile.firstSteps : [
-    'Complete Partner Onboarding to get routed into a track.',
-    'Start Foundations module and pass quiz.',
-    'Open Toolkit and pick your pilot package.'
-  ];
-  document.getElementById('nextActions').innerHTML = actions.map(a=>'<li>'+a+'</li>').join('');
+      <article class="tpCard" data-cat="partner">
+        <div class="tpCardTop">
+          <div>
+            <div class="tpTag">Partner</div>
+            <h3>Readiness Scoring</h3>
+          </div>
+        </div>
+        <p>Score delivery readiness and align to the correct level of support: DIY, assisted, or enterprise consulting.</p>
+        <div class="tpActions">
+          <a class="tpAction primary" href="operator-install/readiness.html">Readiness Scoring</a>
+          <a class="tpAction" href="playbooks/index.html">Playbooks</a>
+        </div>
+      </article>
 
-  const total=6;
-  let done=0;
-  if(progress.profileComplete) done+=1;
-  const qCount=Object.values(quiz||{}).filter(Boolean).length;
-  if(qCount>=2) done+=2;
-  if(qCount>=5) done+=1;
-  if(exam && exam.passed) done+=2;
-  const pct=Math.min(100, Math.round((done/total)*100));
-  set('readiness', pct+'%');
-  document.getElementById('bar').style.width=pct+'%';
-  set('certStatus', (exam && exam.passed) ? 'PASSED' : (exam && exam.score!=null ? ('In progress ('+exam.score+'%)') : 'Not started'));
-})();
-</script>
+      <article class="tpCard" data-cat="legal">
+        <div class="tpCardTop">
+          <div>
+            <div class="tpTag">Legal/IP</div>
+            <h3>Boundaries</h3>
+          </div>
+        </div>
+        <p>Clear boundaries protect MBCC IP while keeping partner education and sales materials enterprise-clean.</p>
+        <div class="tpActions">
+          <a class="tpAction primary" href="ip-notice.html">Open IP Notice</a>
+          <a class="tpAction" href="../docs.html">Docs</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="tpFoot" aria-label="Footer">
+      <div class="tpFootRow">
+        <div><b>© 2026 MBCC FinternetOps™</b> • Partner Enablement</div>
+        <div class="tpTinyLinks">
+          <a href="ip-notice.html">Legal Boundary</a>
+          <a href="../docs.html">Glossary</a>
+          <a href="../index.html">Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      try{
+        const track = localStorage.getItem('mbcc_track') || 'Not assigned';
+        const readiness = localStorage.getItem('mbcc_readiness') || '0%';
+        const cert = localStorage.getItem('mbcc_cert_status') || 'Not started';
+        const tEl = document.getElementById('pdTrack'); if(tEl) tEl.textContent = track;
+        const rEl = document.getElementById('pdReady'); if(rEl) rEl.textContent = readiness;
+        const cEl = document.getElementById('pdCert'); if(cEl) cEl.textContent = cert;
+      }catch(e){}
+    })();
+  </script>
 </body>
 </html>
