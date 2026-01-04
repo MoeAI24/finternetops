@@ -5,6 +5,30 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Discovery & Qualification • MBCC Finternet Ops</title>
 <link rel="stylesheet" href="../assets/site.css">
+<script>
+/* MBCC v18: Force training links to open as full pages (break out of any embedded blade/iframe). */
+(function(){
+  function isSameOrigin(url){
+    try { return new URL(url, window.location.href).origin === window.location.origin; } catch(e){ return false; }
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]');
+    if(!a) return;
+    var href = a.getAttribute('href');
+    if(!href || href.startsWith('#') || href.startsWith('javascript:')) return;
+    // Respect explicit external links (agentops/moecommunitycloud) unless they are same origin.
+    var targetUrl = a.href;
+    // Always navigate the TOP window so the page is visible and not behind any blade UI.
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    try {
+      window.top.location.href = targetUrl;
+    } catch(err){
+      window.location.href = targetUrl;
+    }
+  }, true);
+})();
+</script>
 </head>
 <body><div class="page">
 <header class="topbar">
