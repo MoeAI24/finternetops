@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Treasury Reconciliation Agent (TRA) • FinternetOps Agent Library</title>
+<meta name="description" content="Agent #1 (canonical): reconciles value movement across rails and systems, produces auditable truth, exceptions, and proof artifacts—without moving funds."/>
+<meta name="theme-color" content="#0b0b0b"/>
+<link rel="stylesheet" href="../../assets/css/agent.css"/>
+<link rel="canonical" href="https://finternetops.moecommunitycloud.com/training/agent-library/treasury-reconciliation-agent.html"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "MBCC FinternetOps", "url": "https://finternetops.moecommunitycloud.com/", "description": "FinternetOps is the operational layer for next-gen finance workflows: automation, exception handling, reporting, and enterprise proof artifacts."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Treasury Reconciliation Agent (TRA) \u2022 FinternetOps Agent Library", "description": "Agent #1 (canonical): reconciles value movement across rails and systems, produces auditable truth, exceptions, and proof artifacts\u2014without moving funds.", "author": {"@type": "Organization", "name": "Moe Community Cloud (MBCC)"}, "publisher": {"@type": "Organization", "name": "Moe Community Cloud (MBCC)"}, "datePublished": "2026-01-03", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://finternetops.moecommunitycloud.com/training/agent-library/treasury-reconciliation-agent.html"}}</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="container navwrap">
+    <div class="brand">
+      <div class="mark">FO</div>
+      <div class="brandmeta">
+        <div class="name">FinternetOps</div>
+        <div class="tag">Agent Library • Operator-First • Enterprise Proof</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="../../index.html">FinternetOps Home</a>
+      <a class="primary" href="./index.html">Agent Library</a>
+      <a href="../index.html">Training</a>
+      <a href="https://agentops.moecommunitycloud.com/">Agent Ops</a>
+      <a href="https://moecommunitycloud.com/">MBCC Home</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container hero">
+<section class="panel">
+  <span class="badge">Agent #1 • Canonical Reference Implementation</span>
+  <div class="h1">Treasury Reconciliation Agent (TRA)</div>
+  <p class="lead">
+    Continuously reconciles value movement across accounts, rails, and systems (banks, custodians, processors, tokenized rails),
+    producing provable, auditable truth for finance teams—without replacing human approvals or core systems.
+  </p>
+  <div class="ctaRow">
+    <a class="btn primary" href="../index.html">Back to Training</a>
+    <a class="btn" href="./index.html">Back to Agent Library</a>
+  </div>
+</section>
+
+<div class="grid">
+  <section class="card">
+    <h2>Purpose</h2>
+    <p>
+      Prepare reconciled truth: matched movements, timing differences, and real mismatches—then package evidence so humans can sign off.
+    </p>
+    <div class="meta">
+      <span class="pill">Operator-first</span><span class="pill">Audit-ready</span><span class="pill">Read-only inputs</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Hard boundaries (non-negotiable)</h2>
+    <p>
+      The TRA never moves funds, executes trades, modifies ledgers, approves accounting decisions, or provides legal/tax advice.
+      It prepares evidence; humans own decisions.
+    </p>
+    <div class="meta">
+      <span class="pill">No fund movement</span><span class="pill">No approvals</span><span class="pill">No ledger writes</span>
+    </div>
+  </section>
+</div>
+
+<section class="card" style="margin-top:14px; grid-column:1/-1">
+  <h2>Inputs & Outputs</h2>
+  <table class="table" aria-label="Inputs and outputs table">
+    <thead>
+      <tr><th>Inputs (read-only)</th><th>Outputs (proof artifacts)</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Authoritative ledgers (bank statements, custodian reports, ERP exports)<br/>
+          Event streams (payments, settlements, transfer logs)<br/>
+          Reference data (chart of accounts, FX rates, cutoff rules)<br/>
+          Policies (tolerances, thresholds, approval chains)
+        </td>
+        <td>
+          Reconciliation report (matched/unmatched/timing)<br/>
+          Exception queue + root-cause hypotheses<br/>
+          Audit packet (hashes, timestamps, source references)<br/>
+          Management summary (risk, exposure, trend deltas)
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="grid">
+  <section class="card">
+    <h2>Core workflow</h2>
+    <p>
+      Ingest → Normalize → Match → Classify differences → Explain with evidence → Queue exceptions → Package audit artifacts.
+    </p>
+    <div class="meta">
+      <span class="pill">Deterministic reruns</span><span class="pill">Traceability</span><span class="pill">Exception-first</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Human-in-the-loop</h2>
+    <p>
+      People approve tolerances, resolve exceptions, sign reconciliations, and escalate anomalies.
+      The agent reduces manual comparison work—not responsibility.
+    </p>
+    <div class="meta">
+      <span class="pill">Separation of duties</span><span class="pill">Approvals preserved</span><span class="pill">Escalations</span>
+    </div>
+  </section>
+</div>
+
+<div class="grid">
+  <section class="card">
+    <h2>Risk & failure modes</h2>
+    <p>
+      Late feeds flagged as timing differences. Schema drift handled via versioned adapters + alerts.
+      Partial outages degrade gracefully. No silent failures.
+    </p>
+    <div class="meta">
+      <span class="pill">No silent failure</span><span class="pill">Schema drift alerts</span><span class="pill">Graceful degradation</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Compliance posture</h2>
+    <p>
+      Immutable logs (hash-linked), source traceability per line item, deterministic reruns, and preserved separation of duties.
+      Built to support SOX-style controls without claiming certification.
+    </p>
+    <div class="meta">
+      <span class="pill">Hash-linked logs</span><span class="pill">Line-item traceability</span><span class="pill">Control matrix</span>
+    </div>
+  </section>
+</div>
+
+<section class="panel" style="margin-top:14px">
+  <span class="badge">Enterprise Proof Artifacts</span>
+  <p class="lead" style="margin-top:10px">
+    Buyers ask for proof. Partners need repeatability. The TRA ships with a standard evidence package:
+  </p>
+  <div class="hr"></div>
+  <div class="grid">
+    <div class="card">
+      <h2>Proof pack checklist</h2>
+      <p>
+        Sample reconciliation pack • Exception taxonomy • Control boundary matrix • Operator runbook • Incident response playbook.
+      </p>
+      <div class="meta"><span class="pill">Sales enablement</span><span class="pill">Audit readiness</span><span class="pill">Delivery standard</span></div>
+    </div>
+    <div class="card">
+      <h2>Certification scope</h2>
+      <p>
+        Operator: interpret + run outputs. Partner: integrate + tune. Enterprise: environment-scoped deployments.
+      </p>
+      <div class="meta"><span class="pill">Operator</span><span class="pill">Partner</span><span class="pill">Enterprise</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="small"><strong>IP Notice:</strong> This page describes outcomes and operational boundaries. Internal implementation assets are licensed and provided through partner enablement.</div>
+    <div class="small" style="margin-top:10px">© 2026 Moe Community Cloud (MBCC). All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>
