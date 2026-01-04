@@ -1,83 +1,109 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Login • MBCC Finternet Ops</title>
-<meta name="description" content="Partner login for protected training pages."/>
-<link rel="stylesheet" href="../assets/css/styles.css"/>
-<link rel="stylesheet" href="../assets/css/partner.css"/>
-<script src="../assets/js/auth.js"></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Login • FinternetOps Training</title>
+  <meta name="description" content="Partner login for the FinternetOps training portal. Access is enabled after onboarding and certification."/>
+  <meta name="theme-color" content="#0b0b0b"/>
+<meta name="robots" content="index,follow"/>
+  <link rel="stylesheet" href="../site.css"/>
 </head>
 <body>
-<div class="page">
-<header class="topbar">
-  <div class="brand">
-    <div class="logo">MBCC</div>
-    <div>
-      <div class="brandName">Finternet Ops™ Training</div>
-      <div class="brandTag">Stage 7 • Access</div>
+  <div class="topbar">
+    <div class="topbarInner">
+      <div class="brand">
+        <span class="logoDot"></span>
+        <div>
+          <div style="font-size:14px; line-height:1;">MBCC FINTERNET OPS™</div>
+          <div class="small" style="margin-top:2px;">White‑Label Partner Training Portal</div>
+        </div>
+      </div>
+      <span class="badge">Fortune‑100 Enablement • Agent Ops • Finternet Ops</span>
+      <div class="search">
+        <input data-search placeholder="Search modules, agents, terms…" aria-label="Search"/>
+      </div>
+      <a class="btn" href="certification.html">Certification</a>
     </div>
   </div>
-  <nav class="nav">
-    <a class="navLink" href="index.html">Portal</a>
-    <a class="navLink" href="certification/index.html">Certification</a>
-    <a class="navLink" href="ip-notice.html">IP Notice</a>
-  </nav>
-</header>
 
-<main class="content">
-  <section class="hero"><div class="heroInner">
-    <span class="badge">Protected Access</span>
-    <h1>Partner Login</h1>
-    <p class="lead">Enter your MBCC access token to unlock protected training pages.</p>
-  </div></section>
+  <div class="container layout">
+    <aside class="sidebar">
+      <p class="navTitle">Training Navigation</p>
+      <nav class="nav">
+      <a class="navLink" href="login.html">Login</a>
+      <a class="navLink" href="enterprise-proof/index.html">Enterprise Proof</a>
+      <a class="navLink" href="licensing/index.html">Licensing</a>
+      <a class="navLink" href="certification/index.html">Certification</a>
+        <a class="navLink" href="agents/index.html">Agent Library</a>
+        <a class="navLink" href="ip-notice.html">IP Notice</a>
+        <a class="navLink" href="partner-onboarding.html">Onboarding</a>
+        <a class="navLink" href="partner-dashboard.html">Partner Dashboard</a>
+        <a data-nav href="index.html"><span>Dashboard</span><span class="pill">Start</span></a>
+        <a data-nav href="foundations.html"><span>1) Foundations</span><span class="pill" data-module-id="m1">M1</span></a>
+        <a data-nav href="agent-yield-sentinel.html"><span>2) Yield Sentinel</span><span class="pill" data-module-id="m2">M2</span></a>
+        <a data-nav href="agent-settlement-watchdog.html"><span>3) Settlement Watchdog</span><span class="pill" data-module-id="m3">M3</span></a>
+        <a data-nav href="agent-compliance-explainer.html"><span>4) Compliance Explainer</span><span class="pill" data-module-id="m4">M4</span></a>
+        <a data-nav href="agent-liquidity-stress.html"><span>5) Liquidity Stress</span><span class="pill" data-module-id="m5">M5</span></a>
+        <a data-nav href="agent-anomaly-triage.html"><span>6) Anomaly Triage</span><span class="pill" data-module-id="m6">M6</span></a>
+        <a data-nav href="agent-executive-brief.html"><span>7) Executive Brief</span><span class="pill" data-module-id="m7">M7</span></a>
+        <a data-nav href="implementation.html"><span>8) Implementation</span><span class="pill" data-module-id="m8">M8</span></a>
+        <a data-nav href="toolkit.html"><span>Partner Toolkit</span><span class="pill">Ops</span></a>
+        <a data-nav href="glossary.html"><span>Glossary</span><span class="pill">Terms</span></a>
+        <a data-nav href="legal.html"><span>Legal Boundary</span><span class="pill">Safe</span></a>
+      </nav>
 
-  <section class="card">
-    <h2>Access Token</h2>
-    <p class="small" style="line-height:1.9">Paste the token provided during onboarding. For enterprise deployments, enforce access at the edge (Cloudflare Access / Firebase).</p>
-    <textarea id="tok" class="gateInput" style="min-height:140px; width:100%; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;" placeholder="Paste token here"></textarea>
-    <div class="gateRow" style="margin-top:12px">
-      <button id="save" class="btn btn-primary">Save & Continue</button>
-      <button id="clear" class="btn">Logout</button>
-      <a class="btn" href="stage7-setup.html">Stage 7 Setup</a>
+      <div class="progressWrap">
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+          <strong style="font-size:13px;">Your Progress</strong>
+          <span class="small" data-progress-count>0/0 complete</span>
+        </div>
+        <div class="bar" style="margin-top:8px;"><div data-progress-bar></div></div>
+        <div class="small" style="margin-top:8px;">
+          Progress saves in your browser (local storage). For enterprise SSO + team analytics, integrate later.
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+  <section class="hero">
+    <div class="badge">Partner Access</div>
+    <h1>Login</h1>
+    <p class="sub">
+      This portal supports partner delivery, certification, and licensed implementation. Login is enabled when your partner onboarding is approved.
+    </p>
+    <div class="ctaRow">
+      <a class="btn primary" href="partner-onboarding.html">Start onboarding →</a>
+      <a class="btn" href="partner-dashboard.html">Partner Dashboard</a>
     </div>
-    <div id="msg" class="small" style="margin-top:10px; display:none;"></div>
+    <div class="note" style="margin-top:12px">
+      <strong>Note:</strong> This site intentionally does not expose internal implementation IP publicly. Licensed partners receive install assets separately.
+    </div>
+  </section>
+
+  <section class="cards">
+    <article class="card">
+      <h3>How access works</h3>
+      <ul class="list">
+        <li>Complete onboarding + verification</li>
+        <li>Choose certification track (Operator / Partner)</li>
+        <li>Receive licensed install kit + delivery checklists</li>
+        <li>Get added to partner directory + dashboard access</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>If you need immediate access</h3>
+      <p>Use the Partner Dashboard to request enablement and receive next steps.</p>
+      <div class="miniCtas">
+        <a class="miniBtn" href="partner-dashboard.html">Open Partner Dashboard</a>
+        <a class="miniBtn" href="licensing/index.html">View Licensing</a>
+      </div>
+    </article>
   </section>
 </main>
+  </div>
 
-<footer class="footer">
-  <div class="small">© 2026 MBCC Finternet Ops™</div>
-  <div class="small"><a href="legal.html">Legal Boundary</a> • <a href="ip-notice.html">IP Notice</a></div>
-</footer>
-</div>
-
-<script>
-(function(){
-  const qs = new URLSearchParams(location.search);
-  const next = qs.get('next') || 'partner-dashboard.html';
-  const tok = document.getElementById('tok');
-  const msg = document.getElementById('msg');
-
-  document.getElementById('save').onclick = () => {
-    const t = (tok.value||'').trim();
-    const cfg = window.MBCCAuth.getCfg();
-    const val = window.MBCCAuth.tokenLooksValid(cfg, t);
-    if(!val.ok){
-      msg.style.display='block';
-      msg.textContent = 'Token rejected: ' + val.reason;
-      return;
-    }
-    window.MBCCAuth.saveToken(t);
-    location.href = decodeURIComponent(next);
-  };
-
-  document.getElementById('clear').onclick = () => {
-    window.MBCCAuth.clearToken();
-    msg.style.display='block';
-    msg.textContent = 'Logged out.';
-  };
-})();
-</script>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="assets/site.js"></script>
 </body>
 </html>
