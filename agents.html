@@ -1,559 +1,106 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="MBCC Finternet Ops™ Agent Ops catalog — autonomous monitoring, compliance explainers, settlement watchdogs, and stress-test agents for tokenized finance operations." />
-  <title>Agent Ops | MBCC Finternet Ops™</title>
-  <link rel="stylesheet" href="site.css">
-
-  <style>
-    .toolbar{
-      margin-top: 16px;
-      display:flex;
-      gap: 10px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
-      padding: 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(212,175,55,.16);
-      background: rgba(247,243,233,.03);
-    }
-    .leftTools{ display:flex; gap: 10px; flex-wrap:wrap; align-items:center; }
-    input, select, textarea{
-      padding: 11px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(212,175,55,.20);
-      background: rgba(11,11,11,.35);
-      color: var(--off);
-      outline:none;
-      min-width: 220px;
-      font: inherit;
-    }
-    select{ min-width: 200px; }
-    textarea{ min-width: 100%; }
-    .chipRow{ display:flex; gap: 8px; flex-wrap:wrap; align-items:center; }
-    .chip{
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(212,175,55,.22);
-      background: rgba(11,11,11,.35);
-      color: rgba(247,243,233,.82);
-      font-size: 12px;
-      cursor:pointer;
-      user-select:none;
-      transition:.18s ease;
-    }
-    .chip:hover{ border-color: rgba(212,175,55,.42); }
-    .chip.active{
-      border-color: rgba(212,175,55,.72);
-      background: rgba(212,175,55,.12);
-      color: rgba(247,243,233,.92);
-    }
-
-    ul{
-      margin: 10px 0 0;
-      padding: 0;
-      list-style:none;
-      display:grid;
-      gap: 8px;
-      color: rgba(247,243,233,.76);
-      font-size: 12.5px;
-      line-height: 1.55;
-    }
-    li{ display:flex; gap:10px; align-items:flex-start; }
-    .check{
-      width: 18px; height: 18px; border-radius: 6px;
-      border: 1px solid rgba(212,175,55,.35);
-      background: rgba(212,175,55,.12);
-      flex: 0 0 auto;
-      position:relative;
-      top: 2px;
-    }
-    .check:after{
-      content:"";
-      position:absolute;
-      left: 5px; top: 2px;
-      width: 5px; height: 9px;
-      border-right: 2px solid rgba(247,243,233,.9);
-      border-bottom: 2px solid rgba(247,243,233,.9);
-      transform: rotate(45deg);
-    }
-
-    #modal, #pmodal{
-      position:fixed; inset:0; display:none;
-      align-items:center; justify-content:center;
-      background: rgba(0,0,0,.62);
-      z-index:999; padding: 18px;
-    }
-        .modalBox{
-      width:min(820px, 100%);
-      border-radius: 18px;
-
-      /* FIX: make the modal readable on all screens */
-      background: rgba(11,11,11,.92);
-      border: 1px solid rgba(212,175,55,.38);
-      box-shadow: 0 22px 60px rgba(0,0,0,.78);
-      overflow:hidden;
-
-      /* keep the premium glass feel, but readable */
-      backdrop-filter: blur(18px);
-    }
-    .modalHead{
-      padding: 16px 16px 0;
-      display:flex; justify-content:space-between; gap: 12px; align-items:flex-start;
-    }
-    .modalBody{ padding: 14px 16px 16px; }
-
-    /* FIX: raise contrast for modal text */
-    .modalBox *{
-      color: rgba(247,243,233,.94);
-    }
-    .modalBox .miniBox div,
-    .modalBox .muted,
-    .modalBox small{
-      color: rgba(247,243,233,.82) !important;
-    }
-    .modalTitle{
-      font-size:20px; font-weight:950; letter-spacing:-.01em;
-      margin:0;
-    }
-    .modalText{
-      margin: 6px 0 0;
-      color: rgba(247,243,233,.72);
-      font-size: 13px;
-      line-height:1.6;
-    }
-    .miniGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 10px;
-    }
-    .miniBox{
-      border-radius: 16px;
-      border: 1px solid rgba(212,175,55,.16);
-      background: rgba(11,11,11,.30);
-      padding: 12px;
-    }
-    .miniBox strong{
-      display:block;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      font-size: 11px;
-      color: rgba(247,243,233,.85);
-      margin-bottom: 6px;
-    }
-    .miniBox div{
-      color: rgba(247,243,233,.74);
-      font-size: 13px;
-      line-height:1.6;
-    }
-
-    @media (max-width: 560px){
-      input, select{ min-width: 100%; }
-      .miniGrid{ grid-template-columns: 1fr; }
-    }
-  </style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#0b0b0b"/>
+  <title>Agents • FinternetOps</title>
+  <link rel="stylesheet" href="site.css"/>
 </head>
-
 <body>
-  <div class="bg" aria-hidden="true"></div>
-  <div class="plaid" aria-hidden="true"></div>
-  <div class="grain" aria-hidden="true"></div>
-
-  <header>
-    <div class="container">
-      <div class="nav">
-        <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
-          <div>
-            <strong>MBCC FINTERNET OPS™</strong>
-            <span>Agent Ops Catalog</span>
-          </div>
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn" href="index.html">← Home</a>
-          <a class="btn" href="pricing.html">Pricing</a>
-          <a class="btn" href="docs.html">Docs</a>
-          <a class="btn btn-primary" href="#request" onclick="openPilotModal(event)">Request Pilot</a>
-        </div>
-      </div>
+  <header class="topbar">
+    <div class="wrap topbarInner">
+      <a class="brand" href="../index.html">
+        <span class="brandMark">MBCC</span>
+        <span class="brandText">FinternetOps</span>
+      </a>
+      <nav class="topnav">
+        <a href="../training/index.html">Training</a>
+        <a href="../training/playbooks/index.html">Playbooks</a>
+        <a href="../agents.html" class="active">Agents</a>
+      </nav>
     </div>
   </header>
+  <main class="wrap" style="padding-top:16px;">
+    <section class="hero" style="margin-top:18px;">
+  <div class="badge">No blades • Full pages</div>
+  <h1 style="margin-top:10px;">FinternetOps Agent Library</h1>
+  <p class="sub">Every agent opens as its own dedicated page (no overlays, no blades). This is sellable, readable, and Fortune-100 clean.</p>
+  <div class="ctaRow">
+    <a class="btn btn-primary" href="training/index.html">Open Training Portal</a>
+    <a class="btn" href="training/playbooks/index.html">Open Playbooks</a>
+  </div>
+</section>
 
-  <main>
-    <div class="container">
-      <div class="pill"><span class="dot"></span><span>Agents = monitoring + reporting + explainability (not trading)</span></div>
-      <h1>Agent Ops: automation for tokenized finance operations.</h1>
-      <p class="lead">
-        These agents monitor yield behavior, settlement health, anomalies, and operational risk — then produce plain-English narratives and exportable reports.
-        Start with 1–3 agents in a pilot, then expand by role (Ops / Compliance / Executive).
-      </p>
-
-      <div class="toolbar" aria-label="Agent filters">
-        <div class="leftTools">
-          <input id="q" placeholder="Search agents (yield, settlement, compliance...)" />
-          <select id="category">
-            <option value="all">All categories</option>
-            <option value="monitoring">Monitoring</option>
-            <option value="compliance">Compliance</option>
-            <option value="risk">Risk & Stress</option>
-            <option value="reporting">Reporting</option>
-          </select>
-        </div>
-
-        <div class="chipRow" aria-label="Quick filters">
-          <div class="chip active" data-chip="all">All</div>
-          <div class="chip" data-chip="pilot">Pilot-ready</div>
-          <div class="chip" data-chip="exec">Executive briefs</div>
-          <div class="chip" data-chip="alerts">Alerting</div>
-          <div class="chip" data-chip="pdf">PDF reports</div>
-        </div>
-      </div>
-
-      <div id="grid" class="grid" aria-label="Agent cards"></div>
-
-      <div class="banner" id="request">
-        <strong>Compliance note:</strong> MBCC Finternet Ops™ is an analytics + automation tooling platform.
-        We do not custody assets, execute trades, or provide investment advice. Agents generate monitoring, explanations, and operational reporting.
-      </div>
-    </div>
+<section class="cards" style="margin-top:18px;">
+  <article class="card" style="display:flex; flex-direction:column; gap:10px;">
+  <div class="badge">Monitoring • Pilot-ready</div>
+  <h3 style="margin:0;">Yield Sentinel Agent</h3>
+  <p class="muted" style="margin:0;">Monitors tokenized treasury yields, spread shifts, and deviations; generates actionable alerts and weekly briefs.</p>
+  <div class="chipRow"><span class="chip">pilot</span> <span class="chip">alerts</span> <span class="chip">exec</span> <span class="chip">pdf</span></div>
+  <div class="miniCtas" style="margin-top:auto;">
+    <a class="miniBtn" href="agents/yield-sentinel.html">Open agent page</a>
+    <a class="miniBtn" href="training/agent-library/index.html">Agent Library</a>
+  </div>
+</article><article class="card" style="display:flex; flex-direction:column; gap:10px;">
+  <div class="badge">Monitoring • Ops</div>
+  <h3 style="margin:0;">Settlement Watchdog Agent</h3>
+  <p class="muted" style="margin:0;">Tracks settlement latency signals and failure patterns; logs incidents and generates post-mortem timelines.</p>
+  <div class="chipRow"><span class="chip">pilot</span> <span class="chip">alerts</span> <span class="chip">exec</span></div>
+  <div class="miniCtas" style="margin-top:auto;">
+    <a class="miniBtn" href="agents/settlement-watchdog.html">Open agent page</a>
+    <a class="miniBtn" href="training/agent-library/index.html">Agent Library</a>
+  </div>
+</article><article class="card" style="display:flex; flex-direction:column; gap:10px;">
+  <div class="badge">Compliance • Reporting</div>
+  <h3 style="margin:0;">Compliance Explainer Agent</h3>
+  <p class="muted" style="margin:0;">Converts activity signals into plain-English, policy-friendly summaries and exportable audit artifacts.</p>
+  <div class="chipRow"><span class="chip">pilot</span> <span class="chip">exec</span> <span class="chip">pdf</span></div>
+  <div class="miniCtas" style="margin-top:auto;">
+    <a class="miniBtn" href="agents/compliance-explainer.html">Open agent page</a>
+    <a class="miniBtn" href="training/agent-library/index.html">Agent Library</a>
+  </div>
+</article><article class="card" style="display:flex; flex-direction:column; gap:10px;">
+  <div class="badge">Risk • Simulation</div>
+  <h3 style="margin:0;">Liquidity Stress Agent</h3>
+  <p class="muted" style="margin:0;">Runs redemption/liquidity scenarios and explains operational impact for tokenized instruments.</p>
+  <div class="chipRow"><span class="chip">pilot</span> <span class="chip">exec</span> <span class="chip">pdf</span></div>
+  <div class="miniCtas" style="margin-top:auto;">
+    <a class="miniBtn" href="agents/liquidity-stress.html">Open agent page</a>
+    <a class="miniBtn" href="training/agent-library/index.html">Agent Library</a>
+  </div>
+</article><article class="card" style="display:flex; flex-direction:column; gap:10px;">
+  <div class="badge">Monitoring • Triage</div>
+  <h3 style="margin:0;">Anomaly Triage Agent</h3>
+  <p class="muted" style="margin:0;">Prioritizes anomalies, groups related signals, and produces a “what matters now” ops feed.</p>
+  <div class="chipRow"><span class="chip">alerts</span></div>
+  <div class="miniCtas" style="margin-top:auto;">
+    <a class="miniBtn" href="agents/anomaly-triage.html">Open agent page</a>
+    <a class="miniBtn" href="training/agent-library/index.html">Agent Library</a>
+  </div>
+</article><article class="card" style="display:flex; flex-direction:column; gap:10px;">
+  <div class="badge">Reporting • Executive</div>
+  <h3 style="margin:0;">Executive Brief Agent</h3>
+  <p class="muted" style="margin:0;">Produces a concise, leadership-ready weekly briefing: key events, KPIs, risks, and next actions.</p>
+  <div class="chipRow"><span class="chip">exec</span> <span class="chip">pdf</span></div>
+  <div class="miniCtas" style="margin-top:auto;">
+    <a class="miniBtn" href="agents/exec-brief.html">Open agent page</a>
+    <a class="miniBtn" href="training/agent-library/index.html">Agent Library</a>
+  </div>
+</article>
+</section>
   </main>
-
-  <footer>
-    <div class="container foot">
-      <div>
-        © <span id="yr"></span> Moe Community Cloud (MBCC). All rights reserved.<br/>
-        MBCC Finternet Ops™ provides software tooling. Not a broker-dealer, custodian, or investment adviser.
+  <footer class="footer">
+    <div class="wrap footerInner">
+      <div class="footLeft">
+        <div class="brandLine"><span class="brandMark">MBCC</span> <span>FinternetOps</span></div>
+        <div class="muted">Enterprise-grade training + agent operations for tokenized markets.</div>
       </div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="btn" href="privacy.html">Privacy</a>
-        <a class="btn" href="terms.html">Terms</a>
-        <a class="btn" href="docs.html">Docs</a>
-        
-  <a class="btn" href="training/certification.html">Certification</a>
-<a class="btn btn-primary" href="pilot.html">Pilot</a>
+      <div class="footRight">
+        <a class="btn" href="../training/index.html">Training</a>
+        <a class="btn btn-primary" href="../training/playbooks/index.html">Playbooks</a>
       </div>
     </div>
   </footer>
-
-  <div id="modal">
-    <div class="modalBox">
-      <div class="modalHead">
-        <div>
-          <div class="pill" style="margin-bottom:10px;"><span class="dot"></span><span id="mTag">Agent</span></div>
-          <h2 class="modalTitle" id="mTitle">Agent Name</h2>
-          <p class="modalText" id="mDesc">Agent description</p>
-        </div>
-        <button class="btn" onclick="closeModal()" aria-label="Close" style="padding:10px 12px;">✕</button>
-      </div>
-      <div class="modalBody">
-        <div class="miniGrid">
-          <div class="miniBox">
-            <strong>Signals</strong>
-            <div id="mSignals"></div>
-          </div>
-          <div class="miniBox">
-            <strong>Outputs</strong>
-            <div id="mOutputs"></div>
-          </div>
-          <div class="miniBox">
-            <strong>Best for</strong>
-            <div id="mBest"></div>
-          </div>
-          <div class="miniBox">
-            <strong>Pilot scope</strong>
-            <div id="mPilot"></div>
-          </div>
-        </div>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; margin-top: 14px;">
-          <a class="btn" href="pilot.html">Pilot details</a>
-          <button class="btn btn-primary" onclick="openPilotModal(null,true)">Request pilot →</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="pmodal">
-    <div class="modalBox" style="width:min(760px, 100%);">
-      <div class="modalHead">
-        <div>
-          <div class="pill" style="margin-bottom:10px;"><span class="dot"></span><span>Pilot Request</span></div>
-          <div style="font-size:20px; font-weight:950; letter-spacing:-.01em;">Request Pilot — MBCC Finternet Ops™</div>
-          <div style="color: rgba(247,243,233,.72); font-size: 13px; margin-top:6px; line-height:1.55;">
-            This is a front-end template. It opens an email draft until you wire it to Gmail/CRM.
-          </div>
-        </div>
-        <button class="btn" onclick="closePilotModal()" aria-label="Close" style="padding:10px 12px;">✕</button>
-      </div>
-      <div class="modalBody">
-        <form id="pilotForm" onsubmit="submitPilot(event)" style="display:grid; gap: 12px; margin-top: 8px;">
-          <div class="miniGrid" style="grid-template-columns: 1fr 1fr;">
-            <label style="display:grid; gap:6px;">
-              <span style="font-size:12px; color:rgba(247,243,233,.72);">Full Name</span>
-              <input required name="name" placeholder="Your name" />
-            </label>
-            <label style="display:grid; gap:6px;">
-              <span style="font-size:12px; color:rgba(247,243,233,.72);">Work Email</span>
-              <input required name="email" type="email" placeholder="name@company.com" />
-            </label>
-          </div>
-
-          <div class="miniGrid" style="grid-template-columns: 1fr 1fr;">
-            <label style="display:grid; gap:6px;">
-              <span style="font-size:12px; color:rgba(247,243,233,.72);">Company</span>
-              <input name="company" placeholder="Company / Fund / Org" />
-            </label>
-            <label style="display:grid; gap:6px;">
-              <span style="font-size:12px; color:rgba(247,243,233,.72);">Role</span>
-              <select name="role">
-                <option>Ops / Trading Ops</option>
-                <option>Compliance / Risk</option>
-                <option>Engineering / Data</option>
-                <option>Executive / Decision Maker</option>
-                <option>Other</option>
-              </select>
-            </label>
-          </div>
-
-          <label style="display:grid; gap:6px;">
-            <span style="font-size:12px; color:rgba(247,243,233,.72);">Pilot focus</span>
-            <textarea name="notes" rows="4" placeholder="Example: Yield monitoring for tokenized treasuries, settlement watchdog, compliance-ready reports, liquidity stress scenarios..."></textarea>
-          </label>
-
-          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; margin-top:6px;">
-            <button type="button" class="btn" onclick="closePilotModal()">Cancel</button>
-            <button type="submit" class="btn btn-primary">Create Email Draft →</button>
-          </div>
-
-          <div style="color: rgba(247,243,233,.62); font-size: 12px; line-height:1.55;">
-            By submitting, you acknowledge this is a request for software tooling and operational intelligence — not investment advice.
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <script src="site.js" defer></script>
-  <script>
-    const AGENTS = [
-      {
-        id:"yield-sentinel",
-        tag:"Monitoring • Pilot-ready",
-        category:["monitoring","reporting"],
-        chips:["pilot","alerts","exec","pdf"],
-        name:"Yield Sentinel Agent",
-        desc:"Monitors tokenized treasury yields, spread shifts, and deviations; generates actionable alerts and weekly briefs.",
-        signals:"Yield deltas, spread moves, curve shifts, abnormal volatility windows.",
-        outputs:"Alerts, weekly yield brief, anomaly highlights, CSV snapshots, PDF-ready narrative.",
-        best:"Treasury ops, portfolio monitoring, institutions validating tokenized treasury rails.",
-        pilot:"Start with yield monitoring + weekly exec brief + anomaly alert thresholds."
-      },
-      {
-        id:"settlement-watchdog",
-        tag:"Monitoring • Ops",
-        category:["monitoring"],
-        chips:["pilot","alerts","exec"],
-        name:"Settlement Watchdog Agent",
-        desc:"Tracks settlement latency signals and failure patterns; logs incidents and generates post-mortem timelines.",
-        signals:"Latency thresholds, failed settlement flags, unusual queue behavior, retry anomalies.",
-        outputs:"Alerts, incident timeline, ops summary, escalation checklist.",
-        best:"Ops teams needing confidence in near-real-time settlement rails.",
-        pilot:"Latency KPI dashboard + alerting + incident timeline templates."
-      },
-      {
-        id:"compliance-explainer",
-        tag:"Compliance • Reporting",
-        category:["compliance","reporting"],
-        chips:["pilot","exec","pdf"],
-        name:"Compliance Explainer Agent",
-        desc:"Converts activity signals into plain-English, policy-friendly summaries and exportable audit artifacts.",
-        signals:"Event flags, workflow checkpoints, anomalous patterns requiring explanation.",
-        outputs:"Audit-ready narrative, governance notes, PDF-ready reporting structure.",
-        best:"Compliance, risk, governance stakeholders who need clarity and consistency.",
-        pilot:"Generate weekly compliance narrative + event summaries + exportable reports."
-      },
-      {
-        id:"liquidity-stress",
-        tag:"Risk • Simulation",
-        category:["risk"],
-        chips:["pilot","exec","pdf"],
-        name:"Liquidity Stress Agent",
-        desc:"Runs redemption/liquidity scenarios and explains operational impact for tokenized instruments.",
-        signals:"Redemption pressure assumptions, scenario parameters, stress thresholds.",
-        outputs:"Scenario results, risk brief, response recommendations, PDF-ready report.",
-        best:"Risk and treasury teams needing what-if readiness.",
-        pilot:"1–3 scenarios + risk brief + recommended playbook actions."
-      },
-      {
-        id:"anomaly-triage",
-        tag:"Monitoring • Triage",
-        category:["monitoring","reporting"],
-        chips:["alerts"],
-        name:"Anomaly Triage Agent",
-        desc:"Prioritizes anomalies, groups related signals, and produces a “what matters now” ops feed.",
-        signals:"Cross-signal deviations, clustering, repeated anomalies across time windows.",
-        outputs:"Ranked anomaly list, context summaries, suggested next checks.",
-        best:"Ops teams overwhelmed by noisy alerts.",
-        pilot:"Reduce alert fatigue by grouping anomalies + ranking impact."
-      },
-      {
-        id:"exec-brief",
-        tag:"Reporting • Executive",
-        category:["reporting"],
-        chips:["exec","pdf"],
-        name:"Executive Brief Agent",
-        desc:"Produces a concise, leadership-ready weekly briefing: key events, KPIs, risks, and next actions.",
-        signals:"All chosen agent outputs + KPI deltas and incident logs.",
-        outputs:"One-page executive brief, PDF-ready report, decision checklist.",
-        best:"Decision makers who want clarity, not dashboards.",
-        pilot:"Weekly exec brief powered by 1–3 agents."
-      }
-    ];
-
-    const grid = document.getElementById("grid");
-    const q = document.getElementById("q");
-    const category = document.getElementById("category");
-    const chips = Array.from(document.querySelectorAll(".chip"));
-    let activeChip = "all";
-
-    function render(){
-      const term = (q.value || "").toLowerCase().trim();
-      const cat = category.value;
-
-      const filtered = AGENTS.filter(a=>{
-        const inCat = (cat === "all") ? true : a.category.includes(cat);
-        const inChip = (activeChip === "all") ? true : a.chips.includes(activeChip);
-        const inTerm = !term ? true : (
-          a.name.toLowerCase().includes(term) ||
-          a.desc.toLowerCase().includes(term) ||
-          a.tag.toLowerCase().includes(term) ||
-          a.signals.toLowerCase().includes(term) ||
-          a.outputs.toLowerCase().includes(term)
-        );
-        return inCat && inChip && inTerm;
-      });
-
-      grid.innerHTML = filtered.map(a=>`
-        <article class="card" role="button" tabindex="0" onclick="openAgent('${a.id}')" onkeydown="if(event.key==='Enter'){openAgent('${a.id}')}" aria-label="Open ${a.name}">
-          <div class="tag">${a.tag}</div>
-          <div class="title">${a.name}</div>
-          <p class="desc">${a.desc}</p>
-          <ul>
-            <li><span class="check"></span><span><strong style="color:rgba(247,243,233,.9);">Signals:</strong> ${a.signals}</span></li>
-            <li><span class="check"></span><span><strong style="color:rgba(247,243,233,.9);">Outputs:</strong> ${a.outputs}</span></li>
-          </ul>
-          <div class="actions">
-            <button class="btn btn-primary" type="button" onclick="event.stopPropagation(); openAgent('${a.id}')">View details →</button>
-            <button class="btn" type="button" onclick="event.stopPropagation(); openPilotModal(null,true)">Request pilot</button>
-          </div>
-        </article>
-      `).join("") || `<div class="banner"><strong>No agents match your filters.</strong> Try clearing filters or searching a different keyword.</div>`;
-    }
-
-    q.addEventListener("input", render);
-    category.addEventListener("change", render);
-
-    chips.forEach(c=>{
-      c.addEventListener("click", ()=>{
-        chips.forEach(x=>x.classList.remove("active"));
-        c.classList.add("active");
-        activeChip = c.dataset.chip;
-        render();
-      });
-    });
-
-    const modal = document.getElementById("modal");
-    const mTag = document.getElementById("mTag");
-    const mTitle = document.getElementById("mTitle");
-    const mDesc = document.getElementById("mDesc");
-    const mSignals = document.getElementById("mSignals");
-    const mOutputs = document.getElementById("mOutputs");
-    const mBest = document.getElementById("mBest");
-    const mPilot = document.getElementById("mPilot");
-
-    function openAgent(id){
-      const a = AGENTS.find(x=>x.id===id);
-      if(!a) return;
-      mTag.textContent = a.tag;
-      mTitle.textContent = a.name;
-      mDesc.textContent = a.desc;
-      mSignals.textContent = a.signals;
-      mOutputs.textContent = a.outputs;
-      mBest.textContent = a.best;
-      mPilot.textContent = a.pilot;
-
-      modal.style.display = "flex";
-      document.body.style.overflow = "hidden";
-    }
-    function closeModal(){
-      modal.style.display = "none";
-      document.body.style.overflow = "auto";
-    }
-    modal.addEventListener("click",(e)=>{ if(e.target===modal) closeModal(); });
-    document.addEventListener("keydown",(e)=>{ if(e.key==="Escape"){ closeModal(); closePilotModal(); } });
-
-    const pmodal = document.getElementById("pmodal");
-    function openPilotModal(e){
-      if(e) e.preventDefault();
-      pmodal.style.display = "flex";
-      document.body.style.overflow = "hidden";
-      setTimeout(()=>{
-        const first = document.querySelector("#pilotForm input[name='name']");
-        if(first) first.focus();
-      }, 50);
-    }
-    function closePilotModal(){
-      pmodal.style.display = "none";
-      if(modal.style.display !== "flex") document.body.style.overflow = "auto";
-    }
-    pmodal.addEventListener("click",(e)=>{ if(e.target===pmodal) closePilotModal(); });
-
-    function submitPilot(e){
-      e.preventDefault();
-      const fd = new FormData(e.target);
-      const name = fd.get("name") || "";
-      const email = fd.get("email") || "";
-      const company = fd.get("company") || "";
-      const role = fd.get("role") || "";
-      const notes = fd.get("notes") || "";
-
-      const subject = "Pilot Request — MBCC Finternet Ops™ (Agent Ops)";
-      const body =
-`Hello MBCC Team,
-
-I’m requesting a pilot for MBCC Finternet Ops™.
-
-Name: ${name}
-Email: ${email}
-Company: ${company}
-Role: ${role}
-
-Pilot focus:
-${notes}
-
-Agents of interest:
-- Yield Sentinel / Settlement Watchdog / Compliance Explainer / Liquidity Stress (or other)
-
-Desired outcomes:
-- Monitoring + alerting
-- Compliance-ready narratives
-- Exportable reporting + incident timelines
-- A production scale plan
-
-Thanks,
-${name}`;
-
-      const to = "pilot@moecommunitycloud.com";
-      window.location.href = window.MBCC_mailto(to, subject, body);
-      closePilotModal();
-      closeModal();
-    }
-
-    render();
-  </script>
 </body>
 </html>

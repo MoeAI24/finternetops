@@ -1,45 +1,20 @@
 <!doctype html>
 <html lang="en"><head>
-<meta charset="utf-8"/><base target="_top">
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Implementation Playbooks • MBCC Finternet Ops</title>
 <link rel="stylesheet" href="../assets/site.css">
-<script>
-/* MBCC v18: Force training links to open as full pages (break out of any embedded blade/iframe). */
-(function(){
-  function isSameOrigin(url){
-    try { return new URL(url, window.location.href).origin === window.location.origin; } catch(e){ return false; }
-  }
-  document.addEventListener('click', function(e){
-    var a = e.target.closest && e.target.closest('a[href]');
-    if(!a) return;
-    var href = a.getAttribute('href');
-    if(!href || href.startsWith('#') || href.startsWith('javascript:')) return;
-    // Respect explicit external links (agentops/moecommunitycloud) unless they are same origin.
-    var targetUrl = a.href;
-    // Always navigate the TOP window so the page is visible and not behind any blade UI.
-    e.preventDefault();
-    e.stopImmediatePropagation();
-    try {
-      window.top.location.href = targetUrl;
-    } catch(err){
-      window.location.href = targetUrl;
-    }
-  }, true);
-})();
-</script>
 </head>
 <body><div class="page">
 <header class="topbar">
 <div class="brand"><div class="logo">MBCC</div><div><div class="brandName">Finternet Ops™ Training</div><div class="brandTag">Implementation Playbooks</div></div></div>
 <nav class="nav">
-      <a class="navLink" href="login.html" target="_top">Login</a>
-        <a class="navLink" href="../agents/index.html" target="_top">Agent Library</a>
-        <a class="navLink" href="../ip-notice.html" target="_top">IP Notice</a>
-<a class="navLink" href="../index.html" target="_top">Portal</a>
-<a class="navLink" href="../partner-dashboard.html" target="_top">Partner Dashboard</a>
-<a class="navLink active" href="index.html" target="_top">Playbooks</a>
-<a class="navLink" href="../certification.html" target="_top">Certification</a>
+      <a class="navLink" href="login.html">Login</a>
+        <a class="navLink" href="../agents/index.html">Agent Library</a>
+        <a class="navLink" href="../ip-notice.html">IP Notice</a>
+<a class="navLink" href="../index.html">Portal</a>
+<a class="navLink" href="../partner-dashboard.html">Partner Dashboard</a>
+<a class="navLink active" href="index.html">Playbooks</a>
+<a class="navLink" href="../certification.html">Certification</a>
 </nav>
 </header>
 <main class="content">
@@ -48,13 +23,12 @@
 <p class="lead">Enterprise delivery assets for MBCC partners.</p>
 </div></section>
 <section class="grid">
-<div class="trackCard"><h3>Discovery</h3><a class="btn" href="discovery.html" target="_top">Open</a></div>
-<div class="trackCard"><h3>SOW</h3><a class="btn" href="sow.html" target="_top">Open</a></div>
-<div class="trackCard"><h3>30/60/90</h3><a class="btn" href="3090.html" target="_top">Open</a></div>
-<div class="trackCard"><h3>Pilot</h3><a class="btn" href="pilot.html" target="_top">Open</a></div>
-<div class="trackCard"><h3>Runbook</h3><a class="btn" href="runbook.html" target="_top">Open</a></div>
+<div class="trackCard"><h3>Discovery</h3><a class="btn" href="discovery.html">Open</a></div>
+<div class="trackCard"><h3>SOW</h3><a class="btn" href="sow.html">Open</a></div>
+<div class="trackCard"><h3>30/60/90</h3><a class="btn" href="3090.html">Open</a></div>
+<div class="trackCard"><h3>Pilot</h3><a class="btn" href="pilot.html">Open</a></div>
+<div class="trackCard"><h3>Runbook</h3><a class="btn" href="runbook.html">Open</a></div>
 </section>
 </main>
 <footer class="footer"><div class="small">© 2026 MBCC Finternet Ops™</div></footer>
-</div><script src="../assets/header-offset.js"></script>
-</body></html>
+</div></body></html>

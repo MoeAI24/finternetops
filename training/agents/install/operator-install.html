@@ -2,37 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<base target="_top">
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Operator Install Guide (Partner-only) • MBCC Finternet Ops</title>
 <meta name="description" content="Operator install guide and deployment patterns for licensed partners (soft-gated)."/>
 <meta name="theme-color" content="#0b0b0b"/>
 <script defer src="gate.js"></script>
 <link rel="stylesheet" href="../../assets/site.css">
-<script>
-/* MBCC v18: Force training links to open as full pages (break out of any embedded blade/iframe). */
-(function(){
-  function isSameOrigin(url){
-    try { return new URL(url, window.location.href).origin === window.location.origin; } catch(e){ return false; }
-  }
-  document.addEventListener('click', function(e){
-    var a = e.target.closest && e.target.closest('a[href]');
-    if(!a) return;
-    var href = a.getAttribute('href');
-    if(!href || href.startsWith('#') || href.startsWith('javascript:')) return;
-    // Respect explicit external links (agentops/moecommunitycloud) unless they are same origin.
-    var targetUrl = a.href;
-    // Always navigate the TOP window so the page is visible and not behind any blade UI.
-    e.preventDefault();
-    e.stopImmediatePropagation();
-    try {
-      window.top.location.href = targetUrl;
-    } catch(err){
-      window.location.href = targetUrl;
-    }
-  }, true);
-})();
-</script>
 </head>
 <body>
 <div class="page">
@@ -46,11 +21,11 @@
   </div>
   
     <nav class="nav">
-      <a class="navLink" href="login.html" target="_top">Login</a>
-      <a class="navLink" href="../../index.html" target="_top">Portal</a>
-      <a class="navLink" href="../../partner-dashboard.html" target="_top">Partner Dashboard</a>
-      <a class="navLink" href="../../agents/index.html" target="_top">Agent Library</a>
-      <a class="navLink" href="../../ip-notice.html" target="_top">IP Notice</a>
+      <a class="navLink" href="login.html">Login</a>
+      <a class="navLink" href="../../index.html">Portal</a>
+      <a class="navLink" href="../../partner-dashboard.html">Partner Dashboard</a>
+      <a class="navLink" href="../../agents/index.html">Agent Library</a>
+      <a class="navLink" href="../../ip-notice.html">IP Notice</a>
     </nav>
     
 </header>
@@ -62,9 +37,9 @@
   <h1>Operator Install Guide</h1>
   <p class="lead">Enterprise-friendly deployment path with auditability, human review, and change control.</p>
   <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-    <a class="btn" href="index.html" target="_top">Install Home</a>
-    <a class="btn" href="integration-checklist.html" target="_top">Integration Checklist</a>
-    <a class="btn btn-primary" href="deployment-readiness.html" target="_top">Deployment Readiness</a>
+    <a class="btn" href="index.html">Install Home</a>
+    <a class="btn" href="integration-checklist.html">Integration Checklist</a>
+    <a class="btn btn-primary" href="deployment-readiness.html">Deployment Readiness</a>
   </div>
 </div></section>
 
@@ -125,7 +100,7 @@
 
 <footer class="footer">
   <div class="small">© 2026 MBCC Finternet Ops™</div>
-  <div class="small"><a href="../../legal.html" target="_top">Legal Boundary</a> • <a href="../../ip-notice.html" target="_top">IP Notice</a></div>
+  <div class="small"><a href="../../legal.html">Legal Boundary</a> • <a href="../../ip-notice.html">IP Notice</a></div>
 </footer>
 </div>
 
@@ -141,11 +116,10 @@
       <input id="gate-pass" class="gateInput" placeholder="Enter partner access phrase" />
       <button id="gate-ok" class="btn btn-primary">I Agree & Continue</button>
     </div>
-    <div class="small" style="margin-top:10px">Required tier: <strong id="gate-tier"></strong> • See <a href="../ip-notice.html" target="_top">IP Notice</a></div>
+    <div class="small" style="margin-top:10px">Required tier: <strong id="gate-tier"></strong> • See <a href="../ip-notice.html">IP Notice</a></div>
     <div id="gate-msg" class="gateWarn">Enter your partner access phrase (from MBCC onboarding).</div>
   </div>
 </div>
 
-<script src="../../assets/header-offset.js"></script>
 </body>
 </html>

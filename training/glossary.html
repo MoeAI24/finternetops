@@ -2,37 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <base target="_top">
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Glossary | MBCC Finternet Ops™ Training</title>
   <meta name="description" content="Key terms for MBCC Finternet Ops training portal."/>
   <meta name="theme-color" content="#0b0b0b"/>
 <meta name="robots" content="index,follow"/>
   <link rel="stylesheet" href="assets/site.css">
-<script>
-/* MBCC v18: Force training links to open as full pages (break out of any embedded blade/iframe). */
-(function(){
-  function isSameOrigin(url){
-    try { return new URL(url, window.location.href).origin === window.location.origin; } catch(e){ return false; }
-  }
-  document.addEventListener('click', function(e){
-    var a = e.target.closest && e.target.closest('a[href]');
-    if(!a) return;
-    var href = a.getAttribute('href');
-    if(!href || href.startsWith('#') || href.startsWith('javascript:')) return;
-    // Respect explicit external links (agentops/moecommunitycloud) unless they are same origin.
-    var targetUrl = a.href;
-    // Always navigate the TOP window so the page is visible and not behind any blade UI.
-    e.preventDefault();
-    e.stopImmediatePropagation();
-    try {
-      window.top.location.href = targetUrl;
-    } catch(err){
-      window.location.href = targetUrl;
-    }
-  }, true);
-})();
-</script>
 </head>
 <body>
   <div class="topbar">
@@ -48,7 +23,7 @@
       <div class="search">
         <input data-search placeholder="Search modules, agents, terms…" aria-label="Search"/>
       </div>
-      <a class="btn" href="certification.html" target="_top">Certification</a>
+      <a class="btn" href="certification.html">Certification</a>
     </div>
   </div>
 
@@ -56,19 +31,19 @@
     <aside class="sidebar">
       <p class="navTitle">Training Navigation</p>
       <nav class="nav">
-      <a class="navLink" href="login.html" target="_top">Login</a>
-        <a data-nav href="index.html" target="_top"><span>Dashboard</span><span class="pill">Start</span></a>
-        <a data-nav href="foundations.html" target="_top"><span>1) Foundations</span><span class="pill" data-module-id="m1">M1</span></a>
-        <a data-nav href="agent-yield-sentinel.html" target="_top"><span>2) Yield Sentinel</span><span class="pill" data-module-id="m2">M2</span></a>
-        <a data-nav href="agent-settlement-watchdog.html" target="_top"><span>3) Settlement Watchdog</span><span class="pill" data-module-id="m3">M3</span></a>
-        <a data-nav href="agent-compliance-explainer.html" target="_top"><span>4) Compliance Explainer</span><span class="pill" data-module-id="m4">M4</span></a>
-        <a data-nav href="agent-liquidity-stress.html" target="_top"><span>5) Liquidity Stress</span><span class="pill" data-module-id="m5">M5</span></a>
-        <a data-nav href="agent-anomaly-triage.html" target="_top"><span>6) Anomaly Triage</span><span class="pill" data-module-id="m6">M6</span></a>
-        <a data-nav href="agent-executive-brief.html" target="_top"><span>7) Executive Brief</span><span class="pill" data-module-id="m7">M7</span></a>
-        <a data-nav href="implementation.html" target="_top"><span>8) Implementation</span><span class="pill" data-module-id="m8">M8</span></a>
-        <a data-nav href="toolkit.html" target="_top"><span>Partner Toolkit</span><span class="pill">Ops</span></a>
-        <a data-nav href="glossary.html" target="_top"><span>Glossary</span><span class="pill">Terms</span></a>
-        <a data-nav href="legal.html" target="_top"><span>Legal Boundary</span><span class="pill">Safe</span></a>
+      <a class="navLink" href="login.html">Login</a>
+        <a data-nav href="index.html"><span>Dashboard</span><span class="pill">Start</span></a>
+        <a data-nav href="foundations.html"><span>1) Foundations</span><span class="pill" data-module-id="m1">M1</span></a>
+        <a data-nav href="agent-yield-sentinel.html"><span>2) Yield Sentinel</span><span class="pill" data-module-id="m2">M2</span></a>
+        <a data-nav href="agent-settlement-watchdog.html"><span>3) Settlement Watchdog</span><span class="pill" data-module-id="m3">M3</span></a>
+        <a data-nav href="agent-compliance-explainer.html"><span>4) Compliance Explainer</span><span class="pill" data-module-id="m4">M4</span></a>
+        <a data-nav href="agent-liquidity-stress.html"><span>5) Liquidity Stress</span><span class="pill" data-module-id="m5">M5</span></a>
+        <a data-nav href="agent-anomaly-triage.html"><span>6) Anomaly Triage</span><span class="pill" data-module-id="m6">M6</span></a>
+        <a data-nav href="agent-executive-brief.html"><span>7) Executive Brief</span><span class="pill" data-module-id="m7">M7</span></a>
+        <a data-nav href="implementation.html"><span>8) Implementation</span><span class="pill" data-module-id="m8">M8</span></a>
+        <a data-nav href="toolkit.html"><span>Partner Toolkit</span><span class="pill">Ops</span></a>
+        <a data-nav href="glossary.html"><span>Glossary</span><span class="pill">Terms</span></a>
+        <a data-nav href="legal.html"><span>Legal Boundary</span><span class="pill">Safe</span></a>
       </nav>
 
       <div class="progressWrap">
@@ -119,6 +94,5 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="assets/site.js"></script>
-<script src="assets/header-offset.js"></script>
 </body>
 </html>
