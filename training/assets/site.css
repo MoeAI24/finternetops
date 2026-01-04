@@ -177,3 +177,14 @@ hr.sep{border:none; border-top:1px solid rgba(212,175,55,.18); margin:14px 0}
   color: rgba(247,243,233,.92);
   display:none;
 }
+
+
+/* --- Added in v14: ensure nav links + primary buttons match MBCC brand --- */
+.navLink{ display:block; }
+.btn-primary{
+  border:1px solid rgba(212,175,55,.42);
+  background: linear-gradient(90deg, rgba(193,18,31,.95), rgba(193,18,31,.65));
+  color: #f7f3e9;
+  font-weight: 800;
+}
+.btn-primary:hover{ filter: brightness(1.05); }
