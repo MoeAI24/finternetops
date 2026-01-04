@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <base target="_top">
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Partner Dashboard • MBCC Finternet Ops Training</title>
   <meta name="description" content="Partner dashboard: track assignment, milestones, and certification readiness."/>
   <meta name="theme-color" content="#0b0b0b"/>
@@ -13,17 +14,17 @@
     <header class="topbar">
       <div class="brand"><div class="logo">MBCC</div><div><div class="brandName">Finternet Ops™ Training</div><div class="brandTag">Partner Dashboard</div></div></div>
       <nav class="nav">
-      <a class="navLink" href="login.html">Login</a>
-      <a class="navLink" href="enterprise-proof/index.html">Enterprise Proof</a>
-      <a class="navLink" href="licensing/index.html">Licensing</a>
-      <a class="navLink" href="certification/index.html">Certification</a>
-        <a class="navLink" href="agents/index.html">Agent Library</a>
-        <a class="navLink" href="ip-notice.html">IP Notice</a>
-        <a class="navLink" href="index.html">Portal</a>
-        <a class="navLink" href="partner-onboarding.html">Onboarding</a>
-        <a class="navLink active" href="partner-dashboard.html">Dashboard</a>
-        <a class="navLink" href="certification.html">Certification</a>
-        <a class="navLink" href="toolkit.html">Toolkit</a>
+      <a class="navLink" href="login.html" target="_top">Login</a>
+      <a class="navLink" href="enterprise-proof/index.html" target="_top">Enterprise Proof</a>
+      <a class="navLink" href="licensing/index.html" target="_top">Licensing</a>
+      <a class="navLink" href="certification/index.html" target="_top">Certification</a>
+        <a class="navLink" href="agents/index.html" target="_top">Agent Library</a>
+        <a class="navLink" href="ip-notice.html" target="_top">IP Notice</a>
+        <a class="navLink" href="index.html" target="_top">Portal</a>
+        <a class="navLink" href="partner-onboarding.html" target="_top">Onboarding</a>
+        <a class="navLink active" href="partner-dashboard.html" target="_top">Dashboard</a>
+        <a class="navLink" href="certification.html" target="_top">Certification</a>
+        <a class="navLink" href="toolkit.html" target="_top">Toolkit</a>
       </nav>
     </header>
 
@@ -33,9 +34,9 @@
         <h1 id="welcome">Welcome, Partner</h1>
         <p class="lead" id="subtitle">Complete onboarding to get your track assignment and next actions.</p>
         <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="partner-onboarding.html">Complete / Update Onboarding →</a>
-          <a class="btn" href="certification.html">Certification</a>
-          <a class="btn" href="toolkit.html">Toolkit</a>
+          <a class="btn btn-primary" href="partner-onboarding.html" target="_top">Complete / Update Onboarding →</a>
+          <a class="btn" href="certification.html" target="_top">Certification</a>
+          <a class="btn" href="toolkit.html" target="_top">Toolkit</a>
         </div>
       </div></section>
 
@@ -62,7 +63,7 @@
             <div class="pill">Certification</div>
             <h3 id="certStatus" style="margin:10px 0 6px">Not started</h3>
             <div class="small">Pass the exam (80%+) after completing required modules for your track.</div>
-            <div style="margin-top:10px"><a class="btn" href="certification.html">Open Exam →</a></div>
+            <div style="margin-top:10px"><a class="btn" href="certification.html" target="_top">Open Exam →</a></div>
           </div>
         </div>
       </section>
@@ -80,9 +81,9 @@
         <h2>Stage 3.5 — Operator Install (Partner-only)</h2>
         <p class="small">Implementation checklists and readiness scoring for licensed partners. These pages are soft-gated on static hosting and enforced via your partner agreement.</p>
         <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="agents/install/index.html">Open Operator Install →</a>
-          <a class="btn" href="agents/install/integration-checklist.html">Integration Checklist</a>
-          <a class="btn" href="agents/install/deployment-readiness.html">Readiness Scoring</a>
+          <a class="btn btn-primary" href="agents/install/index.html" target="_top">Open Operator Install →</a>
+          <a class="btn" href="agents/install/integration-checklist.html" target="_top">Integration Checklist</a>
+          <a class="btn" href="agents/install/deployment-readiness.html" target="_top">Readiness Scoring</a>
         </div>
       </section>
 
@@ -90,7 +91,7 @@
 
     <footer class="footer">
       <div class="small">© 2026 MBCC Finternet Ops™ • Partner Enablement</div>
-      <div class="small"><a href="legal.html">Legal Boundary</a> • <a href="glossary.html">Glossary</a></div>
+      <div class="small"><a href="legal.html" target="_top">Legal Boundary</a> • <a href="glossary.html" target="_top">Glossary</a></div>
     </footer>
   </div>
 
@@ -127,7 +128,7 @@
   if(track && trackMap[track]){
     set('trackName',trackMap[track].name);
     set('trackDesc',trackMap[track].desc);
-    setHTML('trackLinkWrap','<a class="btn" href="'+trackMap[track].href+'">Open Track →</a>');
+    setHTML('trackLinkWrap','<a class="btn" href="'+trackMap[track].href+'" target="_top">Open Track →</a>');
   }
 
   const actions = (profile && profile.firstSteps) ? profile.firstSteps : [
