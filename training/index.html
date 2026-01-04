@@ -3,144 +3,245 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Dashboard | MBCC Finternet Ops™ Training</title>
-  <meta name="description" content="MBCC Finternet Ops training portal dashboard for white‑label partners."/>
+  <meta name="description" content="FinternetOps enterprise training portal: partner onboarding, certification, licensing, agent library, playbooks, and enterprise proof artifacts."/>
   <meta name="theme-color" content="#0b0b0b"/>
-<meta name="robots" content="index,follow"/>
-  <link rel="stylesheet" href="assets/site.css">
+  <title>Training Portal • FinternetOps</title>
+  <link rel="stylesheet" href="assets/site.css"/>
 </head>
-<body>
-  <div class="topbar">
-    <div class="topbarInner">
-      <div class="brand">
-        <span class="logoDot"></span>
-        <div>
-          <div style="font-size:14px; line-height:1;">MBCC FINTERNET OPS™</div>
-          <div class="small" style="margin-top:2px;">White‑Label Partner Training Portal</div>
+<body class="trainingPortal">
+  <div class="tpTop">
+    <div class="tpWrap tpTopInner">
+      <a class="tpBrand" href="../index.html" aria-label="Back to FinternetOps home">
+        <div class="tpMark">MB</div>
+        <div class="tpBrandText">
+          <b>MBCC FinternetOps</b>
+          <span>Training & Partner Enablement</span>
         </div>
-      </div>
-      <span class="badge">Fortune‑100 Enablement • Agent Ops • Finternet Ops</span>
-      <div class="search">
-        <input data-search placeholder="Search modules, agents, terms…" aria-label="Search"/>
-      </div>
-      <a class="btn" href="certification.html">Certification</a>
-    </div>
-  </div>
-
-  <div class="container layout">
-    <aside class="sidebar">
-      <p class="navTitle">Training Navigation</p>
-      <nav class="nav">
-      <a class="navLink" href="login.html">Login</a>
-      <a class="navLink" href="enterprise-proof/index.html">Enterprise Proof</a>
-      <a class="navLink" href="licensing/index.html">Licensing</a>
-      <a class="navLink" href="certification/index.html">Certification</a>
-        <a class="navLink" href="agents/index.html">Agent Library</a>
-        <a class="navLink" href="ip-notice.html">IP Notice</a>
-        <a class="navLink" href="partner-onboarding.html">Onboarding</a>
-        <a class="navLink" href="partner-dashboard.html">Partner Dashboard</a>
-        <a data-nav href="index.html"><span>Dashboard</span><span class="pill">Start</span></a>
-        <a data-nav href="foundations.html"><span>1) Foundations</span><span class="pill" data-module-id="m1">M1</span></a>
-        <a data-nav href="agent-yield-sentinel.html"><span>2) Yield Sentinel</span><span class="pill" data-module-id="m2">M2</span></a>
-        <a data-nav href="agent-settlement-watchdog.html"><span>3) Settlement Watchdog</span><span class="pill" data-module-id="m3">M3</span></a>
-        <a data-nav href="agent-compliance-explainer.html"><span>4) Compliance Explainer</span><span class="pill" data-module-id="m4">M4</span></a>
-        <a data-nav href="agent-liquidity-stress.html"><span>5) Liquidity Stress</span><span class="pill" data-module-id="m5">M5</span></a>
-        <a data-nav href="agent-anomaly-triage.html"><span>6) Anomaly Triage</span><span class="pill" data-module-id="m6">M6</span></a>
-        <a data-nav href="agent-executive-brief.html"><span>7) Executive Brief</span><span class="pill" data-module-id="m7">M7</span></a>
-        <a data-nav href="implementation.html"><span>8) Implementation</span><span class="pill" data-module-id="m8">M8</span></a>
-        <a data-nav href="toolkit.html"><span>Partner Toolkit</span><span class="pill">Ops</span></a>
-        <a data-nav href="glossary.html"><span>Glossary</span><span class="pill">Terms</span></a>
-        <a data-nav href="legal.html"><span>Legal Boundary</span><span class="pill">Safe</span></a>
+      </a>
+      <nav class="tpTopNav" aria-label="Training navigation">
+        <a class="tpLink" href="../agents.html">Agents</a>
+        <a class="tpLink" href="agent-library/index.html">Agent Library</a>
+        <a class="tpLink" href="playbooks/index.html">Playbooks</a>
+        <a class="tpLink" href="certification/index.html">Certification</a>
+        <a class="tpLink" href="licensing/index.html">Licensing</a>
+        <a class="tpLink" href="enterprise-proof/index.html">Enterprise Proof</a>
+        <a class="tpLink primary" href="partner-dashboard.html">Partner Dashboard</a>
       </nav>
-
-      <div class="progressWrap">
-        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
-          <strong style="font-size:13px;">Your Progress</strong>
-          <span class="small" data-progress-count>0/0 complete</span>
-        </div>
-        <div class="bar" style="margin-top:8px;"><div data-progress-bar></div></div>
-        <div class="small" style="margin-top:8px;">
-          Progress saves in your browser (local storage). For enterprise SSO + team analytics, integrate later.
-        </div>
-      </div>
-    </aside>
-
-    <main>
-      
-<section class="card" data-search-item="dashboard overview start here finternet ops agent ops certification">
-  <div class="cardHeader">
-    <h1 class="h1">Training Dashboard</h1>
-    <p class="small">This portal trains white‑label partners to implement, integrate, consult, and scale <strong>MBCC Finternet Ops™</strong> at Fortune‑100 standards. Start with Foundations, then master each agent, then learn implementation and certification.</p>
-  </div>
-  <div class="cardBody">
-    <div class="twoCol">
-      <div class="content">
-        <h2>How to use this portal</h2>
-        <ol>
-          <li><strong>Complete modules in order.</strong> Each module ends with a short quiz (pass to mark complete).</li>
-          <li><strong>Speak the language.</strong> MBCC is Ops + Governance + Explainability. Not trading. Not custody. Not investment advice.</li>
-          <li><strong>Operate like enterprise.</strong> Use the Partner Toolkit for pilots, workshops, and client delivery.</li>
-        </ol>
-        <div class="callout">
-          <strong>Partner outcome:</strong> You can walk into an Ops, Risk, or Compliance meeting and explain what you do in plain English — with controls, deliverables, and a rollout plan.
-        </div>
-      </div>
-      <div class="content">
-        <h2>Program pillars</h2>
-        <table class="table">
-          <thead><tr><th>Pillar</th><th>What you learn</th><th>Deliverable mindset</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Foundations</strong></td><td>Finternet definitions, Agent Ops positioning, governance language</td><td>Executive‑safe clarity</td></tr>
-            <tr><td><strong>Agent mastery</strong></td><td>Every agent as a consulting product: signals → outputs → workflows</td><td>Repeatable client value</td></tr>
-            <tr><td><strong>Implementation</strong></td><td>Pilots, operationalization, scale, incident response, reporting</td><td>Enterprise rollout plan</td></tr>
-            <tr><td><strong>Certification</strong></td><td>Exams, rubrics, partner tiers, monetization playbooks</td><td>Defensible partner ecosystem</td></tr>
-          </tbody>
-        </table>
-        <div class="kpiRow">
-          <span class="pill">Pilot → Operate → Scale</span>
-          <span class="pill">Ops + Risk + Compliance</span>
-          <span class="pill">Explainability first</span>
-          <span class="pill">Board‑ready briefs</span>
-        </div>
-      </div>
-    </div>
-
-    <hr class="sep"/>
-
-    <div class="grid cols3" style="margin-top:12px;">
-      <a class="card" href="foundations.html" data-search-item="foundations finternet tokenization agent ops governance language module 1">
-        <div class="cardHeader"><h3 class="h2">Module 1: Foundations</h3><p class="small">Finternet definition, what tokenization changes, and why Agent Ops is the control layer.</p></div>
-        <div class="cardBody"><span class="btn">Start Module</span></div>
-      </a>
-      <a class="card" href="implementation.html" data-search-item="implementation pilot operationalization scale runbook reporting module 8">
-        <div class="cardHeader"><h3 class="h2">Module 8: Implementation</h3><p class="small">How to deploy pilots, design outputs, run workshops, and scale safely.</p></div>
-        <div class="cardBody"><span class="btn">View Model</span></div>
-      </a>
-      <a class="card" href="certification.html" data-search-item="certification exam partner levels practitioner consultant strategist">
-        <div class="cardHeader"><h3 class="h2">Certification</h3><p class="small">Pass the exam to earn MBCC partner status and unlock enterprise playbooks.</p></div>
-        <div class="cardBody"><span class="btn">Get Certified</span></div>
-      </a>
     </div>
   </div>
-</section>
 
-      <div class="footer">
-        © 2026 Moeai24.Live / Moe Community Cloud (MBCC). All rights reserved. • Training portal is enablement content, not investment advice.
-      </div>
-    
-      <section class="card" style="margin-top:18px">
-        <h2>Partner Enablement</h2>
-        <p class="small">Route whitelabel buyers into the right track, then enforce milestones before certification.</p>
-        <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="partner-onboarding.html">Start Partner Onboarding →</a>
-          <a class="btn" href="partner-dashboard.html">Open Partner Dashboard</a>
-          <a class="btn" href="tracks/operator.html">View Tracks</a>
+  <main class="tpWrap">
+    <section class="tpHero">
+      <div class="tpHeroGrid">
+        <div class="tpHeroCard">
+          <div class="tpHeroInner">
+            <div class="tpKicker">Fortune-100 Training • No Blades • Page-Based</div>
+            <h1 class="tpTitle">FinternetOps Training Portal</h1>
+            <p class="tpSub">
+              A full operator + partner curriculum for building, integrating, and delivering tokenized-market solutions.
+              Everything opens as a normal page. No overlays. No hidden text.
+            </p>
+            <div class="tpCtas">
+              <a class="tpBtn primary" href="partner-onboarding.html">Start Partner Onboarding →</a>
+              <a class="tpBtn" href="ip-notice.html">IP Notice</a>
+              <a class="tpBtn" href="playbooks/index.html">Open Playbooks</a>
+              <a class="tpBtn" href="agent-library/index.html">Browse Agent Library</a>
+            </div>
+          </div>
         </div>
-      </section>
-</main>
-  </div>
 
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="assets/site.js"></script>
+        <div class="tpStats" aria-label="Portal quick stats">
+          <div class="tpStat"><b>Curriculum</b><span>Onboarding → Certification → Licensing → Delivery</span></div>
+          <div class="tpStat"><b>Operators</b><span>Runbooks, controls, monitoring, and proof artifacts</span></div>
+          <div class="tpStat"><b>Partners</b><span>Implementation kits + consulting playbook + QA gates</span></div>
+          <div class="tpStat"><b>Sales-ready</b><span>Everything readable, page-based, and brand-consistent</span></div>
+        </div>
+      </div>
+
+      <div class="tpTools" role="region" aria-label="Search and filters">
+        <div class="tpSearch" role="search">
+          <span aria-hidden="true">🔎</span>
+          <input id="tpSearch" type="search" placeholder="Search modules (e.g., licensing, DTC, treasury, agent library)"/>
+        </div>
+        <div class="tpPillRow" aria-label="Category filters">
+          <button class="tpPill" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="tpPill" type="button" data-filter="partner" aria-pressed="false">Partner</button>
+          <button class="tpPill" type="button" data-filter="operator" aria-pressed="false">Operator</button>
+          <button class="tpPill" type="button" data-filter="legal" aria-pressed="false">Legal/IP</button>
+          <button class="tpPill" type="button" data-filter="proof" aria-pressed="false">Proof</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="tpGrid" id="tpGrid" aria-label="Training modules">
+      <article class="tpCard" data-cat="partner">
+        <div class="tpCardTop">
+          <div>
+            <div class="tpTag">Partner • Step 1</div>
+            <h3>Partner Onboarding</h3>
+          </div>
+        </div>
+        <p>Intake, positioning, delivery readiness, and partner qualification in a clean step-by-step flow.</p>
+        <div class="tpMeta"><span class="tpChip">Checklist</span><span class="tpChip">Discovery</span><span class="tpChip">SOW ready</span></div>
+        <div class="tpActions">
+          <a class="tpAction primary" href="partner-onboarding.html">Open Onboarding</a>
+          <a class="tpAction" href="partner-dashboard.html">Partner Dashboard</a>
+        </div>
+      </article>
+
+      <article class="tpCard" data-cat="operator">
+        <div class="tpCardTop">
+          <div>
+            <div class="tpTag">Operator • Core</div>
+            <h3>Agent Library</h3>
+          </div>
+        </div>
+        <p>Individual agent specs: signals, controls, outputs, pilot plan, and proof artifacts for enterprise delivery.</p>
+        <div class="tpMeta"><span class="tpChip">Signals</span><span class="tpChip">Controls</span><span class="tpChip">Outputs</span></div>
+        <div class="tpActions">
+          <a class="tpAction primary" href="agent-library/index.html">Open Library</a>
+          <a class="tpAction" href="../agents.html">Agent Pages</a>
+        </div>
+      </article>
+
+      <article class="tpCard" data-cat="operator">
+        <div class="tpCardTop">
+          <div>
+            <div class="tpTag">Operator • Core</div>
+            <h3>Playbooks</h3>
+          </div>
+        </div>
+        <p>Delivery playbooks and runbooks: Discovery, SOW, 30/60/90, Pilot, and Runbook execution.</p>
+        <div class="tpMeta"><span class="tpChip">Discovery</span><span class="tpChip">Pilot</span><span class="tpChip">Runbook</span></div>
+        <div class="tpActions">
+          <a class="tpAction primary" href="playbooks/index.html">Open Playbooks</a>
+          <a class="tpAction" href="enterprise-proof/index.html">Proof Artifacts</a>
+        </div>
+      </article>
+
+      <article class="tpCard" data-cat="partner operator">
+        <div class="tpCardTop">
+          <div>
+            <div class="tpTag">Partner/Operator • Step 2</div>
+            <h3>Certification</h3>
+          </div>
+        </div>
+        <p>Role-based certification: Operator, Implementer, and Partner tracks with readiness gates.</p>
+        <div class="tpMeta"><span class="tpChip">Assessments</span><span class="tpChip">Badges</span><span class="tpChip">QA gates</span></div>
+        <div class="tpActions">
+          <a class="tpAction primary" href="certification/index.html">Open Certification</a>
+          <a class="tpAction" href="partner-dashboard.html">Track Progress</a>
+        </div>
+      </article>
+
+      <article class="tpCard" data-cat="partner legal">
+        <div class="tpCardTop">
+          <div>
+            <div class="tpTag">Legal/IP • Step 3</div>
+            <h3>Licensing</h3>
+          </div>
+        </div>
+        <p>License models, permitted use, delivery boundaries, and partner obligations (sales-ready clarity).</p>
+        <div class="tpMeta"><span class="tpChip">Terms</span><span class="tpChip">Resell</span><span class="tpChip">White-label</span></div>
+        <div class="tpActions">
+          <a class="tpAction primary" href="licensing/index.html">Open Licensing</a>
+          <a class="tpAction" href="ip-notice.html">IP Notice</a>
+        </div>
+      </article>
+
+      <article class="tpCard" data-cat="proof operator">
+        <div class="tpCardTop">
+          <div>
+            <div class="tpTag">Proof • Step 4</div>
+            <h3>Enterprise Proof</h3>
+          </div>
+        </div>
+        <p>Executive-ready artifacts: controls evidence, audit-friendly checklists, and implementation proof packets.</p>
+        <div class="tpMeta"><span class="tpChip">Controls</span><span class="tpChip">Evidence</span><span class="tpChip">Audit</span></div>
+        <div class="tpActions">
+          <a class="tpAction primary" href="enterprise-proof/index.html">Open Proof</a>
+          <a class="tpAction" href="partner-dashboard.html">Partner Evidence</a>
+        </div>
+      </article>
+
+      <article class="tpCard" data-cat="legal">
+        <div class="tpCardTop">
+          <div><div class="tpTag">Legal/IP</div><h3>IP Notice</h3></div>
+        </div>
+        <p>Clear boundary language to protect MBCC IP while enabling SEO, sales, and partner education.</p>
+        <div class="tpMeta"><span class="tpChip">Public-safe</span><span class="tpChip">Buyer-safe</span><span class="tpChip">Partner-safe</span></div>
+        <div class="tpActions">
+          <a class="tpAction primary" href="ip-notice.html">Open IP Notice</a>
+          <a class="tpAction" href="../index.html">Back to Home</a>
+        </div>
+      </article>
+
+      <article class="tpCard" data-cat="partner">
+        <div class="tpCardTop">
+          <div><div class="tpTag">Partner</div><h3>Partner Dashboard</h3></div>
+        </div>
+        <p>Your partner operating system: next steps, deliverables, checklists, and implementation progress.</p>
+        <div class="tpMeta"><span class="tpChip">Milestones</span><span class="tpChip">Requests</span><span class="tpChip">Delivery</span></div>
+        <div class="tpActions">
+          <a class="tpAction primary" href="partner-dashboard.html">Open Dashboard</a>
+          <a class="tpAction" href="partner-onboarding.html">Onboarding</a>
+        </div>
+      </article>
+
+      <article class="tpCard" data-cat="operator">
+        <div class="tpCardTop">
+          <div><div class="tpTag">Operator</div><h3>Onboarding Ops</h3></div>
+        </div>
+        <p>Internal operator flow for installing, integrating, validating, and delivering customer success.</p>
+        <div class="tpMeta"><span class="tpChip">Install</span><span class="tpChip">Validate</span><span class="tpChip">Operate</span></div>
+        <div class="tpActions">
+          <a class="tpAction primary" href="onboarding/index.html">Open Onboarding Ops</a>
+          <a class="tpAction" href="playbooks/index.html">Playbooks</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="tpFoot" aria-label="Footer">
+      <div class="tpFootRow">
+        <div><b>MBCC FinternetOps</b> • Training Portal v20 • No blades • Page-based navigation</div>
+        <div class="tpTinyLinks">
+          <a href="../index.html">Home</a>
+          <a href="../agents.html">Agents</a>
+          <a href="playbooks/index.html">Playbooks</a>
+          <a href="licensing/index.html">Licensing</a>
+          <a href="partner-dashboard.html">Partner Dashboard</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+  (function(){
+    const search = document.getElementById('tpSearch');
+    const pills = Array.from(document.querySelectorAll('.tpPill'));
+    const cards = Array.from(document.querySelectorAll('.tpCard'));
+    let active = 'all';
+
+    function apply(){
+      const q = (search.value || '').trim().toLowerCase();
+      cards.forEach(c => {
+        const cat = (c.getAttribute('data-cat') || '').toLowerCase();
+        const text = c.innerText.toLowerCase();
+        const catOk = active === 'all' ? true : cat.includes(active);
+        const qOk = q ? text.includes(q) : true;
+        c.style.display = (catOk && qOk) ? '' : 'none';
+      });
+    }
+
+    pills.forEach(p => p.addEventListener('click', () => {
+      pills.forEach(x => x.setAttribute('aria-pressed','false'));
+      p.setAttribute('aria-pressed','true');
+      active = p.getAttribute('data-filter') || 'all';
+      apply();
+    }));
+
+    search.addEventListener('input', apply);
+  })();
+  </script>
 </body>
 </html>
