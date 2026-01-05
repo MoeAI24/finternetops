@@ -3,104 +3,230 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="MBCC FinternetOps + AgentOps agent library: enterprise-ready agents for tokenized market operations, compliance, reconciliation, partner enablement, and delivery."/>
   <meta name="theme-color" content="#0b0b0b"/>
-  <title>Agents • FinternetOps</title>
+  <title>Agents • MBCC FinternetOps</title>
   <link rel="stylesheet" href="site.css"/>
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap topbarInner">
-      <a class="brand" href="../index.html">
-        <span class="brandMark">MBCC</span>
-        <span class="brandText">FinternetOps</span>
-      </a>
-      <nav class="topnav">
-        <a href="../training/index.html">Training</a>
-        <a href="../training/playbooks/index.html">Playbooks</a>
-        <a href="../agents.html" class="active">Agents</a>
-      </nav>
-    </div>
-  </header>
-  <main class="wrap" style="padding-top:16px;">
-    <section class="hero" style="margin-top:18px;">
-  <div class="badge">No blades • Full pages</div>
-  <h1 style="margin-top:10px;">FinternetOps Agent Library</h1>
-  <p class="sub">Every agent opens as its own dedicated page (no overlays, no blades). This is sellable, readable, and Fortune-100 clean.</p>
-  <div class="ctaRow">
-    <a class="btn btn-primary" href="training/index.html">Open Training Portal</a>
-    <a class="btn" href="training/playbooks/index.html">Open Playbooks</a>
-  </div>
-</section>
 
-<section class="cards" style="margin-top:18px;">
-  <article class="card" style="display:flex; flex-direction:column; gap:10px;">
-  <div class="badge">Monitoring • Pilot-ready</div>
-  <h3 style="margin:0;">Yield Sentinel Agent</h3>
-  <p class="muted" style="margin:0;">Monitors tokenized treasury yields, spread shifts, and deviations; generates actionable alerts and weekly briefs.</p>
-  <div class="chipRow"><span class="chip">pilot</span> <span class="chip">alerts</span> <span class="chip">exec</span> <span class="chip">pdf</span></div>
-  <div class="miniCtas" style="margin-top:auto;">
-    <a class="miniBtn" href="agents/yield-sentinel.html">Open agent page</a>
-    <a class="miniBtn" href="training/agent-library/index.html">Agent Library</a>
-  </div>
-</article><article class="card" style="display:flex; flex-direction:column; gap:10px;">
-  <div class="badge">Monitoring • Ops</div>
-  <h3 style="margin:0;">Settlement Watchdog Agent</h3>
-  <p class="muted" style="margin:0;">Tracks settlement latency signals and failure patterns; logs incidents and generates post-mortem timelines.</p>
-  <div class="chipRow"><span class="chip">pilot</span> <span class="chip">alerts</span> <span class="chip">exec</span></div>
-  <div class="miniCtas" style="margin-top:auto;">
-    <a class="miniBtn" href="agents/settlement-watchdog.html">Open agent page</a>
-    <a class="miniBtn" href="training/agent-library/index.html">Agent Library</a>
-  </div>
-</article><article class="card" style="display:flex; flex-direction:column; gap:10px;">
-  <div class="badge">Compliance • Reporting</div>
-  <h3 style="margin:0;">Compliance Explainer Agent</h3>
-  <p class="muted" style="margin:0;">Converts activity signals into plain-English, policy-friendly summaries and exportable audit artifacts.</p>
-  <div class="chipRow"><span class="chip">pilot</span> <span class="chip">exec</span> <span class="chip">pdf</span></div>
-  <div class="miniCtas" style="margin-top:auto;">
-    <a class="miniBtn" href="agents/compliance-explainer.html">Open agent page</a>
-    <a class="miniBtn" href="training/agent-library/index.html">Agent Library</a>
-  </div>
-</article><article class="card" style="display:flex; flex-direction:column; gap:10px;">
-  <div class="badge">Risk • Simulation</div>
-  <h3 style="margin:0;">Liquidity Stress Agent</h3>
-  <p class="muted" style="margin:0;">Runs redemption/liquidity scenarios and explains operational impact for tokenized instruments.</p>
-  <div class="chipRow"><span class="chip">pilot</span> <span class="chip">exec</span> <span class="chip">pdf</span></div>
-  <div class="miniCtas" style="margin-top:auto;">
-    <a class="miniBtn" href="agents/liquidity-stress.html">Open agent page</a>
-    <a class="miniBtn" href="training/agent-library/index.html">Agent Library</a>
-  </div>
-</article><article class="card" style="display:flex; flex-direction:column; gap:10px;">
-  <div class="badge">Monitoring • Triage</div>
-  <h3 style="margin:0;">Anomaly Triage Agent</h3>
-  <p class="muted" style="margin:0;">Prioritizes anomalies, groups related signals, and produces a “what matters now” ops feed.</p>
-  <div class="chipRow"><span class="chip">alerts</span></div>
-  <div class="miniCtas" style="margin-top:auto;">
-    <a class="miniBtn" href="agents/anomaly-triage.html">Open agent page</a>
-    <a class="miniBtn" href="training/agent-library/index.html">Agent Library</a>
-  </div>
-</article><article class="card" style="display:flex; flex-direction:column; gap:10px;">
-  <div class="badge">Reporting • Executive</div>
-  <h3 style="margin:0;">Executive Brief Agent</h3>
-  <p class="muted" style="margin:0;">Produces a concise, leadership-ready weekly briefing: key events, KPIs, risks, and next actions.</p>
-  <div class="chipRow"><span class="chip">exec</span> <span class="chip">pdf</span></div>
-  <div class="miniCtas" style="margin-top:auto;">
-    <a class="miniBtn" href="agents/exec-brief.html">Open agent page</a>
-    <a class="miniBtn" href="training/agent-library/index.html">Agent Library</a>
-  </div>
-</article>
-</section>
-  </main>
-  <footer class="footer">
-    <div class="wrap footerInner">
-      <div class="footLeft">
-        <div class="brandLine"><span class="brandMark">MBCC</span> <span>FinternetOps</span></div>
-        <div class="muted">Enterprise-grade training + agent operations for tokenized markets.</div>
+<header class="topbar">
+<div class="wrap topbarInner">
+<a class="brand" href="../index.html">
+<span class="brandMark">MBCC</span>
+<span class="brandText">FinternetOps</span>
+</a>
+<nav class="topnav">
+<a href="../training/index.html">Training</a>
+<a href="../training/playbooks/index.html">Playbooks</a>
+<a class="active" href="../agents.html">Agents</a>
+</nav>
+</div>
+</header>
+
+<main class="wrap" style="padding-top:16px;">
+  <section class="hero" style="margin-top:18px;">
+    <div class="agentsHeroGrid">
+      <div>
+        <div class="badge">Agent Library • FinternetOps + AgentOps • Enterprise-ready</div>
+        <h1 style="margin-top:10px;">All MBCC Agents</h1>
+        <p class="sub">
+          These are the operating agents that make FinternetOps deliverable: reconciliation, custody & settlement, controls evidence,
+          partner enablement, and AgentOps orchestration. Every red button opens a real page.
+        </p>
+        <div class="ctaRow" style="margin-top:12px;">
+          <a class="btn btn-primary" href="training/index.html">Open Training Portal</a>
+          <a class="btn" href="training/agent-library/index.html">Agent Specs (Library)</a>
+          <a class="btn" href="training/playbooks/index.html">Delivery Playbooks</a>
+          <a class="btn" href="https://agentops.moecommunitycloud.com/" target="_blank" rel="noopener">AgentOps Platform</a>
+        </div>
       </div>
-      <div class="footRight">
-        <a class="btn" href="../training/index.html">Training</a>
-        <a class="btn btn-primary" href="../training/playbooks/index.html">Playbooks</a>
+
+      <div class="kpiTiles" aria-label="Key metrics">
+        <div class="kpi"><b>9 agents live</b><span>Ops + Controls + Partner enablement + AgentOps</span></div>
+        <div class="kpi"><b>Enterprise proof ready</b><span>Controls evidence + audit-friendly artifacts</span></div>
+        <div class="kpi"><b>White‑label deployable</b><span>Training + certification + licensing flow included</span></div>
+        <div class="kpi"><b>Future-ready</b><span>Tokenization ops + AgentOps orchestration layer</span></div>
       </div>
     </div>
-  </footer>
+  </section>
+
+  <section class="card" style="margin-top:14px;">
+    <h2 style="margin:0 0 8px;">Find the right agent fast</h2>
+    <div class="filterRow">
+      <div class="filterSearch" role="search">
+        <span aria-hidden="true">🔎</span>
+        <input id="agentSearch" type="search" placeholder="Search agents (treasury, custody, settlement, compliance, onboarding, agentops)"/>
+      </div>
+      <div class="filterPills" aria-label="Category filters">
+        <button class="filterPill" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filterPill" type="button" data-filter="finternetops" aria-pressed="false">FinternetOps</button>
+        <button class="filterPill" type="button" data-filter="controls" aria-pressed="false">Controls</button>
+        <button class="filterPill" type="button" data-filter="partner" aria-pressed="false">Partner</button>
+        <button class="filterPill" type="button" data-filter="agentops" aria-pressed="false">AgentOps</button>
+        <button class="filterPill" type="button" data-filter="delivery" aria-pressed="false">Delivery</button>
+      </div>
+    </div>
+    <p class="sub" style="margin:0;">Each agent includes: purpose, inputs, outputs, controls, and where it fits in delivery. Use Training for full implementation steps.</p>
+  </section>
+
+  <section class="agentsGrid" id="agentsGrid" aria-label="Agent cards">
+    <article class="agentCard" data-cat="finternetops • core">
+  <div class="agentTop">
+    <div>
+      <div class="agentPill">FinternetOps • Core</div>
+      <h3 class="agentName">Treasury Recon Agent</h3>
+    </div>
+  </div>
+  <p class="agentDesc">Reconciles tokenized Treasury positions against custodian statements, on-chain proofs, and settlement activity. Flags breaks, stale pricing, and custody mismatches.</p>
+  <div class="agentMeta"><span class="agentChip">Reconciliation</span><span class="agentChip">Custody Proof</span><span class="agentChip">Exceptions</span></div>
+  <div class="agentActions"><a class="agentBtn primary" href="training/agent-library/index.html#treasury-recon">Spec / Library</a><a class="agentBtn" href="training/index.html">Open Training</a></div>
+</article>
+<article class="agentCard" data-cat="finternetops • core">
+  <div class="agentTop">
+    <div>
+      <div class="agentPill">FinternetOps • Core</div>
+      <h3 class="agentName">Custody & Settlement Agent</h3>
+    </div>
+  </div>
+  <p class="agentDesc">Tracks custody movement, settlement states (T+0/T+1), and operational handoffs. Produces settlement dashboards and exception queues for partners.</p>
+  <div class="agentMeta"><span class="agentChip">Settlement</span><span class="agentChip">Ops Queue</span><span class="agentChip">T+0/T+1</span></div>
+  <div class="agentActions"><a class="agentBtn primary" href="training/enterprise-proof/index.html">Enterprise Proof</a><a class="agentBtn" href="training/playbooks/index.html">Playbooks</a></div>
+</article>
+<article class="agentCard" data-cat="finternetops • controls">
+  <div class="agentTop">
+    <div>
+      <div class="agentPill">FinternetOps • Controls</div>
+      <h3 class="agentName">Risk & Limits Agent</h3>
+    </div>
+  </div>
+  <p class="agentDesc">Applies exposure limits, concentration checks, and liquidity stress triggers. Generates daily risk snapshots and escalation events for operator review.</p>
+  <div class="agentMeta"><span class="agentChip">Limits</span><span class="agentChip">Stress</span><span class="agentChip">Escalation</span></div>
+  <div class="agentActions"><a class="agentBtn primary" href="training/enterprise-proof/index.html">Controls Evidence</a><a class="agentBtn" href="training/licensing/index.html">Licensing</a></div>
+</article>
+<article class="agentCard" data-cat="finternetops • controls">
+  <div class="agentTop">
+    <div>
+      <div class="agentPill">FinternetOps • Controls</div>
+      <h3 class="agentName">Compliance Evidence Agent</h3>
+    </div>
+  </div>
+  <p class="agentDesc">Builds audit-friendly evidence packets: policy mapping, run logs, approvals, and change records. Produces a proof bundle for enterprise buyers.</p>
+  <div class="agentMeta"><span class="agentChip">Audit</span><span class="agentChip">Evidence Pack</span><span class="agentChip">Policy Map</span></div>
+  <div class="agentActions"><a class="agentBtn primary" href="training/enterprise-proof/index.html">Proof Kit</a><a class="agentBtn" href="training/ip-notice.html">IP Notice</a></div>
+</article>
+<article class="agentCard" data-cat="partner enablement">
+  <div class="agentTop">
+    <div>
+      <div class="agentPill">Partner Enablement</div>
+      <h3 class="agentName">Partner Onboarding Agent</h3>
+    </div>
+  </div>
+  <p class="agentDesc">Routes new partners into the right track (Operator / Consultant / Sales), checks readiness, and outputs next-step checklists and deliverables.</p>
+  <div class="agentMeta"><span class="agentChip">Intake</span><span class="agentChip">Track Routing</span><span class="agentChip">Milestones</span></div>
+  <div class="agentActions"><a class="agentBtn primary" href="training/partner-onboarding.html">Start Onboarding</a><a class="agentBtn" href="training/partner-dashboard.html">Partner Dashboard</a></div>
+</article>
+<article class="agentCard" data-cat="training • qa">
+  <div class="agentTop">
+    <div>
+      <div class="agentPill">Training • QA</div>
+      <h3 class="agentName">Certification Proctor Agent</h3>
+    </div>
+  </div>
+  <p class="agentDesc">Administers certification readiness: module completion, assessment scoring, and remediation plan. Outputs badge status for the partner profile.</p>
+  <div class="agentMeta"><span class="agentChip">Assessments</span><span class="agentChip">Remediation</span><span class="agentChip">Badges</span></div>
+  <div class="agentActions"><a class="agentBtn primary" href="training/certification/index.html">Certification</a><a class="agentBtn" href="training/index.html">Portal</a></div>
+</article>
+<article class="agentCard" data-cat="consulting • delivery">
+  <div class="agentTop">
+    <div>
+      <div class="agentPill">Consulting • Delivery</div>
+      <h3 class="agentName">SOW & Delivery Agent</h3>
+    </div>
+  </div>
+  <p class="agentDesc">Generates delivery-ready scopes: discovery outputs, implementation phases, acceptance criteria, and weekly reporting cadence.</p>
+  <div class="agentMeta"><span class="agentChip">Discovery</span><span class="agentChip">SOW</span><span class="agentChip">Acceptance</span></div>
+  <div class="agentActions"><a class="agentBtn primary" href="training/playbooks/index.html">Playbooks</a><a class="agentBtn" href="training/enterprise-proof/index.html">Enterprise Proof</a></div>
+</article>
+<article class="agentCard" data-cat="agentops • platform">
+  <div class="agentTop">
+    <div>
+      <div class="agentPill">AgentOps • Platform</div>
+      <h3 class="agentName">AgentOps Orchestration Agent</h3>
+    </div>
+  </div>
+  <p class="agentDesc">Defines agent lifecycle: specs, guardrails, RBAC, logging, and change control. Bridges FinternetOps agents into a repeatable AgentOps delivery system.</p>
+  <div class="agentMeta"><span class="agentChip">RBAC</span><span class="agentChip">Logs</span><span class="agentChip">Change Control</span></div>
+  <div class="agentActions"><a class="agentBtn primary" href="https://agentops.moecommunitycloud.com/" target="_blank" rel="noopener">AgentOps Site</a><a class="agentBtn" href="training/index.html">Partner Training</a></div>
+</article>
+<article class="agentCard" data-cat="agentops • data">
+  <div class="agentTop">
+    <div>
+      <div class="agentPill">AgentOps • Data</div>
+      <h3 class="agentName">Signals & Data Intake Agent</h3>
+    </div>
+  </div>
+  <p class="agentDesc">Standardizes signals: market data, custodian files, event feeds, and internal metrics. Produces normalized event streams for downstream agents.</p>
+  <div class="agentMeta"><span class="agentChip">Signals</span><span class="agentChip">Normalization</span><span class="agentChip">Pipelines</span></div>
+  <div class="agentActions"><a class="agentBtn primary" href="docs.html">Docs</a><a class="agentBtn" href="training/playbooks/index.html">Playbooks</a></div>
+</article>
+  </section>
+
+  <section class="card" style="margin-top:16px;">
+    <h2 style="margin:0 0 8px;">How AgentOps connects to FinternetOps</h2>
+    <p class="sub" style="margin:0;">
+      FinternetOps is the domain solution (tokenization operations). AgentOps is the delivery system (specs, guardrails, RBAC, logs,
+      change control, monitoring). When you sell white-label, the buyer gets both: the FinternetOps agents + the AgentOps operating model.
+    </p>
+    <div class="ctaRow" style="margin-top:12px;">
+      <a class="btn btn-primary" href="training/partner-onboarding.html">Partner Onboarding</a>
+      <a class="btn" href="training/certification/index.html">Certification Tracks</a>
+      <a class="btn" href="training/licensing/index.html">Licensing Models</a>
+      <a class="btn" href="training/enterprise-proof/index.html">Enterprise Proof Pack</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+<div class="wrap footerInner">
+<div class="footLeft">
+<div class="brandLine"><span class="brandMark">MBCC</span> <span>FinternetOps</span></div>
+<div class="muted">Enterprise-grade training + agent operations for tokenized markets.</div>
+</div>
+<div class="footRight">
+<a class="btn" href="../training/index.html">Training</a>
+<a class="btn btn-primary" href="../training/playbooks/index.html">Playbooks</a>
+</div>
+</div>
+</footer>
+
+<script>
+(function(){
+  const search = document.getElementById('agentSearch');
+  const pills = Array.from(document.querySelectorAll('.filterPill'));
+  const cards = Array.from(document.querySelectorAll('.agentCard'));
+  let active = 'all';
+
+  function apply(){
+    const q = (search.value || '').trim().toLowerCase();
+    cards.forEach(c => {
+      const cat = (c.getAttribute('data-cat') || '').toLowerCase();
+      const text = c.innerText.toLowerCase();
+      const catOk = active === 'all' ? true : cat.includes(active);
+      const qOk = q ? text.includes(q) : true;
+      c.style.display = (catOk && qOk) ? '' : 'none';
+    });
+  }
+
+  pills.forEach(p => p.addEventListener('click', () => {
+    pills.forEach(x => x.setAttribute('aria-pressed','false'));
+    p.setAttribute('aria-pressed','true');
+    active = p.getAttribute('data-filter') || 'all';
+    apply();
+  }));
+
+  search.addEventListener('input', apply);
+})();
+</script>
 </body>
 </html>
