@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#0b0b0b"/>
+  <meta name="description" content="MBCC FinternetOps Training — Fortune 100 partner enablement for tokenization operations and AgentOps delivery."/>
+  <title>Module M4 • Risk, Limits & Liquidity • MBCC FinternetOps Training</title>
+  <link rel="stylesheet" href="../assets/training.css"/>
+</head>
+<body class="training">
+  <div class="bg"></div><div class="plaid"></div><div class="grain"></div>
+  <div class="tpTop">
+    <div class="tpWrap tpTopInner">
+      <a class="tpBrand" href="../../index.html">
+        <div class="tpMark">MB</div>
+        <div class="tpBrandText"><b>FinternetOps</b><span>Training & Partner Enablement</span></div>
+      </a>
+      <nav class="tpNav" aria-label="Training navigation"><a class=""  href="../../../index.html">Portal</a>
+<a class=""  href="../../tracks.html">Tracks</a>
+<a class=""  href="../../curriculum.html">Curriculum</a>
+<a class="primary" aria-current="page" href="../../modules/index.html">Modules</a>
+<a class=""  href="../../agent-library.html">Agent Library</a>
+<a class=""  href="../../playbooks.html">Playbooks</a>
+<a class=""  href="../../certification.html">Certification</a>
+<a class=""  href="../../partner-dashboard.html">Partner Dashboard</a></nav>
+    </div>
+  </div>
+  <main class="tpWrap tpMain">
+    <section class="tpHero">
+      <div class="tpKicker">Module M4</div>
+      <h1 class="tpTitle">Risk, Limits & Liquidity</h1>
+      <p class="tpSub">Risk controls that enterprises expect before they buy.</p>
+      <div class="tpCtas"><a class="tpBtn primary" href="../index.html">Back to Modules</a><a class="tpBtn" href="../../curriculum.html">Curriculum</a><a class="tpBtn" href="../../partner-dashboard.html">Dashboard</a></div>
+    </section>
+    <section class="tpSection">
+  <div class="tpMeta">
+    <div class="tpPill"><b>Duration:</b> 60–90 min</div>
+    <div class="tpPill"><b>Deliverable:</b> 1 artifact</div>
+    <div class="tpPill"><b>Pass:</b> 80%+</div>
+  </div>
+  <div class="tpDivider"></div>
+  <div class="tpGrid2">
+    <div>
+      <h2>Topics</h2>
+      <ul class="tpList"><li>Exposure limits: concentration, counterparty, intraday movement</li><li>Liquidity and redemption/transfer constraints</li><li>Escalations: thresholds, approvals, override logging</li><li>Daily risk snapshot reporting</li></ul>
+    </div>
+    <div>
+      <h2>Hands-on deliverable</h2>
+      <ul class="tpList"><li>Design a Daily Risk Snapshot (fields + thresholds + approver)</li><li>Write an escalation policy: who approves overrides</li></ul>
+      <div class="tpCallout" style="margin-top:10px">
+        <b>Make it client-ready:</b> use the <a href="../../playbooks.html">Playbooks</a> section templates.
+      </div>
+    </div>
+  </div>
+</section>
+<section class="tpQuiz" aria-label="Knowledge check">
+  <h3>Knowledge Check</h3>
+  <p class="tpSub">Score <b>80%</b> or higher to mark this module complete.</p>
+  <div class="tpQ"><div><b>Q1.</b> A limit breach should trigger:</div><label><input type="radio" name="q1" value="0"> A silent log entry only.</label><label><input type="radio" name="q1" value="1"> An escalation workflow with approval and an evidence record.</label><label><input type="radio" name="q1" value="2"> An automatic override to avoid blocking settlement.</label></div><div class="tpQ"><div><b>Q2.</b> A useful risk snapshot includes:</div><label><input type="radio" name="q2" value="0"> Only totals.</label><label><input type="radio" name="q2" value="1"> Totals plus limit utilization and exceptions.</label><label><input type="radio" name="q2" value="2"> Marketing KPIs.</label></div>
+  <div class="tpCtas" style="margin-top:10px">
+    <button class="tpBtn primary" type="button" onclick="grade()">Submit &amp; Score</button>
+    <button class="tpBtn" type="button" onclick="resetQuiz()">Reset</button>
+  </div>
+  <div class="tpCallout" id="resultBox" style="display:none;margin-top:10px"></div>
+</section>
+<script>
+const ANSWERS = {"q1": 1, "q2": 1};
+function grade(){
+  let correct=0,total=Object.keys(ANSWERS).length;
+  for(const q of Object.keys(ANSWERS)){
+    const sel=document.querySelector('input[name="'+q+'"]:checked');
+    if(sel && Number(sel.value)===ANSWERS[q]) correct++;
+  }
+  const pct=Math.round((correct/total)*100);
+  const box=document.getElementById('resultBox');
+  box.style.display='block';
+  let msg = "<b>Score:</b> " + pct + "% (" + correct + "/" + total + ")<div class=\"tpDivider\"></div>";
+  msg += (pct>=80)
+    ? "<b>Pass.</b> This module is marked complete in your local dashboard."
+    : "<b>Not yet.</b> Review the module and try again.";
+  box.innerHTML = msg;
+  try{
+    if(pct>=80){ localStorage.setItem('mbcc_module_m4','complete'); }
+    localStorage.setItem('mbcc_module_m4_score', String(pct));
+  }catch(e){}
+}
+function resetQuiz(){
+  document.querySelectorAll('input[type="radio"]').forEach(i=>i.checked=false);
+  const box=document.getElementById('resultBox');
+  box.style.display='none'; box.innerHTML='';
+}
+</script>
+<section class="tpSection">
+  <h2>Next step</h2>
+  <div class="tpCtas" style="margin-top:12px">
+    <a class="tpBtn primary" href="../m5/index.html">Next Module →</a>
+    <a class="tpBtn" href="../../partner-dashboard.html">Partner Dashboard</a>
+    <a class="tpBtn" href="../../certification.html">Certification</a>
+  </div>
+</section>
+    <div class="tpFoot">
+      <div>© 2026 MBCC FinternetOps™ • Training is page-based (no blades).</div>
+      <div><a href="../../docs.html">Docs</a> • <a href="../../agents.html">Agents</a> • <a href="../../index.html">Home</a></div>
+    </div>
+  </main>
+</body>
+</html>

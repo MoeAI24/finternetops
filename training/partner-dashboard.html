@@ -21,6 +21,7 @@
         <a class=""  href="index.html">Portal</a>
 <a class=""  href="tracks.html">Tracks</a>
 <a class=""  href="curriculum.html">Curriculum</a>
+        <a class=""  href="modules/index.html">Modules</a>
 <a class=""  href="agent-library.html">Agent Library</a>
 <a class=""  href="playbooks.html">Playbooks</a>
 <a class=""  href="certification.html">Certification</a>
@@ -45,6 +46,7 @@
     <div class="tpActions">
       <a class="tpAction primary" href="tracks.html">Select Track</a>
       <a class="tpAction" href="curriculum.html">Curriculum</a>
+        <a class=""  href="modules/index.html">Modules</a>
     </div>
   </article>
   <article class="tpCard">
@@ -104,6 +106,33 @@
       <div>© 2026 MBCC FinternetOps™ • Training is page-based (no blades).</div>
       <div><a href="../docs.html">Docs</a> • <a href="../agents.html">Agents</a> • <a href="../index.html">Home</a></div>
     </div>
-  </main>
+  <section class="tpSection" aria-label="Module progress">
+  <h2>Module progress</h2>
+  <table class="tpTable" role="table" aria-label="Module status">
+    <thead><tr><th>Module</th><th>Title</th><th>Status</th><th>Score</th></tr></thead>
+    <tbody><tr class="tpRow"><td><b>M1</b></td><td>Finternet Fundamentals</td><td><span id="st_m1">Not started</span></td><td><span id="sc_m1">—</span></td></tr><tr class="tpRow"><td><b>M2</b></td><td>Tokenized Treasury Ops</td><td><span id="st_m2">Not started</span></td><td><span id="sc_m2">—</span></td></tr><tr class="tpRow"><td><b>M3</b></td><td>Custody & Settlement</td><td><span id="st_m3">Not started</span></td><td><span id="sc_m3">—</span></td></tr><tr class="tpRow"><td><b>M4</b></td><td>Risk, Limits & Liquidity</td><td><span id="st_m4">Not started</span></td><td><span id="sc_m4">—</span></td></tr><tr class="tpRow"><td><b>M5</b></td><td>Compliance & Evidence</td><td><span id="st_m5">Not started</span></td><td><span id="sc_m5">—</span></td></tr><tr class="tpRow"><td><b>M6</b></td><td>AgentOps Operating Model</td><td><span id="st_m6">Not started</span></td><td><span id="sc_m6">—</span></td></tr><tr class="tpRow"><td><b>M7</b></td><td>Delivery Playbooks</td><td><span id="st_m7">Not started</span></td><td><span id="sc_m7">—</span></td></tr><tr class="tpRow"><td><b>M8</b></td><td>Partner Scale</td><td><span id="st_m8">Not started</span></td><td><span id="sc_m8">—</span></td></tr></tbody>
+  </table>
+  <div class="tpCtas" style="margin-top:12px">
+    <a class="tpBtn primary" href="modules/index.html">Go to Modules →</a>
+    <a class="tpBtn" href="playbooks.html">Playbooks</a>
+    <a class="tpBtn" href="certification.html">Certification</a>
+  </div>
+</section>
+<script>
+(function(){
+  const mods=["m1", "m2", "m3", "m4", "m5", "m6", "m7", "m8"];
+  mods.forEach(m=>{
+    const st=document.getElementById('st_'+m);
+    const sc=document.getElementById('sc_'+m);
+    try{
+      const status=localStorage.getItem('mbcc_module_'+m);
+      const score=localStorage.getItem('mbcc_module_'+m+'_score');
+      st.textContent = status==='complete' ? 'Complete' : 'Not started';
+      sc.textContent = score ? score+'%' : '—';
+    }catch(e){}
+  });
+})();
+</script>
+</main>
 </body>
 </html>

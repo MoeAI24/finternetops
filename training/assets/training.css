@@ -108,3 +108,19 @@ body.training .bg{ opacity: .92 !important; filter: saturate(1.05) contrast(1.08
 .tpSub{ font-size: 15.5px !important; }
 .tpList{ font-size: 14.5px !important; }
 .tpTable th{ font-size: 12.5px !important; }
+
+
+/* === v27 Certification-ready additions === */
+.tpMeta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.tpPill{border:1px solid rgba(212,175,55,.22);background:rgba(0,0,0,.28);color:rgba(247,243,233,.92);
+  padding:8px 10px;border-radius:999px;font-weight:900;font-size:12px}
+.tpGrid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px}
+@media (max-width:860px){.tpGrid2{grid-template-columns:1fr}}
+.tpCallout{border:1px solid rgba(212,175,55,.22);background:rgba(193,18,31,.08);border-radius:16px;padding:14px}
+.tpCallout b{color:rgba(212,175,55,.92)}
+.tpDivider{height:1px;background:rgba(212,175,55,.16);margin:14px 0}
+.tpQuiz{border:1px solid rgba(212,175,55,.22);background:rgba(0,0,0,.22);border-radius:16px;padding:14px}
+.tpQuiz h3{margin:0 0 10px;font-size:16px}
+.tpQ{margin:10px 0}
+.tpQ label{display:block;margin:6px 0;color:rgba(247,243,233,.92);font-size:14px;line-height:1.5}
+.tpQuiz .tpBtn{cursor:pointer}
