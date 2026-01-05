@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="theme-color" content="#0b0b0b"/>
   <meta name="description" content="MBCC FinternetOps Training — Fortune 100 partner enablement for tokenization operations and AgentOps delivery."/>
-  <title>Certification • MBCC FinternetOps Training</title>
+  <title>Final Assessment • MBCC FinternetOps Training</title>
   <link rel="stylesheet" href="assets/training.css"/>
 </head>
 <body class="training">
@@ -32,23 +32,31 @@
   <main class="tpWrap tpMain">
     <section class="tpHero">
       <div class="tpKicker">Certification</div>
-      <h1 class="tpTitle">Earn enterprise trust</h1>
-      <p class="tpSub">Complete modules, submit artifacts, and pass the scenario assessment to earn your partner badge.</p>
-      <div class="tpCtas"><a class="tpBtn primary" href="certification/final-assessment.html">Final Assessment →</a><a class="tpBtn" href="partner-dashboard.html">Dashboard</a><a class="tpBtn" href="curriculum.html">Curriculum</a></div>
+      <h1 class="tpTitle">Final Assessment</h1>
+      <p class="tpSub">Scenario-based exam — complete the prompts and mark local pass state (auth/gating can be added later).</p>
+      <div class="tpCtas"><a class="tpBtn primary" href="../certification.html">Back to Certification</a><a class="tpBtn" href="../partner-dashboard.html">Dashboard</a><a class="tpBtn" href="../playbooks.html">Playbooks</a></div>
     </section>
 
     <section class="tpSection">
-  <h2>Certification Requirements</h2>
-  <ul class="tpList">
-    <li>Complete Modules M1–M8.</li>
-    <li>Submit artifacts: <b>Recon checklist</b>, <b>Evidence packet checklist</b>, <b>SOW + acceptance criteria</b>.</li>
-    <li>Pass final assessment with <b>80%+</b>.</li>
-  </ul>
+  <h2>Scenario Prompts</h2>
+  <ol class="tpList">
+    <li><b>Recon break:</b> Custodian statement differs from on-chain proof. What do you check first?</li>
+    <li><b>Settlement failure:</b> A match fails after confirmation. What’s your remediation + evidence log?</li>
+    <li><b>Limits breach:</b> Concentration exceeds policy threshold. Who approves escalation?</li>
+    <li><b>Evidence export:</b> What’s included in the enterprise proof packet?</li>
+  </ol>
   <div class="tpCtas" style="margin-top:12px">
-    <a class="tpBtn primary" href="certification/final-assessment.html">Final Assessment →</a>
-    <a class="tpBtn" href="partner-dashboard.html">Dashboard</a>
+    <button class="tpBtn primary" id="markPassed" type="button">Mark “Passed” (Local)</button>
+    <a class="tpBtn" href="../playbooks/enterprise-proof-packet.html">Review Proof Packet</a>
+    <a class="tpBtn" href="../partner-dashboard.html">Back to Dashboard</a>
   </div>
 </section>
+<script>
+document.getElementById('markPassed').addEventListener('click', ()=>{
+  try{localStorage.setItem('mbcc_cert_status','Passed (local)');localStorage.setItem('mbcc_readiness','90%');}catch(e){}
+  alert('Saved locally: Passed (local) + readiness 90%');
+});
+</script>
 
     <div class="tpFoot">
       <div>© 2026 MBCC FinternetOps™ • Training is page-based (no blades).</div>
