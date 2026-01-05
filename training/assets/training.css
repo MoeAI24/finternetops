@@ -63,3 +63,48 @@ body.training{min-height:100vh;}
 .tpRow td:last-child{border-right:1px solid rgba(212,175,55,.12);border-top-right-radius:14px;border-bottom-right-radius:14px}
 .tpFoot{margin-top:18px;color:rgba(247,243,233,.66);font-size:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .tpFoot a{color:rgba(247,243,233,.82)}
+
+
+/* === v25 Readability Fix (strong contrast, standard text) === */
+html, body { font-size: 16px; }
+body.training{
+  color:#f7f3e9;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+/* Reduce busy background overlays from site.css */
+body.training .plaid{ opacity: .08 !important; }
+body.training .grain{ opacity: .10 !important; }
+body.training .bg{ opacity: .92 !important; filter: saturate(1.05) contrast(1.08) brightness(.78) !important; }
+
+/* Make all secondary text readable */
+:root{ --tp-text2: rgba(247,243,233,.92) !important; }
+
+.tpSub, .tpCard p, .tpList, .tpRow td, .tpBrandText span, .tpNav a{
+  color: rgba(247,243,233,.92) !important;
+}
+.tpTitle, .tpCard h3, .tpSection h2{
+  color: #f7f3e9 !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,.55);
+}
+.tpCard{
+  background: linear-gradient(180deg, rgba(10,10,12,.86), rgba(10,10,12,.70)) !important;
+  border-color: rgba(212,175,55,.24) !important;
+}
+.tpHero, .tpSection{
+  background: linear-gradient(180deg, rgba(10,10,12,.86), rgba(10,10,12,.68)) !important;
+  border-color: rgba(212,175,55,.24) !important;
+}
+.tpNav a{
+  background: rgba(0,0,0,.30) !important;
+  border-color: rgba(212,175,55,.20) !important;
+}
+.tpRow td{
+  background: rgba(0,0,0,.32) !important;
+}
+/* Increase line height and spacing */
+.tpSub, .tpCard p, .tpList{ line-height: 1.65 !important; }
+.tpCard p{ font-size: 14.5px !important; }
+.tpSub{ font-size: 15.5px !important; }
+.tpList{ font-size: 14.5px !important; }
+.tpTable th{ font-size: 12.5px !important; }
