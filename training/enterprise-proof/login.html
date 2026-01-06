@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enterprise Proof Portal • FinternetOps Training</title>
+  <meta name="description" content="Secure access for FinternetOps enterprise-proof training and validation workflows. Role-based access concepts, audit readiness, and compliance-first operations." />
+  <link rel="canonical" href="https://finternetops.moecommunitycloud.com/training/enterprise-proof/login.html" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8387411349417007" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/assets/css/portal.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/training/index.html" aria-label="Back to Training Home">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <div>
+          MoeCommunityCloud
+          <small>FinternetOps Training</small>
+        </div>
+      </a>
+      <nav class="navlinks" aria-label="Primary">
+        <a class="pill" href="/training/index.html">Training Home</a>
+        <a class="pill primary" href="/agents.html">Agents</a>
+        <a class="pill" href="https://moecommunitycloud.com">Main Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <article class="card" aria-label="Portal overview">
+        <div class="card-inner">
+          <div class="card-head">
+            <div>
+              <div class="kicker">Enterprise Proof</div>
+              <h1 class="h1">Login to the Proof Portal</h1>
+              <p class="sub">
+                This portal supports <strong>audit-ready training</strong>: validation checklists, evidence workflows,
+                and compliance-first automation patterns. It’s designed to look and feel like production—without risking production.
+              </p>
+            </div>
+            <a class="pill" href="/training/enterprise-proof/dashboard.html">Preview</a>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="grid2">
+            <div class="mini">
+              <h3>What you unlock</h3>
+              <ul>
+                <li>Enterprise proof checklist</li>
+                <li>Controls by layer: execution → purpose</li>
+                <li>Evidence artifacts + review steps</li>
+                <li>Operator-ready templates</li>
+              </ul>
+            </div>
+            <div class="mini">
+              <h3>How it works</h3>
+              <p>
+                For now this is a <strong>static demo login</strong> that stores a session token locally
+                so the experience works on GitHub Pages/static hosting. You can swap in real auth later.
+              </p>
+            </div>
+          </div>
+
+          <div class="notice" role="note">
+            <strong>Operator note:</strong> A portal is only “enterprise” when controls are real.
+            This training page teaches the controls — RBAC, approvals, audit logs, and policy-first automation.
+          </div>
+        </div>
+      </article>
+
+      <aside class="card" aria-label="Login form">
+        <div class="card-inner">
+          <div class="kicker">Secure Access</div>
+          <h2 class="h1" style="font-size:1.45rem;margin-top:8px;">Sign in</h2>
+          <p class="sub">Use your portal credentials to continue.</p>
+
+          <form class="form" data-portal-login-form>
+            <div>
+              <label for="email">Email</label>
+              <input class="input" id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required>
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input class="input" id="password" name="password" type="password" placeholder="••••••••" autocomplete="current-password" required>
+            </div>
+
+            <div class="row">
+              <span class="small">By signing in, you agree to operate within training guardrails.</span>
+              <button class="btn" type="submit">Enter Portal</button>
+            </div>
+
+            <div class="row">
+              <a class="small" href="/training/index.html">← Back to Training</a>
+              <a class="small" href="#" onclick="alert('Demo page: replace with your recovery flow.'); return false;">Forgot password?</a>
+            </div>
+
+            <div class="toast" data-portal-toast></div>
+
+            <div class="footer">
+              <div><strong>Session:</strong> stored locally for demo (<code>localStorage</code>).</div>
+              <div><strong>Next:</strong> replace demo auth with Firebase/Auth0/Cloud IAP when ready.</div>
+            </div>
+          </form>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="/assets/js/portal-auth.js"></script>
+</body>
+</html>
