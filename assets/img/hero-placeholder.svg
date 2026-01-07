@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0b12"/>
+      <stop offset="0.5" stop-color="#120a1a"/>
+      <stop offset="1" stop-color="#07070d"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="40%" r="55%">
+      <stop offset="0" stop-color="#34d7ff" stop-opacity="0.35"/>
+      <stop offset="0.42" stop-color="#a66bff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="thread" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff2b2b" stop-opacity="0.75"/>
+      <stop offset="0.5" stop-color="#ffcf6a" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#34d7ff" stop-opacity="0.75"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#halo)"/>
+
+  <!-- Left: human silhouette -->
+  <g transform="translate(360,130)">
+    <circle cx="160" cy="140" r="64" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+    <path d="M160 220
+             C120 235 105 270 105 318
+             C105 376 130 422 160 422
+             C190 422 215 376 215 318
+             C215 270 200 235 160 220Z"
+          fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+    <path d="M104 300 C70 315 55 350 70 380
+             M216 300 C250 315 265 350 250 380"
+          fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- Right: Source orb -->
+  <g transform="translate(1060,170)">
+    <circle cx="260" cy="280" r="120" fill="rgba(255,207,106,0.10)" stroke="rgba(255,207,106,0.34)" stroke-width="2"/>
+    <circle cx="260" cy="280" r="66" fill="rgba(52,215,255,0.10)" stroke="rgba(52,215,255,0.28)" stroke-width="2"/>
+    <circle cx="260" cy="280" r="28" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+  </g>
+
+  <!-- Threads connecting -->
+  <g fill="none" stroke="url(#thread)" stroke-width="3" stroke-linecap="round" opacity="0.85">
+    <path d="M560 330 C720 210, 920 210, 1110 380"/>
+    <path d="M560 410 C740 330, 890 370, 1110 450"/>
+    <path d="M560 490 C740 520, 920 540, 1110 520"/>
+  </g>
+
+  <!-- Layer markers -->
+  <g font-family="Inter, Arial" font-size="18" fill="rgba(255,255,255,0.75)">
+    <g opacity="0.85">
+      <circle cx="740" cy="260" r="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.22)"/>
+      <text x="740" y="266" text-anchor="middle">2</text>
+      <circle cx="860" cy="260" r="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.22)"/>
+      <text x="860" y="266" text-anchor="middle">3</text>
+      <circle cx="980" cy="280" r="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.22)"/>
+      <text x="980" y="286" text-anchor="middle">4</text>
+      <circle cx="880" cy="420" r="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.22)"/>
+      <text x="880" y="426" text-anchor="middle">5</text>
+      <circle cx="980" cy="540" r="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.22)"/>
+      <text x="980" y="546" text-anchor="middle">6</text>
+    </g>
+  </g>
+
+  <!-- Label -->
+  <g font-family="Space Grotesk, Arial" fill="rgba(255,255,255,0.84)">
+    <text x="80" y="82" font-size="42" font-weight="700">Six Layers of Reality</text>
+    <text x="80" y="120" font-size="18" fill="rgba(255,255,255,0.62)">Replace this placeholder with your branded colorful artwork</text>
+  </g>
+</svg>

@@ -1,163 +1,464 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="MBCC Finternet Ops™ — Agent Ops for tokenized finance: monitoring, explainability, compliance-ready reporting, and operational risk tooling." />
-  <meta name="robots" content="index,follow" />
-  <title>MBCC Finternet Ops™ | Agent Ops for Tokenized Finance</title>
+  <meta name="theme-color" content="#0b0b12" />
+  <meta name="description" content="Six Layers of Reality — a visual framework from human experience to Source. MoeCommunityCloud + AgentOps." />
+  <title>Six Layers of Reality | MoeCommunityCloud</title>
 
-  <meta property="og:title" content="MBCC Finternet Ops™" />
-  <meta property="og:description" content="Agent Ops for tokenized finance — monitoring, explainability, compliance-ready reporting, and operational risk tooling." />
-  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-
 <body>
-  <div class="bg" aria-hidden="true"></div>
-  <div class="plaid" aria-hidden="true"></div>
-  <div class="grain" aria-hidden="true"></div>
+  <!-- Ambient -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
 
-  <header>
-    <div class="container">
-      <div class="nav">
-        <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
-          <div>
-            <strong>MBCC FINTERNET OPS™</strong>
-            <span>Agent Ops for Tokenized Finance</span>
-          </div>
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn" href="docs.html">Docs</a>
-          <a class="btn" href="agents.html">Agent Ops</a>
-          <a class="btn" href="pricing.html">Pricing</a>
-          
-  <a class="btn" href="training/index.html">Training</a>
-<a class="btn btn-primary" href="pilot.html">Start Pilot</a>
-        </div>
-      </div>
-    </div>
+  <!-- Top bar -->
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand__mark" aria-hidden="true">◎</span>
+      <span class="brand__name">MoeCommunityCloud</span>
+      <span class="brand__tag">Six Layers of Reality</span>
+    </a>
+
+    <nav class="nav">
+      <a href="#framework">Framework</a>
+      <a href="#layers">Layers</a>
+      <a href="#practice">Practice</a>
+      <a href="#video">Video</a>
+      <a class="pill" href="#join">Join</a>
+    </nav>
+
+    <button class="icon-btn" id="menuBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
-  <main>
-    <div class="container">
-      <div class="pill"><span class="dot"></span><span>Monitoring • Explainability • Compliance-ready reporting</span></div>
-
-      <h1>Tokenized finance moves fast. Ops has to move faster.</h1>
-      <p class="lead">
-        MBCC Finternet Ops™ is the operations layer for tokenized assets: monitoring, anomaly triage, incident timelines,
-        governance narratives, and exportable reporting — built as “Agent Ops” so teams can scale without adding headcount.
-        <strong>Not custody. Not trading. Not investment advice.</strong>
-      </p>
-
-      <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
-        <a class="btn btn-primary" href="pilot.html">Request Pilot →</a>
-        <a class="btn" href="agents.html">Browse Agents</a>
-        <a class="btn" href="docs.html">Read Docs</a>
-      </div>
-
-      <div class="grid" style="margin-top:18px;">
-        <div class="card">
-          <div class="tag">⚙️ Agent Ops</div>
-          <div class="title">Deploy 1–3 agents in a pilot</div>
-          <p class="desc">
-            Start with monitoring + narratives. Add exec briefs, PDF reporting, and stress scenarios once signals are stable.
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="pilot.html">Start Pilot →</a>
-            <a class="btn" href="agents.html">Agent Catalog</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="tag">🛡️ Compliance</div>
-          <div class="title">Explainability that governance can approve</div>
-          <p class="desc">
-            Turn noisy events into plain-English summaries with consistent structure: what happened, why it matters, what changed.
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="docs/compliance.html">How it works →</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="tag">📉 Risk</div>
-          <div class="title">Stress tests + response playbooks</div>
-          <p class="desc">
-            Run liquidity and settlement scenarios, then generate a decision-ready playbook for ops and leadership.
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="docs/stress.html">Read stress docs →</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="tag">📡 Monitoring</div>
-          <div class="title">Watch yields, spreads, settlement health</div>
-          <p class="desc">
-            Alerts + anomaly triage to reduce noise. Focus on what matters now, not a thousand charts.
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="agents.html">See monitoring agents →</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="tag">📄 Reporting</div>
-          <div class="title">Exportable outputs (PDF-ready)</div>
-          <p class="desc">
-            Weekly briefs, incident timelines, and governance artifacts — consistent formatting for audits and stakeholders.
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="pricing.html">See packages →</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="tag">🧱 Architecture</div>
-          <div class="title">Cloud-first, controls-first</div>
-          <p class="desc">
-            Designed for modern stacks (Vertex AI/Gemini optional later), with policy-first thinking and role-based outputs.
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="docs.html">Docs →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="banner">
-        <strong>Important:</strong> MBCC Finternet Ops™ is software tooling and education. We do not custody assets,
-        execute trades, or provide investment advice. Outputs are operational and informational.
-      </div>
-
-      <div style="margin-top: 16px; display:flex; gap:10px; flex-wrap:wrap;">
-        <a class="btn btn-primary" href="pilot.html">Start Pilot →</a>
-        <a class="btn" href="pricing.html">Pricing</a>
-        <a class="btn" href="docs.html">Docs</a>
-        <a class="btn" href="agents.html">Agents</a>
-      </div>
+  <!-- Mobile drawer -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__head">
+      <div class="drawer__title">Navigate</div>
+      <button class="icon-btn" id="closeDrawer" aria-label="Close menu">
+        <span></span><span></span>
+      </button>
     </div>
+    <div class="drawer__links">
+      <a href="#framework">Framework</a>
+      <a href="#layers">Layers</a>
+      <a href="#practice">Practice</a>
+      <a href="#video">Video</a>
+      <a href="#join">Join</a>
+      <a href="#shop">Shop</a>
+    </div>
+  </aside>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero" id="top">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <div class="kicker">
+            <span class="dot"></span>
+            A spiritual framework (not a physical systems diagram)
+          </div>
+
+          <h1>
+            Six Layers of Reality:
+            <span class="grad">from Human</span>
+            to <span class="grad2">Source</span>
+          </h1>
+
+          <p class="lead">
+            A clean, visual map from lived experience through mind and cosmic order,
+            into the silent origin: <strong>Monad / Pleroma / All-That-Is</strong>.
+            Built for MoeCommunityCloud + AgentOps storytelling — with a page that actually hits.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn primary" href="#layers">
+              Enter the Layers
+              <span class="btn__icon" aria-hidden="true">→</span>
+            </a>
+            <a class="btn ghost" href="#video">
+              Watch the Video
+              <span class="btn__icon" aria-hidden="true">▶</span>
+            </a>
+          </div>
+
+          <div class="hero__meta">
+            <div class="meta-card">
+              <div class="meta-card__label">Mode</div>
+              <div class="meta-card__value">Knowing → Remembering</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-card__label">Brand</div>
+              <div class="meta-card__value">MCC • AgentOps</div>
+            </div>
+            <div class="meta-card">
+              <div class="meta-card__label">Focus</div>
+              <div class="meta-card__value">Spiritual clarity</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-label="Six layers visualization">
+          <!-- Replace this SVG with your generated 16:9 hero image when ready -->
+          <div class="frame">
+            <img class="frame__img" src="assets/img/hero-placeholder.svg" alt="Colorful spiritual human-to-source framework placeholder artwork" />
+            <div class="frame__badge">Replace with your branded AI image</div>
+          </div>
+
+          <div class="layer-rail" aria-label="Layers list">
+            <button class="layer-chip" data-jump="l1">
+              <span class="n">1</span><span class="t">Human</span><span class="s">Embodied Life</span>
+            </button>
+            <button class="layer-chip" data-jump="l2">
+              <span class="n">2</span><span class="t">Mind</span><span class="s">Perception & Meaning</span>
+            </button>
+            <button class="layer-chip" data-jump="l3">
+              <span class="n">3</span><span class="t">Collective</span><span class="s">Culture & Story</span>
+            </button>
+            <button class="layer-chip" data-jump="l4">
+              <span class="n">4</span><span class="t">Archetypal</span><span class="s">Patterns & Symbols</span>
+            </button>
+            <button class="layer-chip" data-jump="l5">
+              <span class="n">5</span><span class="t">Cosmic</span><span class="s">Order & Intelligence</span>
+            </button>
+            <button class="layer-chip" data-jump="l6">
+              <span class="n">6</span><span class="t">Source</span><span class="s">Monad / Pleroma</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll">
+        <a href="#framework" class="scroll-hint" aria-label="Scroll to framework">
+          <span class="scroll-hint__mouse" aria-hidden="true"></span>
+          <span>Scroll</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Framework -->
+    <section class="section" id="framework">
+      <div class="container">
+        <div class="section__head">
+          <h2>The Framework</h2>
+          <p>
+            This is a ladder of awareness. You don’t climb it with effort —
+            you climb it by dropping what’s fake.
+          </p>
+        </div>
+
+        <div class="cards two">
+          <article class="card glow">
+            <h3>What it is</h3>
+            <p>
+              A practical way to describe how reality “feels” at different depths:
+              from the body, to the mind, to the shared world, to the symbolic,
+              to the cosmic, to the origin.
+            </p>
+            <ul class="ticks">
+              <li>Designed for video + web storytelling</li>
+              <li>Clean language (no tech system diagrams)</li>
+              <li>Built to spark comments and self-reflection</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>What it’s not</h3>
+            <p>
+              Not an excuse to escape life. Not a hierarchy for ego.
+              Not “spiritual flexing.” The point is clarity and alignment.
+            </p>
+            <ul class="ticks x">
+              <li>No “I’m above you” energy</li>
+              <li>No fear-farming</li>
+              <li>No confusion-for-profit</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="quote">
+          <div class="quote__bar" aria-hidden="true"></div>
+          <div class="quote__text">
+            <strong>Remember:</strong> The closer you get to Source, the less noise you need.
+            You don’t “win” the truth — you recognize it.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layers -->
+    <section class="section" id="layers">
+      <div class="container">
+        <div class="section__head">
+          <h2>The Six Layers</h2>
+          <p>Tap any layer to expand. The site remembers your last open layer.</p>
+        </div>
+
+        <div class="layers">
+          <details class="layer" id="l1" open>
+            <summary>
+              <span class="badge">1</span>
+              <span class="title">Human</span>
+              <span class="sub">Embodied life: sensation, survival, love, pain, choices.</span>
+              <span class="chev" aria-hidden="true">⌄</span>
+            </summary>
+            <div class="content">
+              <p>
+                The “street level.” Bills, relationships, hunger, joy, grief — and the raw moment
+                where you decide what kind of person you are going to be.
+              </p>
+              <div class="chips">
+                <span class="chip">Presence</span>
+                <span class="chip">Integrity</span>
+                <span class="chip">Courage</span>
+                <span class="chip">Discipline</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="layer" id="l2">
+            <summary>
+              <span class="badge">2</span>
+              <span class="title">Mind</span>
+              <span class="sub">Perception: thoughts, identity, filters, beliefs.</span>
+              <span class="chev" aria-hidden="true">⌄</span>
+            </summary>
+            <div class="content">
+              <p>
+                Here’s where stories become “truth.” You can be free… or trapped inside a narrative.
+                This layer is about noticing the lens.
+              </p>
+              <div class="chips">
+                <span class="chip">Attention</span>
+                <span class="chip">Self-talk</span>
+                <span class="chip">Bias</span>
+                <span class="chip">Reframe</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="layer" id="l3">
+            <summary>
+              <span class="badge">3</span>
+              <span class="title">Collective</span>
+              <span class="sub">Culture: media, tribe, language, “normal,” pressure.</span>
+              <span class="chev" aria-hidden="true">⌄</span>
+            </summary>
+            <div class="content">
+              <p>
+                The shared dream. This layer can uplift you — or program you.
+                The question: <em>Who benefits from what you believe?</em>
+              </p>
+              <div class="chips">
+                <span class="chip">Culture</span>
+                <span class="chip">Power</span>
+                <span class="chip">Narratives</span>
+                <span class="chip">Discernment</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="layer" id="l4">
+            <summary>
+              <span class="badge">4</span>
+              <span class="title">Archetypal</span>
+              <span class="sub">Symbols: patterns, myths, psyche, shadow, light.</span>
+              <span class="chev" aria-hidden="true">⌄</span>
+            </summary>
+            <div class="content">
+              <p>
+                Patterns underneath the pattern. The hero, the trickster, the tyrant,
+                the redeemer — these show up in nations and in you.
+              </p>
+              <div class="chips">
+                <span class="chip">Shadow work</span>
+                <span class="chip">Symbols</span>
+                <span class="chip">Myth</span>
+                <span class="chip">Integration</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="layer" id="l5">
+            <summary>
+              <span class="badge">5</span>
+              <span class="title">Cosmic</span>
+              <span class="sub">Order: intelligence, harmony, law, rhythm, design.</span>
+              <span class="chev" aria-hidden="true">⌄</span>
+            </summary>
+            <div class="content">
+              <p>
+                The feeling that reality has rhythm — and that your life can align with it.
+                Less superstition, more resonance.
+              </p>
+              <div class="chips">
+                <span class="chip">Resonance</span>
+                <span class="chip">Synchronicity</span>
+                <span class="chip">Order</span>
+                <span class="chip">Silence</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="layer" id="l6">
+            <summary>
+              <span class="badge">6</span>
+              <span class="title">Source</span>
+              <span class="sub">Monad / Pleroma: origin, totality, pure being.</span>
+              <span class="chev" aria-hidden="true">⌄</span>
+            </summary>
+            <div class="content">
+              <p>
+                Beyond language. Not a “thing” — the ground of everything.
+                The closer you get, the more it becomes knowing instead of believing.
+              </p>
+              <div class="chips">
+                <span class="chip">Monad</span>
+                <span class="chip">Pleroma</span>
+                <span class="chip">All-That-Is</span>
+                <span class="chip">Unity</span>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Practice -->
+    <section class="section" id="practice">
+      <div class="container">
+        <div class="section__head">
+          <h2>Practice: Make it Real</h2>
+          <p>Three quick drills that turn this from “cool ideas” into transformation.</p>
+        </div>
+
+        <div class="cards three">
+          <article class="card">
+            <h3>30-Second Truth Check</h3>
+            <p>Ask: “What’s actually happening, without my story?” Then breathe once, slow.</p>
+            <div class="mini">Layer: Human → Mind</div>
+          </article>
+
+          <article class="card">
+            <h3>Programming Audit</h3>
+            <p>Ask: “Who taught me this?” If the answer is fear, pause and choose again.</p>
+            <div class="mini">Layer: Collective</div>
+          </article>
+
+          <article class="card glow">
+            <h3>Silent Return</h3>
+            <p>One minute: no words, no scrolling, no proving. Just presence.</p>
+            <div class="mini">Layer: Cosmic → Source</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video -->
+    <section class="section" id="video">
+      <div class="container">
+        <div class="section__head">
+          <h2>Video</h2>
+          <p>Drop your video link below when you publish. The layout is already ready for it.</p>
+        </div>
+
+        <div class="cards two">
+          <article class="card">
+            <h3>Embed</h3>
+            <p class="muted">
+              Replace the <code>YOUR_YOUTUBE_ID</code> in <code>index.html</code> to embed automatically.
+            </p>
+            <div class="video">
+              <iframe
+                title="Six Layers of Reality video"
+                src="https://www.youtube.com/embed/YOUR_YOUTUBE_ID"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+          </article>
+
+          <article class="card" id="shop">
+            <h3>Call to Action</h3>
+            <p>
+              If this framework hits you, don’t just watch — build with us.
+              Join as a member and rep the brand.
+            </p>
+            <div class="cta-stack">
+              <a class="btn primary" href="https://moecommunitycloud.com/" target="_blank" rel="noreferrer">
+                Visit MoeCommunityCloud.com <span class="btn__icon">↗</span>
+              </a>
+              <a class="btn ghost" href="https://moe-bucks.myspreadshop.com/" target="_blank" rel="noreferrer">
+                Shop the Merch <span class="btn__icon">↗</span>
+              </a>
+              <a class="btn subtle" href="#join">
+                Become a Member <span class="btn__icon">→</span>
+              </a>
+            </div>
+
+            <div class="note">
+              <strong>Tip:</strong> Put your membership link in <code>JOIN_URL</code> (assets/js/app.js)
+              so every “Join” button routes correctly.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ending Screen -->
+    <section class="section ending" id="join">
+      <div class="container">
+        <div class="ending__grid">
+          <div class="ending__img">
+            <img src="assets/img/ending-screen-placeholder.svg" alt="Ending screen placeholder artwork: like, subscribe, share" />
+          </div>
+          <div class="ending__copy">
+            <h2>Like • Subscribe • Share</h2>
+            <p>
+              Drop a comment: <strong>Which layer are you stuck in — and which one are you ready to enter?</strong>
+            </p>
+
+            <div class="ending__buttons">
+              <a class="btn primary" id="joinBtn" href="#" target="_blank" rel="noreferrer">
+                Join as a Member <span class="btn__icon">↗</span>
+              </a>
+              <a class="btn ghost" href="https://moe-bucks.myspreadshop.com/" target="_blank" rel="noreferrer">
+                Merch Store <span class="btn__icon">↗</span>
+              </a>
+            </div>
+
+            <div class="ending__small">
+              Want the full framework + downloads? Visit <a href="https://moecommunitycloud.com/" target="_blank" rel="noreferrer">moecommunitycloud.com</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__left">
+          <div class="footer__logo">◎</div>
+          <div>
+            <div class="footer__title">MoeCommunityCloud • AgentOps</div>
+            <div class="footer__muted">Six Layers of Reality — spiritual clarity, no fluff.</div>
+          </div>
+        </div>
+
+        <div class="footer__right">
+          <a href="#top">Back to top ↑</a>
+        </div>
+      </div>
+    </footer>
   </main>
 
-  <footer>
-    <div class="container foot">
-      <div>
-        © <span id="yr"></span> Moe Community Cloud (MBCC). All rights reserved.<br/>
-        MBCC Finternet Ops™ provides software tooling. Not a broker-dealer, custodian, or investment adviser.
-      </div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a class="btn" href="privacy.html">Privacy</a>
-        <a class="btn" href="terms.html">Terms</a>
-        <a class="btn" href="docs.html">Docs</a>
-        
-  <a class="btn" href="training/certification.html">Certification</a>
-<a class="btn btn-primary" href="pilot.html">Pilot</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="site.js" defer></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
