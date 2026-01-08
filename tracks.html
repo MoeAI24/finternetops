@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0b"/>
+  <title>Tracks • MBCC FinternetOps Training</title>
+  <meta name="description" content="Choose a training track: Operator, Consultant, or Sales/Partner. Clear page-based learning paths (no blades)." />
+  <style>
+    :root{--bg:#0b0b0b;--text:#f7f3e9;--muted:rgba(247,243,233,.78);--red:#c1121f;--gold:#d4af37;--shadow:0 12px 30px rgba(0,0,0,.45);--r:16px;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:radial-gradient(1200px 600px at 15% 0%, rgba(193,18,31,.18), transparent 60%),radial-gradient(900px 500px at 85% 10%, rgba(212,175,55,.10), transparent 60%),var(--bg);color:var(--text);line-height:1.5}
+    header{position:sticky;top:0;z-index:10;backdrop-filter:blur(10px);background:rgba(11,11,11,.76);border-bottom:1px solid rgba(212,175,55,.18)}
+    .nav{max-width:1100px;margin:0 auto;padding:14px 18px;display:flex;gap:14px;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
+    .brand .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(180deg,var(--red),#7b0a12);box-shadow:0 0 0 2px rgba(212,175,55,.25)}
+    .links{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+    .links a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:12px;border:1px solid transparent;font-weight:650;font-size:14px}
+    .links a:hover{color:var(--text);border-color:rgba(212,175,55,.24);background:rgba(212,175,55,.06)}
+    .links a.active{color:var(--text);border-color:rgba(212,175,55,.36);background:rgba(193,18,31,.10)}
+    main{max-width:1100px;margin:0 auto;padding:26px 18px 44px}
+    .hero{border:1px solid rgba(212,175,55,.22);background:linear-gradient(180deg, rgba(18,18,18,.9), rgba(12,12,12,.85));box-shadow:var(--shadow);border-radius:calc(var(--r) + 6px);padding:22px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:-2px;background:repeating-linear-gradient(135deg,rgba(212,175,55,.06) 0px,rgba(212,175,55,.06) 10px,rgba(193,18,31,.06) 10px,rgba(193,18,31,.06) 20px);opacity:.25;pointer-events:none;mask:linear-gradient(#000, transparent 75%)}
+    h1{margin:0 0 6px;font-size:30px}
+    .sub{margin:0 0 16px;color:var(--muted);max-width:75ch}
+    .ctaRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;border-radius:999px;padding:10px 14px;font-weight:800;border:1px solid rgba(212,175,55,.34);background:rgba(212,175,55,.06);color:var(--text);transition:transform .15s ease, box-shadow .15s ease, background .15s ease}
+    .btn:hover{background:rgba(212,175,55,.10)}
+    .btn.primary{border-color:rgba(212,175,55,.55);background:linear-gradient(180deg, rgba(193,18,31,.95), rgba(123,10,18,.95));box-shadow:0 10px 22px rgba(193,18,31,.18)}
+    .btn.primary:hover{box-shadow:0 14px 28px rgba(193,18,31,.24);transform:translateY(-1px)}
+    .sectionTitle{margin:22px 0 12px;font-size:18px;font-weight:900}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:12px}
+    @media (max-width:960px){.grid{grid-template-columns:1fr}}
+    .card{border-radius:var(--r);border:1px solid rgba(212,175,55,.22);background:linear-gradient(180deg, rgba(18,18,18,.92), rgba(11,11,11,.92));padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease;min-height:240px}
+    .card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,.42);box-shadow:0 16px 40px rgba(0,0,0,.55)}
+    .pill{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;border:1px solid rgba(212,175,55,.28);background:rgba(212,175,55,.06);font-weight:850;font-size:12px;letter-spacing:.4px;text-transform:uppercase}
+    .pill.red{border-color:rgba(193,18,31,.45);background:rgba(193,18,31,.10)}
+    .card h3{margin:10px 0 6px;font-size:18px}
+    .card p{margin:0 0 12px;color:var(--muted);font-size:14px}
+    .meta{display:grid;gap:8px;margin:10px 0 14px;padding-top:10px;border-top:1px solid rgba(212,175,55,.16);color:rgba(247,243,233,.86);font-size:13px}
+    .meta b{color:var(--text)}
+    .cardActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .card a.stretch{position:absolute;inset:0;border-radius:var(--r);text-indent:-9999px;overflow:hidden}
+    .hint{margin-top:12px;color:rgba(247,243,233,.72);font-size:13px}
+    footer{max-width:1100px;margin:0 auto;padding:18px;color:rgba(247,243,233,.72);border-top:1px solid rgba(212,175,55,.14)}
+    a:focus-visible{outline:3px solid rgba(212,175,55,.65);outline-offset:2px;border-radius:14px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand"><span class="dot" aria-hidden="true"></span><span>FinternetOps Training &amp; Partner Enablement</span></div>
+      <nav class="links" aria-label="Training navigation">
+        <a href="index.html">Portal</a>
+        <a class="active" href="tracks.html" aria-current="page">Tracks</a>
+        <a href="curriculum.html">Curriculum</a>
+        <a href="modules/index.html">Modules</a>
+        <a href="agent-library.html">Agent Library</a>
+        <a href="playbooks.html">Playbooks</a>
+        <a href="certification.html">Certification</a>
+        <a href="partner-dashboard.html">Partner Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Training Tracks</h1>
+      <p class="sub">Pick your delivery role and jump into a clear learning path. Click a track below to route into the matching curriculum.</p>
+      <div class="ctaRow">
+        <a class="btn primary" href="curriculum.html">Go to Curriculum →</a>
+        <a class="btn" href="partner-dashboard.html">Open Partner Dashboard</a>
+        <a class="btn" href="../index.html">Home</a>
+      </div>
+      <div class="hint" id="trackHint">Tip: Your selection is saved so Curriculum can highlight your track.</div>
+    </section>
+
+    <h2 class="sectionTitle">Choose your track</h2>
+
+    <section class="grid" aria-describedby="trackHint">
+      <article class="card" data-track="operator">
+        <a class="stretch" href="curriculum.html?track=operator">Operator track</a>
+        <span class="pill red">Operator</span>
+        <h3>Operate FinternetOps systems</h3>
+        <p>Run ops with execution discipline: recon, custody, settlement, limits, and evidence.</p>
+        <div class="meta">
+          <div><b>Primary outcomes:</b> stable execution + controls</div>
+          <div><b>Best when:</b> you own day-2 operations, monitoring, incidents</div>
+        </div>
+        <div class="cardActions">
+          <a class="btn primary" href="curriculum.html?track=operator">Start Operator Path →</a>
+          <a class="btn" href="modules/index.html?track=operator">View Modules</a>
+        </div>
+      </article>
+
+      <article class="card" data-track="consultant">
+        <a class="stretch" href="curriculum.html?track=consultant">Consultant track</a>
+        <span class="pill">Consultant</span>
+        <h3>Deliver discovery to acceptance</h3>
+        <p>Discovery → architecture → implementation → acceptance, with clean docs and sign-off.</p>
+        <div class="meta">
+          <div><b>Primary outcomes:</b> strategy + delivery</div>
+          <div><b>Best when:</b> you scope, design, implement, close projects</div>
+        </div>
+        <div class="cardActions">
+          <a class="btn primary" href="curriculum.html?track=consultant">Start Consultant Path →</a>
+          <a class="btn" href="modules/index.html?track=consultant">View Modules</a>
+        </div>
+      </article>
+
+      <article class="card" data-track="sales">
+        <a class="stretch" href="curriculum.html?track=sales">Sales/Partner track</a>
+        <span class="pill">Sales / Partner</span>
+        <h3>Package &amp; move deals</h3>
+        <p>Packaging, proof, SOW creation, evaluation flow, and buying-path readiness.</p>
+        <div class="meta">
+          <div><b>Primary outcomes:</b> evaluation + buying path</div>
+          <div><b>Best when:</b> you sell, partner, or drive a partner-led funnel</div>
+        </div>
+        <div class="cardActions">
+          <a class="btn primary" href="curriculum.html?track=sales">Start Sales/Partner Path →</a>
+          <a class="btn" href="partner-dashboard.html">Open Partner Dashboard</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>© 2026 MBCC FinternetOps™ • Training is page-based (no blades).</footer>
+
+  <script>
+    (function(){
+      document.querySelectorAll('[data-track] a').forEach(function(a){
+        a.addEventListener('click', function(){
+          try{
+            var u = new URL(a.href, window.location.href);
+            var t = u.searchParams.get('track');
+            if(t) localStorage.setItem('mbcc_track', t);
+          }catch(e){}
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
