@@ -1,0 +1,138 @@
+
+:root{
+  --red:#c1121f;
+  --black:#0b0b0b;
+  --gold:#d4af37;
+  --gold2:#a8831e;
+  --off:#f7f3e9;
+  --muted: rgba(247,243,233,.78);
+  --panel: rgba(18,18,18,.92);
+  --line: rgba(212,175,55,.22);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  color: var(--off);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background:
+    radial-gradient(1200px 700px at 10% -10%, rgba(193,18,31,.30), transparent 60%),
+    radial-gradient(900px 600px at 90% 0%, rgba(212,175,55,.12), transparent 55%),
+    var(--black);
+  line-height:1.55;
+}
+a{color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:20px 18px}
+.card{
+  border-radius: 18px;
+  border: 1px solid rgba(212,175,55,.20);
+  background: linear-gradient(180deg, rgba(18,18,18,.92), rgba(11,11,11,.92));
+  box-shadow: 0 18px 45px rgba(0,0,0,.55);
+  padding: 16px;
+}
+.h1{font-size:28px; font-weight:1000; margin:0 0 6px}
+.sub{color:var(--muted); font-weight:800; margin:0 0 12px}
+.btnrow{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  text-decoration:none; gap:10px;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 950;
+  border: 1px solid rgba(212,175,55,.34);
+  background: rgba(212,175,55,.06);
+}
+.btn:hover{background: rgba(212,175,55,.10)}
+.btn.primary{
+  background: linear-gradient(180deg, rgba(193,18,31,.95), rgba(123,10,18,.95));
+  border-color: rgba(212,175,55,.55);
+}
+.grid{display:grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap:14px; margin-top:14px}
+@media (max-width: 980px){ .grid{grid-template-columns:1fr} }
+.field{grid-column: span 6; display:grid; gap:6px}
+@media (max-width: 980px){ .field{grid-column: span 12} }
+label{font-weight:950; color: rgba(247,243,233,.90)}
+input, select{
+  border-radius: 14px;
+  border: 1px solid rgba(212,175,55,.20);
+  background: rgba(0,0,0,.22);
+  color: var(--off);
+  padding: 10px 12px;
+  font-weight: 850;
+}
+small.hint{color: rgba(247,243,233,.68); font-weight:800}
+hr.sep{border:0; border-top: 1px solid rgba(212,175,55,.14); margin: 14px 0}
+/* Certificate canvas */
+.certWrap{
+  margin-top:14px;
+  border-radius: 22px;
+  border: 1px solid rgba(212,175,55,.26);
+  background: rgba(0,0,0,.18);
+  padding: 16px;
+}
+.certificate{
+  width: 100%;
+  aspect-ratio: 1.414 / 1; /* A4 landscape-ish */
+  border-radius: 18px;
+  border: 2px solid rgba(212,175,55,.42);
+  background:
+    linear-gradient(180deg, rgba(18,18,18,.95), rgba(10,10,10,.92));
+  position: relative;
+  overflow:hidden;
+  padding: 26px;
+}
+.certificate:before{
+  content:"";
+  position:absolute; inset:-2px;
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(212,175,55,.06) 0px,
+      rgba(212,175,55,.06) 12px,
+      rgba(193,18,31,.06) 12px,
+      rgba(193,18,31,.06) 24px);
+  opacity:.18;
+  pointer-events:none;
+  mask: linear-gradient(#000, transparent 78%);
+}
+.certHeader{display:flex; justify-content:space-between; align-items:flex-start; gap:16px}
+.mark{display:flex; gap:12px; align-items:center}
+.dot{width:16px;height:16px;border-radius:50%;
+  background: linear-gradient(180deg, var(--red), #7b0a12);
+  box-shadow:0 0 0 2px rgba(212,175,55,.25);
+}
+.brandTitle{font-weight:1000; letter-spacing:.3px}
+.brandSub{color: rgba(247,243,233,.72); font-weight:850; font-size:13px}
+.qrBox{
+  border:1px solid rgba(212,175,55,.22);
+  background: rgba(0,0,0,.22);
+  border-radius: 14px;
+  padding: 10px 12px;
+  min-width: 220px;
+}
+.qrBox b{display:block; font-size:12px; letter-spacing:.35px; text-transform:uppercase}
+.qrBox .u{margin-top:6px; font-size:12px; color: rgba(247,243,233,.78); word-break:break-all; font-weight:850}
+.certBody{margin-top:18px; text-align:center}
+.certBody h2{margin:0; font-size:22px; letter-spacing:.4px}
+.certBody h1{margin:10px 0 6px; font-size:38px; letter-spacing:.3px}
+.certBody p{margin:0 auto 10px; max-width: 85ch; color: rgba(247,243,233,.82); font-weight:800}
+.ribbon{display:inline-flex; gap:10px; align-items:center; margin-top:10px;
+  border-radius:999px; padding:8px 12px; border:1px solid rgba(212,175,55,.28);
+  background: rgba(212,175,55,.06); font-weight:950}
+.ribbon span{color: rgba(247,243,233,.80); font-weight:900}
+.certFooter{position:absolute; left:26px; right:26px; bottom:18px;
+  display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;
+  border-top:1px solid rgba(212,175,55,.16); padding-top:12px}
+.meta{font-size:12px; font-weight:900; color: rgba(247,243,233,.80)}
+.meta b{color: var(--off)}
+.sig{display:flex; gap:14px; align-items:flex-end}
+.sigLine{width:220px; border-top:1px solid rgba(212,175,55,.28); padding-top:6px; text-align:center}
+.sigLine b{display:block; font-size:12px}
+.sigLine span{font-size:12px; color: rgba(247,243,233,.72); font-weight:850}
+/* Print */
+@media print{
+  body{background:#fff;color:#000}
+  .container{max-width:none; padding:0}
+  .card, .btnrow, .grid, .sub, .h1, .hint, hr.sep{display:none !important}
+  .certWrap{border:none; padding:0; margin:0}
+  .certificate{border:2px solid #b08b1f; border-radius:0; padding:24px}
+  .certificate:before{display:none}
+}

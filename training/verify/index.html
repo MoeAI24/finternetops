@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#0b0b0b"/>
+  <title>Verify Certificate • MBCC FinternetOps</title>
+  <meta name="description" content="Verify an MBCC FinternetOps certificate ID."/>
+  <link rel="canonical" href="https://finternetops.moecommunitycloud.com/training/verify/index.html"/>
+  <meta property="og:title" content="Verify Certificate • MBCC FinternetOps"/>
+  <meta property="og:description" content="Certificate verification status."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://finternetops.moecommunitycloud.com/training/verify/index.html"/>
+  <meta property="og:image" content="https://finternetops.moecommunitycloud.com/assets/images/training-og.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="stylesheet" href="../assets/css/styles.css"/>
+  <link rel="stylesheet" href="../assets/css/certificate.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="h1">Certificate Verification</div>
+      <p class="sub">Enter a certificate ID to verify. (Enterprise demo: local registry only.)</p>
+
+      <div class="grid">
+        <div class="field" style="grid-column: span 12">
+          <label for="cid">Certificate ID</label>
+          <input id="cid" placeholder="MBCC-FOPS-2026-XXXXXXXX" />
+          <small class="hint">Tip: open a link like <b>?id=MBCC-FOPS-...</b> or paste an ID above.</small>
+        </div>
+      </div>
+
+      <div class="btnrow">
+        <a class="btn primary" href="#" id="verifyBtn">Verify</a>
+        <a class="btn" href="../certificates/generate.html">Issuer</a>
+        <a class="btn" href="../index.html">Portal</a>
+      </div>
+
+      <hr class="sep"/>
+
+      <div class="certWrap" id="statusWrap" style="display:none">
+        <div class="sub" style="margin:0 0 8px"><b>Status</b></div>
+
+        <div class="certificate" style="aspect-ratio:auto; padding:18px" id="statusCard">
+          <div class="certHeader">
+            <div class="mark">
+              <span class="dot" aria-hidden="true"></span>
+              <div>
+                <div class="brandTitle" id="statusTitle">—</div>
+                <div class="brandSub" id="statusSub">—</div>
+              </div>
+            </div>
+            <div class="qrBox">
+              <b>Certificate ID</b>
+              <div class="u" id="sid">—</div>
+            </div>
+          </div>
+
+          <div class="certBody" style="text-align:left; margin-top:14px">
+            <p style="max-width:none">
+              <b>Recipient:</b> <span id="sname">—</span><br/>
+              <b>Track:</b> <span id="strack">—</span><br/>
+              <b>Issued:</b> <span id="sissued">—</span><br/>
+              <b>Program:</b> <span id="sprogram">—</span><br/>
+              <span id="sscoreLine"></span>
+            </p>
+            <div class="callout" style="margin-top:12px">
+              <b>Enterprise note</b>
+              This verification is <b>local-only</b> (browser registry). For true enterprise verification, connect IDs to a server registry.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <small class="hint">If you want server-backed verification, we’ll add an API endpoint + database registry + signed cert IDs.</small>
+    </div>
+  </div>
+
+  <script src="../assets/js/certificate.js"></script>
+  <script>
+    (function(){
+      const cid = document.getElementById("cid");
+      const btn = document.getElementById("verifyBtn");
+      const wrap = document.getElementById("statusWrap");
+
+      function setText(id, v){ document.getElementById(id).textContent = v; }
+
+      function run(id){
+        id = String(id||"").trim();
+        if(!id){ alert("Enter a certificate ID."); return; }
+
+        const cert = MBCC_CERT.getCert(id);
+        wrap.style.display = "block";
+        setText("sid", id);
+
+        if(!cert){
+          setText("statusTitle","Not verified (local registry)");
+          setText("statusSub","This ID was not found in this browser’s registry.");
+          setText("sname","—");
+          setText("strack","—");
+          setText("sissued","—");
+          setText("sprogram","—");
+          document.getElementById("sscoreLine").textContent = "";
+          return;
+        }
+
+        setText("statusTitle","Verified (local registry)");
+        setText("statusSub","ID exists in this browser’s registry. For public verification, add server registry.");
+        setText("sname", cert.name || "—");
+        setText("strack", MBCC_CERT.prettyTrack(cert.track));
+        setText("sissued", new Date(cert.issuedAt).toLocaleDateString());
+        setText("sprogram", cert.program || "—");
+        const scoreLine = document.getElementById("sscoreLine");
+        scoreLine.textContent = (cert.score!=null && !Number.isNaN(cert.score)) ? ("Final Exam Score: " + cert.score + "%") : "";
+      }
+
+      btn.addEventListener("click", function(e){
+        e.preventDefault();
+        run(cid.value);
+      });
+
+      const id = MBCC_CERT.qs("id");
+      if(id){
+        cid.value = id;
+        run(id);
+      }
+    })();
+  </script>
+</body>
+</html>

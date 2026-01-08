@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#0b0b0b"/>
+  <title>Generate Certificate • MBCC FinternetOps</title>
+  <meta name="description" content="Generate MBCC FinternetOps certification certificates with verification IDs."/>
+  <link rel="canonical" href="https://finternetops.moecommunitycloud.com/training/certificates/generate.html"/>
+  <meta property="og:title" content="Generate Certificate • MBCC FinternetOps"/>
+  <meta property="og:description" content="Create a certificate ID and downloadable certificate page (enterprise demo)."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://finternetops.moecommunitycloud.com/training/certificates/generate.html"/>
+  <meta property="og:image" content="https://finternetops.moecommunitycloud.com/assets/images/training-og.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="stylesheet" href="../assets/css/styles.css"/>
+  <link rel="stylesheet" href="../assets/css/certificate.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="h1">Certificate Issuer</div>
+      <p class="sub">Enterprise demo: issues a certificate ID and stores it locally for verification. Later, we can wire this to a real backend registry.</p>
+
+      <div class="grid">
+        <div class="field">
+          <label for="name">Recipient full name</label>
+          <input id="name" autocomplete="name" placeholder="e.g., Morris Stephens"/>
+          <small class="hint">Use the legal name you want displayed.</small>
+        </div>
+
+        <div class="field">
+          <label for="track">Certification track</label>
+          <select id="track">
+            <option value="operator">Operator</option>
+            <option value="consultant">Consultant</option>
+            <option value="sales">Sales/Partner</option>
+          </select>
+          <small class="hint">Tracks align to your training funnel.</small>
+        </div>
+
+        <div class="field">
+          <label for="score">Final exam score (optional)</label>
+          <input id="score" inputmode="numeric" placeholder="e.g., 90"/>
+          <small class="hint">If you want the score printed on the certificate.</small>
+        </div>
+
+        <div class="field">
+          <label>Actions</label>
+          <div class="btnrow">
+            <a class="btn primary" href="#" id="issueBtn">Issue Certificate</a>
+            <a class="btn" href="../certification.html">Back to Certification</a>
+            <a class="btn" href="../index.html">Portal</a>
+          </div>
+          <small class="hint">Issuing creates a new certificate ID.</small>
+        </div>
+      </div>
+
+      <hr class="sep"/>
+
+      <div class="certWrap" id="previewWrap" style="display:none">
+        <div class="sub" style="margin:0 0 8px"><b>Preview</b> (print or share)</div>
+        <div class="btnrow">
+          <a class="btn primary" id="openCert" href="#">Open Certificate Page</a>
+          <a class="btn" id="openVerify" href="#">Open Verification Page</a>
+          <a class="btn" id="copyVerify" href="#">Copy Verify URL</a>
+          <a class="btn" id="printCert" href="#">Print to PDF</a>
+        </div>
+        <small class="hint">Printing uses the browser’s “Save as PDF” for a clean certificate export.</small>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/certificate.js"></script>
+  <script>
+    (function(){
+      const nameEl = document.getElementById("name");
+      const trackEl = document.getElementById("track");
+      const scoreEl = document.getElementById("score");
+      const issueBtn = document.getElementById("issueBtn");
+      const previewWrap = document.getElementById("previewWrap");
+      const openCert = document.getElementById("openCert");
+      const openVerify = document.getElementById("openVerify");
+      const copyVerify = document.getElementById("copyVerify");
+      const printCert = document.getElementById("printCert");
+
+      let last = null;
+
+      function ensureValid(){
+        const n = (nameEl.value||"").trim();
+        if(!n){ alert("Enter recipient name."); return false; }
+        return true;
+      }
+
+      issueBtn.addEventListener("click", function(e){
+        e.preventDefault();
+        if(!ensureValid()) return;
+
+        last = MBCC_CERT.issueCertificate({
+          name: nameEl.value,
+          track: trackEl.value,
+          score: scoreEl.value
+        });
+
+        const certUrl = "certificate.html?id=" + encodeURIComponent(last.id);
+        const verifyUrl = "../verify/index.html?id=" + encodeURIComponent(last.id);
+
+        openCert.href = certUrl;
+        openVerify.href = verifyUrl;
+
+        copyVerify.onclick = function(ev){
+          ev.preventDefault();
+          const full = location.origin + "/training/verify/index.html?id=" + encodeURIComponent(last.id);
+          navigator.clipboard.writeText(full).then(()=>alert("Copied verify URL."));
+        };
+
+        printCert.onclick = function(ev){
+          ev.preventDefault();
+          const w = window.open(certUrl, "_blank");
+          // user prints from the certificate page
+          if(!w){ alert("Popup blocked. Allow popups for printing."); }
+        };
+
+        previewWrap.style.display = "block";
+        alert("Issued: " + last.id);
+      });
+    })();
+  </script>
+</body>
+</html>

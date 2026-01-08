@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#0b0b0b"/>
+  <title>Certificate • MBCC FinternetOps</title>
+  <meta name="description" content="MBCC FinternetOps certificate with verification ID."/>
+  <link rel="canonical" href="https://finternetops.moecommunitycloud.com/training/certificates/certificate.html"/>
+  <link rel="stylesheet" href="../assets/css/styles.css"/>
+  <link rel="stylesheet" href="../assets/css/certificate.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="h1">Certificate</div>
+      <p class="sub">Print this page to PDF for a clean certificate export. Verification is shown on the certificate.</p>
+
+      <div class="btnrow">
+        <a class="btn" href="generate.html">← Issuer</a>
+        <a class="btn" id="verifyLink" href="../verify/index.html">Verify</a>
+        <a class="btn primary" href="#" onclick="window.print(); return false;">Print / Save as PDF</a>
+        <a class="btn" href="../index.html">Portal</a>
+      </div>
+
+      <div class="certWrap">
+        <div class="certificate" id="certCanvas" aria-label="Certificate">
+          <div class="certHeader">
+            <div class="mark">
+              <span class="dot" aria-hidden="true"></span>
+              <div>
+                <div class="brandTitle">MBCC FinternetOps™</div>
+                <div class="brandSub">Enterprise Partner Enablement • Certification</div>
+              </div>
+            </div>
+            <div class="qrBox">
+              <b>Verify</b>
+              <div class="u" id="verifyUrl">—</div>
+            </div>
+          </div>
+
+          <div class="certBody">
+            <h2>Certificate of Completion</h2>
+            <h1 id="recipient">—</h1>
+            <p>
+              has successfully completed the <b>MBCC FinternetOps™ Enterprise Training Program</b> and demonstrated competency
+              in enterprise operations, controls, evidence management, and delivery standards.
+            </p>
+
+            <div class="ribbon">
+              Track: <b id="track">—</b> <span>•</span>
+              Certificate ID: <b id="certId">—</b>
+            </div>
+
+            <p style="margin-top:10px" id="scoreLine"></p>
+          </div>
+
+          <div class="certFooter">
+            <div class="meta">
+              <div><b>Issued:</b> <span id="issuedAt">—</span></div>
+              <div><b>Program:</b> MBCC FinternetOps™ Enterprise Training</div>
+            </div>
+
+            <div class="sig">
+              <div class="sigLine">
+                <b>MBCC Certification Authority</b>
+                <span>Authorized Signature</span>
+              </div>
+              <div class="sigLine">
+                <b>FinternetOps Program Lead</b>
+                <span>Partner Enablement</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="sep"/>
+      <small class="hint">
+        Note: This is a front-end verification demo (local registry). For true enterprise verification, we’ll wire certificate IDs to a server registry.
+      </small>
+    </div>
+  </div>
+
+  <script src="../assets/js/certificate.js"></script>
+  <script>
+    (function(){
+      const id = MBCC_CERT.qs("id");
+      const verifyLink = document.getElementById("verifyLink");
+
+      if(!id){
+        alert("Missing certificate ID.");
+        return;
+      }
+
+      const cert = MBCC_CERT.getCert(id);
+      if(!cert){
+        // Still show ID, but mark unknown
+        document.getElementById("recipient").textContent = "Unknown Recipient";
+        document.getElementById("track").textContent = "—";
+        document.getElementById("certId").textContent = id;
+        document.getElementById("issuedAt").textContent = "—";
+      } else {
+        document.getElementById("recipient").textContent = cert.name || "—";
+        document.getElementById("track").textContent = MBCC_CERT.prettyTrack(cert.track);
+        document.getElementById("certId").textContent = cert.id;
+        document.getElementById("issuedAt").textContent = new Date(cert.issuedAt).toLocaleDateString();
+        const scoreLine = document.getElementById("scoreLine");
+        if(cert.score != null && !Number.isNaN(cert.score)){
+          scoreLine.innerHTML = "<b>Final Exam Score:</b> " + cert.score + "%";
+        } else {
+          scoreLine.textContent = "";
+        }
+      }
+
+      const verifyUrl = location.origin + "/training/verify/index.html?id=" + encodeURIComponent(id);
+      document.getElementById("verifyUrl").textContent = verifyUrl;
+      verifyLink.href = "../verify/index.html?id=" + encodeURIComponent(id);
+    })();
+  </script>
+</body>
+</html>
