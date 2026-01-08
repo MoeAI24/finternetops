@@ -5,16 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0b0b0b"/>
   <title>M8 • Partner Scale • MBCC FinternetOps Training</title>
-  <meta name="description" content="Scale delivery and keep quality consistent across partners." />
+  <meta name="description" content="Scale delivery through partners without losing quality: enablement, QA gates, metrics, and incident learning loops." />
   <link rel="canonical" href="https://finternetops.moecommunitycloud.com/training/modules/m8.html" />
   <meta property="og:title" content="M8 • Partner Scale • MBCC FinternetOps Training" />
-  <meta property="og:description" content="Scale delivery and keep quality consistent across partners." />
+  <meta property="og:description" content="Scale delivery through partners without losing quality: enablement, QA gates, metrics, and incident learning loops." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://finternetops.moecommunitycloud.com/training/modules/m8.html" />
   <meta property="og:image" content="https://finternetops.moecommunitycloud.com/assets/images/training-og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="preload" href="../assets/css/styles.css" as="style" />
   <link rel="stylesheet" href="../assets/css/styles.css" />
+
+  <style>
+    .toc { display:grid; gap:10px; margin-top:12px; }
+    .toc a { text-decoration:none; border:1px solid rgba(212,175,55,.18); background:rgba(0,0,0,.18); padding:10px 12px; border-radius:16px; color:rgba(247,243,233,.86); font-weight:900; }
+    .toc a:hover { border-color: rgba(212,175,55,.38); background: rgba(212,175,55,.06); }
+    .lesson { border:1px solid rgba(212,175,55,.18); background: rgba(0,0,0,.18); border-radius:16px; padding:12px 14px; }
+    .lesson h3 { margin:0 0 6px; font-size:16px; }
+    .lesson p { margin:0 0 10px; color: var(--muted); font-weight:800; }
+    .callout { border:1px solid rgba(193,18,31,.28); background: rgba(193,18,31,.08); border-radius:16px; padding:12px 14px; }
+    .callout b { display:block; margin-bottom:6px; }
+    details { border:1px solid rgba(212,175,55,.18); background: rgba(0,0,0,.18); border-radius:16px; padding:10px 12px; }
+    details summary { cursor:pointer; font-weight:950; }
+    details[open] { border-color: rgba(212,175,55,.38); background: rgba(212,175,55,.05); }
+    .miniTable { width:100%; border-collapse: collapse; margin-top:10px; }
+    .miniTable th, .miniTable td { text-align:left; padding:10px 10px; border-bottom:1px solid rgba(212,175,55,.12); color: rgba(247,243,233,.86); vertical-align:top; }
+    .miniTable th { color: var(--off); font-weight:950; }
+    .inputBox { width:100%; min-height:110px; border-radius:16px; border:1px solid rgba(212,175,55,.18); background: rgba(0,0,0,.22); color: var(--off); padding:12px 12px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    .hint { color: rgba(247,243,233,.68); font-weight:800; font-size:13px; }
+  </style>
+
 </head>
 <body>
   <header class="topbar">
@@ -46,76 +67,361 @@
     <section class="hero">
       <div class="hrow">
         <div>
-          <span class="pill red">Module</span>
+          <span class="pill red">Module M8</span>
           <h1>M8 • Partner Scale</h1>
-          <p class="sub">Scale delivery and keep quality consistent across partners.</p>
+          <p class="sub">Scale delivery through partners without losing quality: enablement, QA gates, metrics, and incident learning loops.</p>
+
           <div class="btnrow">
             <a class="btn ghost" href="m7.html">← Previous</a>
             <a class="btn" href="quiz.html?m=m8" data-requires-track>Take Quiz</a>
-            <a class="btn primary" id="markDone">Mark Module Complete</a>
+            <a class="btn primary" id="markDone" href="#">Mark Module Complete</a>
             <a class="btn" href="../capstone.html" data-requires-track>Next →</a>
           </div>
+
+          <div class="pathbar" style="margin-top:14px">
+            <div class="badge"><div style="font-size:14px">Track</div> <span data-track-name>—</span></div>
+            <div class="progressOuter"><div class="progressInner" data-progress-bar></div></div>
+            <div class="badge"><div style="font-size:14px">Progress</div> <span data-progress-percent>0%</span></div>
+          </div>
+
+          <div class="toc" aria-label="Module table of contents">
+            <a href="#outcomes">1) Outcomes & timebox</a>
+            <a href="#core">2) Core concepts</a>
+            <a href="#boundaries">3) Trust boundaries & controls</a>
+            <a href="#evidence">4) Evidence & proof artifacts</a>
+            <a href="#case">5) Mini case study</a>
+            <a href="#worksheet">6) Worksheet (download)</a>
+          </div>
         </div>
+
         <aside class="kpis">
           <h2 style="margin:0 0 10px">Status</h2>
           <div class="k"><div class="l">Track</div><div class="v" data-track-name>—</div></div>
           <div class="k"><div class="l">Module</div><div class="v">M8</div></div>
           <div class="k"><div class="l">Completion</div><div class="v" id="doneLabel">Not started</div></div>
+          <div class="k"><div class="l">Target time</div><div class="v">40–65 min</div></div>
         </aside>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="outcomes">
       <div class="sectionTitle">
-        <h2>Objectives</h2>
-        <div class="small">This module is written to support enterprise delivery</div>
+        <h2>Outcomes & timebox</h2>
+        <div class="small">Enterprise grade = clear outputs</div>
       </div>
 
       <div class="grid">
         <div class="card" style="grid-column: span 6">
-          <span class="pill">You will learn</span>
-          <ul style="margin:10px 0 0; color:var(--muted); font-weight:800; line-height:1.8">
-            <li>Key concepts and operating vocabulary</li>
-            <li>Trust boundaries and control points</li>
-            <li>Artifacts required for enterprise proof</li>
-            <li>How this connects to AgentOps + delivery playbooks</li>
+          <span class="pill">By the end you can</span>
+          <ul style="margin:10px 0 0; color:var(--muted); font-weight:850; line-height:1.9">
+            <li>Explain the enterprise operating model for partner scale</li>
+            <li>Identify control points, owners, and escalation paths</li>
+            <li>Define evidence outputs that satisfy enterprise review</li>
+            <li>Produce a reusable artifact template for your Proof Pack</li>
           </ul>
         </div>
+
         <div class="card" style="grid-column: span 6">
-          <span class="pill">Deliverable</span>
+          <span class="pill">How to use this module</span>
           <p class="sub" style="margin-top:10px">
-            Produce a short artifact for your Proof Pack (outline + checklist). You’ll refine it in the Capstone.
+            Read the tables, then complete the scenario + worksheet. Download the artifact to your delivery repo.
           </p>
-          <div class="adslot" style="margin-top:12px"><b>Notes:</b> Use your internal tools, then paste final outputs into your delivery repo.</div>
+
+          <div class="callout" style="margin-top:12px">
+            <b>Enterprise test</b>
+            If a bank asked “show me,” you can hand them <b>controls + evidence + runbook steps</b> within 10 minutes.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="core">
+      <div class="sectionTitle">
+        <h2>Core concepts</h2>
+        <div class="small">Vocabulary + enterprise expectations</div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 7">
+          <span class="pill red">Operating model</span>
+          <h2 style="margin-top:10px">What “good” looks like</h2>
+
+          <table class="miniTable" aria-label="Module table">
+            <thead><tr><th>Scale component</th><th>What it is</th><th>Failure mode</th><th>Control</th><th>Evidence</th></tr></thead>
+            <tbody>
+              <tr><td>Enablement</td><td>Training + docs</td><td>Inconsistent delivery</td><td>Standard curriculum</td><td>Completion metrics</td></tr><tr><td>Quality gates</td><td>Checks before go-live</td><td>Bad deployments</td><td>Gate checklist</td><td>Gate signoff</td></tr><tr><td>Metrics</td><td>Outcomes tracking</td><td>No feedback loop</td><td>KPIs + reviews</td><td>KPI reports</td></tr><tr><td>Partner tiers</td><td>Capability levels</td><td>Overpromising</td><td>Tier requirements</td><td>Tier audit</td></tr><tr><td>Incident learning</td><td>Postmortems</td><td>Repeat failures</td><td>Corrective actions</td><td>CAPA records</td></tr>
+            </tbody>
+          </table>
+
+          <p class="hint">Turn each row into: owners → controls → monitoring → evidence.</p>
+        </div>
+
+        <div class="card" style="grid-column: span 5">
+          <span class="pill">Roles</span>
+          <h2 style="margin-top:10px">Who owns what</h2>
+
+          <details style="margin-top:10px">
+            <summary>Partner enablement lead</summary>
+            <div class="hint" style="margin-top:8px">Owns training, certification, and partner readiness.</div>
+          </details>
+        
+          <details style="margin-top:10px">
+            <summary>QA/controls owner</summary>
+            <div class="hint" style="margin-top:8px">Owns quality gates and go-live checks.</div>
+          </details>
+        
+          <details style="margin-top:10px">
+            <summary>Program owner</summary>
+            <div class="hint" style="margin-top:8px">Tracks metrics, incidents, and continuous improvement.</div>
+          </details>
+        
+          <div class="callout" style="margin-top:12px">
+            <b>Clarity closes deals</b>
+            Ambiguous ownership = buyer assumes risk = approval stalls.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="boundaries">
+      <div class="sectionTitle">
+        <h2>Trust boundaries & controls</h2>
+        <div class="small">Where enterprise risk actually lives</div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 6">
+          <span class="pill red">Boundaries</span>
+          <h2 style="margin-top:10px">Boundaries you must control</h2>
+
+          <div class="lesson" style="margin-top:10px">
+            <h3>Boundary A: Partner claims → Proof</h3>
+            <p>Partners must prove capability.</p>
+            <div class="hint"><b>Evidence:</b> Tier checklist + certification records</div>
+          </div>
+        
+          <div class="lesson" style="margin-top:10px">
+            <h3>Boundary B: Delivery → QA gates</h3>
+            <p>No go-live without gates.</p>
+            <div class="hint"><b>Evidence:</b> Gate signoff + evidence</div>
+          </div>
+        
+          <div class="lesson" style="margin-top:10px">
+            <h3>Boundary C: Incidents → Improvement</h3>
+            <p>Incidents must drive change.</p>
+            <div class="hint"><b>Evidence:</b> Postmortems + CAPA</div>
+          </div>
+        
+        </div>
+
+        <div class="card" style="grid-column: span 6">
+          <span class="pill">Minimum control set</span>
+          <h2 style="margin-top:10px">Controls you must be able to prove</h2>
+          <ul style="margin:10px 0 0; color:var(--muted); font-weight:850; line-height:1.9">
+            <li><b>Partner tiering</b> (requirements + audits)</li>
+            <li><b>Go-live quality gates</b></li>
+            <li><b>Enablement completion</b> tracking</li>
+            <li><b>Outcome KPIs</b> and review cadence</li>
+            <li><b>Incident CAPA</b> (corrective actions)</li>
+            <li><b>Shared templates</b> (SOW/runbooks/evidence)</li>
+          </ul>
+
+          <div class="callout" style="margin-top:12px">
+            <b>Buyer question</b>
+            “If this breaks at 2am, who sees it, what do they do, and where’s the evidence?”
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="evidence">
+      <div class="sectionTitle">
+        <h2>Evidence & proof artifacts</h2>
+        <div class="small">What makes enterprise buyers trust you</div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 7">
+          <span class="pill red">Proof artifacts</span>
+          <h2 style="margin-top:10px">Add these to your Proof Pack</h2>
+          <ol style="margin:10px 0 0; color:var(--muted); font-weight:850; line-height:1.9">
+            <li><b>Partner Tier Requirements</b></li>
+            <li><b>Go-live Gate Checklist</b></li>
+            <li><b>Partner Scorecard Template</b></li>
+            <li><b>CAPA Template</b></li>
+            <li><b>Enablement Completion Report</b></li>
+          </ol>
+          <details style="margin-top:12px">
+            <summary>Evidence rule</summary>
+            <div class="hint" style="margin-top:8px">
+              Evidence must be <b>time-bound</b>, <b>attributable</b>, and <b>reviewable</b> — without leaking private keys or customer PII.
+            </div>
+          </details>
+        </div>
+
+        <div class="card" style="grid-column: span 5">
+          <span class="pill">Template</span>
+          <h2 style="margin-top:10px">Downloadable artifact</h2>
+          <p class="sub" style="margin-top:10px">Complete the worksheet below and download a Markdown file to your repo.</p>
+          <div class="adslot"><b>Tip:</b> Keep artifacts buyer-safe. Use IDs/hashes instead of sensitive details.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="case">
+      <div class="sectionTitle">
+        <h2>Mini case study</h2>
+        <div class="small">Enterprise thinking in 10 minutes</div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 12">
+          <span class="pill red">Scenario</span>
+          <h2 style="margin-top:10px">Partner delivery quality regression</h2>
+          <p class="sub">A partner causes two avoidable incidents in a month. Buyer asks: “How do you enforce quality and prevent repeats?”</p>
+
+          <div class="grid" style="margin-top:12px">
+            <div class="card" style="grid-column: span 6">
+              <span class="pill">Your response must include</span>
+              <ul style="margin:10px 0 0; color:var(--muted); font-weight:850; line-height:1.9">
+                <li>Quality gate enforcement</li>
+                <li>Tier downgrade/remediation plan</li>
+                <li>CAPA actions and deadlines</li>
+                <li>Evidence of training completion</li>
+                <li>Metrics trend review</li>
+              </ul>
+            </div>
+            <div class="card" style="grid-column: span 6">
+              <span class="pill">Write your ops response</span>
+              <p class="sub" style="margin-top:10px">Write 6–12 lines you could hand to an enterprise buyer.</p>
+              <textarea class="inputBox" id="caseAnswer" placeholder="Write your ops response here..."></textarea>
+              <div class="btnrow" style="margin-top:10px">
+                <a class="btn" href="#" id="downloadCase">Download as .md</a>
+              </div>
+              <div class="hint">Optional, but it turns training into a deliverable.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="worksheet">
+      <div class="sectionTitle">
+        <h2>Worksheet</h2>
+        <div class="small">This becomes your capstone foundation</div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 6">
+          <span class="pill red">Fill & download</span>
+          <p class="sub" style="margin-top:10px">Fill the fields and download the artifact for your Proof Pack.</p>
+
+          <label class="hint" style="margin-top:10px">Partner tier requirements</label>
+          <textarea class="inputBox" id="tier" placeholder="Tier 1: cert + 2 projects
+Tier 2: cert + QA pass
+..."></textarea>
+        
+          <label class="hint" style="margin-top:10px">Go-live gate checklist</label>
+          <textarea class="inputBox" id="gates" placeholder="RBAC reviewed
+Evidence export tested
+Runbook approved
+..."></textarea>
+        
+          <label class="hint" style="margin-top:10px">Partner scorecard KPIs</label>
+          <textarea class="inputBox" id="scorecard" placeholder="Incidents/month
+Time-to-resolve
+Customer satisfaction
+..."></textarea>
+        
+          <div class="btnrow" style="margin-top:10px">
+            <a class="btn primary" href="#" id="downloadArtifact">Download Artifact →</a>
+          </div>
+        </div>
+
+        <div class="card" style="grid-column: span 6">
+          <span class="pill">What “enterprise grade” means</span>
+          <div class="lesson" style="margin-top:10px">
+            <h3>Not statements — outputs</h3>
+            <p>Every module produces an artifact: checklist, runbook section, control matrix, or proof pack component.</p>
+          </div>
+          <div class="lesson" style="margin-top:10px">
+            <h3>Measurable gates</h3>
+            <p>Quizzes + capstone + exam. Completion is earned by passing gates.</p>
+          </div>
+          <div class="lesson" style="margin-top:10px">
+            <h3>Repeatable delivery</h3>
+            <p>Templates, owners, SLAs, and evidence. That’s what closes enterprise deals.</p>
+          </div>
+
+          <div class="btnrow" style="margin-top:12px">
+            <a class="btn" href="quiz.html?m=m8" data-requires-track>Take M8 Quiz →</a>
+            <a class="btn primary" href="../capstone.html" data-requires-track>Next Module →</a>
+          </div>
         </div>
       </div>
     </section>
 
     <div class="footer">
-      © 2026 MBCC FinternetOps™ • Modules are page-based (no blades).
+      © 2026 MBCC FinternetOps™ • Enterprise modules produce deliverables.
     </div>
   </main>
 
   <script src="../assets/js/app.js"></script>
-
   <script>
-    document.addEventListener("DOMContentLoaded", function(){
-      var s = MBCC.load();
-      var done = !!s.modules["m8"];
+    document.addEventListener("DOMContentLoaded", function() {
+      var s = (window.MBCC && MBCC.load) ? MBCC.load() : null;
+      var done = s ? !!(s.modules && s.modules["m8"]) : false;
+
       var label = document.getElementById("doneLabel");
-      if(label) label.textContent = done ? "Complete" : "Not started";
       var btn = document.getElementById("markDone");
-      if(btn){
-        btn.addEventListener("click", function(e){
+      if(label) label.textContent = done ? "Complete" : "Not started";
+      if(btn) {
+        if(done) { btn.textContent = "Completed ✓"; btn.classList.add("ghost"); }
+        btn.addEventListener("click", function(e) {
           e.preventDefault();
-          MBCC.markModule("m8", true);
-          label.textContent = "Complete";
+          if(window.MBCC && MBCC.markModule) MBCC.markModule("m8", true);
+          if(label) label.textContent = "Complete";
           btn.textContent = "Completed ✓";
           btn.classList.add("ghost");
         });
       }
+
+      function download(filename, content) {
+        var blob = new Blob([content], {type:"text/markdown;charset=utf-8"});
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url; a.download = filename;
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(function() { URL.revokeObjectURL(url); }, 500);
+      }
+
+      var dc = document.getElementById("downloadCase");
+      if(dc) {
+        dc.addEventListener("click", function(e) {
+          e.preventDefault();
+          var txt = document.getElementById("caseAnswer").value.trim() || "(no answer provided)";
+          var md = "# M8 Case Study — Ops Response\n\n" + txt + "\n";
+          download("m8-case-ops-response.md", md);
+        });
+      }
+
+      var da = document.getElementById("downloadArtifact");
+      if(da) {
+        da.addEventListener("click", function(e) {
+          e.preventDefault();
+          var parts = [];
+          parts.push("## Partner tier requirements\n" + (document.getElementById("tier").value.trim() || "(not provided)") + "\n");
+          parts.push("## Go-live gate checklist\n" + (document.getElementById("gates").value.trim() || "(not provided)") + "\n");
+          parts.push("## Partner scorecard KPIs\n" + (document.getElementById("scorecard").value.trim() || "(not provided)") + "\n");
+          var track = (window.MBCC && MBCC.prettyTrack && MBCC.load) ? MBCC.prettyTrack((MBCC.load().track||"")) : "—";
+          var md = "# Proof Pack Artifact (M8)\n\n" +
+                   "Track: " + track + "\n\n" +
+                   parts.join("\n") +
+                   "\n## Acceptance Checklist\n- Criteria (measurable)\n- Test steps\n- Evidence required\n- Signoff\n";
+          download("m8-proof-pack-artifact.md", md);
+        });
+      }
     });
   </script>
-
 </body>
 </html>
