@@ -1,1 +1,486 @@
-<!-- Enterprise Module M1 -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0b"/>
+  <title>M1 • Finternet Fundamentals • MBCC FinternetOps Training</title>
+  <meta name="description" content="Enterprise-grade training module: Finternet fundamentals, trust boundaries, control points, and proof artifacts." />
+  <link rel="canonical" href="https://finternetops.moecommunitycloud.com/training/modules/m1.html" />
+  <meta property="og:title" content="M1 • Finternet Fundamentals • MBCC FinternetOps Training" />
+  <meta property="og:description" content="Enterprise-grade fundamentals: lifecycle, roles, control points, evidence, and operating models." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://finternetops.moecommunitycloud.com/training/modules/m1.html" />
+  <meta property="og:image" content="https://finternetops.moecommunitycloud.com/assets/images/training-og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preload" href="../assets/css/styles.css" as="style" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+
+  <style>
+    /* Module-only enhancements (still page-based, no blades) */
+    .toc { display:grid; gap:10px; margin-top:12px; }
+    .toc a { text-decoration:none; border:1px solid rgba(212,175,55,.18); background:rgba(0,0,0,.18); padding:10px 12px; border-radius:16px; color:rgba(247,243,233,.86); font-weight:900; }
+    .toc a:hover { border-color: rgba(212,175,55,.38); background: rgba(212,175,55,.06); }
+    .lesson { border:1px solid rgba(212,175,55,.18); background: rgba(0,0,0,.18); border-radius:16px; padding:12px 14px; }
+    .lesson h3 { margin:0 0 6px; font-size:16px; }
+    .lesson p { margin:0 0 10px; color: var(--muted); font-weight:800; }
+    .callout { border:1px solid rgba(193,18,31,.28); background: rgba(193,18,31,.08); border-radius:16px; padding:12px 14px; }
+    .callout b { display:block; margin-bottom:6px; }
+    details { border:1px solid rgba(212,175,55,.18); background: rgba(0,0,0,.18); border-radius:16px; padding:10px 12px; }
+    details summary { cursor:pointer; font-weight:950; }
+    details[open] { border-color: rgba(212,175,55,.38); background: rgba(212,175,55,.05); }
+    .miniTable { width:100%; border-collapse: collapse; margin-top:10px; }
+    .miniTable th, .miniTable td { text-align:left; padding:10px 10px; border-bottom:1px solid rgba(212,175,55,.12); color: rgba(247,243,233,.86); }
+    .miniTable th { color: var(--off); font-weight:950; }
+    .inputBox { width:100%; min-height:110px; border-radius:16px; border:1px solid rgba(212,175,55,.18); background: rgba(0,0,0,.22); color: var(--off); padding:12px 12px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    .hint { color: rgba(247,243,233,.68); font-weight:800; font-size:13px; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <span class="brandMark" aria-hidden="true"></span>
+          <div>
+            <div>FinternetOps Training</div>
+            <small>Modules • Funnel → Certification</small>
+          </div>
+        </div>
+        <nav class="navlinks" aria-label="Training navigation">
+          <a href="../index.html">Portal</a>
+          <a href="../tracks.html">Tracks</a>
+          <a href="../path.html">Path</a>
+          <a class="active" href="index.html">Modules</a>
+          <a href="../certification.html">Certification</a>
+          <a href="../../agents.html">Agents</a>
+          <a href="../../playbooks.html">Playbooks</a>
+          <a href="../../index.html">Home</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hrow">
+        <div>
+          <span class="pill red">Module M1</span>
+          <h1>M1 • Finternet Fundamentals</h1>
+          <p class="sub">
+            This module teaches the enterprise basics: the tokenization lifecycle, roles, trust boundaries, control points,
+            settlement models, and the proof artifacts buyers expect before they sign.
+          </p>
+
+          <div class="btnrow">
+            <a class="btn ghost" href="index.html">← Back to Modules</a>
+            <a class="btn" href="quiz.html?m=m1" data-requires-track>Take Quiz</a>
+            <a class="btn primary" id="markDone" href="#">Mark Module Complete</a>
+            <a class="btn" href="m2.html" data-requires-track>Next →</a>
+          </div>
+
+          <div class="pathbar" style="margin-top:14px">
+            <div class="badge"><div style="font-size:14px">Track</div> <span data-track-name>—</span></div>
+            <div class="progressOuter"><div class="progressInner" data-progress-bar></div></div>
+            <div class="badge"><div style="font-size:14px">Progress</div> <span data-progress-percent>0%</span></div>
+          </div>
+
+          <div class="toc" aria-label="Module table of contents">
+            <a href="#outcomes">1) Outcomes & timebox</a>
+            <a href="#core">2) Core concepts</a>
+            <a href="#boundaries">3) Trust boundaries & controls</a>
+            <a href="#evidence">4) Evidence & proof artifacts</a>
+            <a href="#case">5) Mini case study</a>
+            <a href="#worksheet">6) Build your Proof Pack (worksheet)</a>
+          </div>
+        </div>
+
+        <aside class="kpis">
+          <h2 style="margin:0 0 10px">Status</h2>
+          <div class="k"><div class="l">Track</div><div class="v" data-track-name>—</div></div>
+          <div class="k"><div class="l">Module</div><div class="v">M1</div></div>
+          <div class="k"><div class="l">Completion</div><div class="v" id="doneLabel">Not started</div></div>
+          <div class="k"><div class="l">Target time</div><div class="v">35–55 min</div></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="outcomes">
+      <div class="sectionTitle">
+        <h2>Outcomes & timebox</h2>
+        <div class="small">Enterprise-grade = clear outputs</div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 6">
+          <span class="pill">By the end you can</span>
+          <ul style="margin:10px 0 0; color:var(--muted); font-weight:850; line-height:1.9">
+            <li>Explain the tokenization lifecycle and where failures happen</li>
+            <li>Map the main roles (issuer, operator, custodian, broker, auditor)</li>
+            <li>Identify trust boundaries and required controls at each boundary</li>
+            <li>Describe settlement finality and why enterprises care</li>
+            <li>Produce a first-pass Proof Pack outline (runbook + evidence + acceptance)</li>
+          </ul>
+        </div>
+
+        <div class="card" style="grid-column: span 6">
+          <span class="pill">Prereqs</span>
+          <p class="sub" style="margin-top:10px">
+            None required. If you’re new, do the module in order and use the worksheet at the end.
+          </p>
+
+          <div class="callout" style="margin-top:12px">
+            <b>Enterprise rule of thumb</b>
+            Buyers don’t purchase “blockchain.” They purchase <b>operational certainty</b>:
+            <b>controls + monitoring + evidence + repeatability</b>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="core">
+      <div class="sectionTitle">
+        <h2>Core concepts</h2>
+        <div class="small">Vocabulary + operating model</div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 7">
+          <span class="pill red">Lifecycle</span>
+          <h2 style="margin-top:10px">Tokenization lifecycle (enterprise view)</h2>
+
+          <table class="miniTable" aria-label="Lifecycle table">
+            <thead>
+              <tr><th>Stage</th><th>What happens</th><th>Primary risk</th><th>Proof expected</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Mint</b></td>
+                <td>Create token supply + policies</td>
+                <td>Incorrect supply / policy drift</td>
+                <td>Change control + approvals + logs</td>
+              </tr>
+              <tr>
+                <td><b>Distribute</b></td>
+                <td>Allocate to participants / wallets</td>
+                <td>Bad onboarding / access</td>
+                <td>KYC/controls evidence (without PII)</td>
+              </tr>
+              <tr>
+                <td><b>Transfer</b></td>
+                <td>Movement between parties</td>
+                <td>Fraud, abuse, limits failure</td>
+                <td>Limits + alerts + exception queue</td>
+              </tr>
+              <tr>
+                <td><b>Settle</b></td>
+                <td>Finality + records updated</td>
+                <td>Disputes, mismatch, rollback</td>
+                <td>Recon reports + finality rules</td>
+              </tr>
+              <tr>
+                <td><b>Redeem</b></td>
+                <td>Token → underlying / cash</td>
+                <td>Liquidity / redemption failure</td>
+                <td>Redemption SLA + incident logs</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="hint">Use this table when writing your proof pack—each stage needs: controls + monitoring + evidence.</p>
+        </div>
+
+        <div class="card" style="grid-column: span 5">
+          <span class="pill">Roles</span>
+          <h2 style="margin-top:10px">Who does what</h2>
+          <details>
+            <summary>Issuer</summary>
+            <div class="hint" style="margin-top:8px">
+              Defines supply, terms, policies. Must support audits, change control, and redemption mechanics.
+            </div>
+          </details>
+          <details style="margin-top:10px">
+            <summary>Operator</summary>
+            <div class="hint" style="margin-top:8px">
+              Runs day‑2 operations: monitoring, exceptions, evidence exports, incident response, recon.
+            </div>
+          </details>
+          <details style="margin-top:10px">
+            <summary>Custodian / Broker / Auditor</summary>
+            <div class="hint" style="margin-top:8px">
+              Custody controls + movement approvals; brokers handle distribution/transfer; auditors verify evidence.
+            </div>
+          </details>
+
+          <div class="callout" style="margin-top:12px">
+            <b>Enterprise clarity</b>
+            If the roles aren’t clear, the buyer assumes risk and stalls the deal.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="boundaries">
+      <div class="sectionTitle">
+        <h2>Trust boundaries & controls</h2>
+        <div class="small">Where enterprise risk actually lives</div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 6">
+          <span class="pill red">Trust boundaries</span>
+          <h2 style="margin-top:10px">Boundaries you must control</h2>
+          <div class="lesson">
+            <h3>Boundary A: Human → System</h3>
+            <p>Authentication, RBAC, least privilege, approval workflows, session logging.</p>
+            <div class="hint"><b>Evidence:</b> access logs, approvals, role matrix.</div>
+          </div>
+          <div class="lesson" style="margin-top:10px">
+            <h3>Boundary B: System → Chain / Ledger</h3>
+            <p>Signing policies, transaction simulation, limits, monitoring, rollback plan.</p>
+            <div class="hint"><b>Evidence:</b> signing policy, limit config, alerts, incident runbooks.</div>
+          </div>
+          <div class="lesson" style="margin-top:10px">
+            <h3>Boundary C: System → External Providers</h3>
+            <p>Custodian integrations, price feeds, banking rails, third-party SLAs.</p>
+            <div class="hint"><b>Evidence:</b> SLA, recon report, exception handling workflow.</div>
+          </div>
+        </div>
+
+        <div class="card" style="grid-column: span 6">
+          <span class="pill">Control points</span>
+          <h2 style="margin-top:10px">Minimum enterprise controls</h2>
+          <ul style="margin:10px 0 0; color:var(--muted); font-weight:850; line-height:1.9">
+            <li><b>RBAC</b> + least privilege (role matrix is documented)</li>
+            <li><b>Change control</b> (who can change what + approvals + rollback)</li>
+            <li><b>Monitoring</b> (alerts tied to SLAs + owners)</li>
+            <li><b>Recon</b> (expected vs actual states)</li>
+            <li><b>Exception queue</b> (non-standard cases routed + resolved)</li>
+            <li><b>Evidence exports</b> (audit-friendly, no sensitive leakage)</li>
+          </ul>
+
+          <div class="callout" style="margin-top:12px">
+            <b>Buyer question you must answer</b>
+            “If this breaks at 2am, who sees it, what do they do, and where is the evidence?”
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="evidence">
+      <div class="sectionTitle">
+        <h2>Evidence & proof artifacts</h2>
+        <div class="small">What makes enterprise buyers trust you</div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 7">
+          <span class="pill red">Proof Pack</span>
+          <h2 style="margin-top:10px">The 5 artifacts most buyers expect</h2>
+          <ol style="margin:10px 0 0; color:var(--muted); font-weight:850; line-height:1.9">
+            <li><b>Runbook outline</b> (daily ops, exceptions, incidents)</li>
+            <li><b>Evidence packet checklist</b> (what is captured, by whom, and retained)</li>
+            <li><b>Control matrix</b> (controls → risks → evidence mapping)</li>
+            <li><b>Acceptance checklist</b> (testable outcomes and signoff)</li>
+            <li><b>Change control policy</b> (release gates, approvals, rollback)</li>
+          </ol>
+
+          <details style="margin-top:12px">
+            <summary>What “evidence” means (without leaking sensitive info)</summary>
+            <div class="hint" style="margin-top:8px">
+              Evidence is audit-friendly record of: <b>control execution</b>, <b>outcomes</b>, and <b>who approved</b>.
+              Never include private keys or customer PII. Provide references/hashes where needed.
+            </div>
+          </details>
+        </div>
+
+        <div class="card" style="grid-column: span 5">
+          <span class="pill">Mini-templates</span>
+          <h2 style="margin-top:10px">Copy these headings</h2>
+          <div class="hint" style="margin-top:8px">Paste into your repo as Markdown.</div>
+          <pre style="margin-top:10px; white-space:pre-wrap; color:rgba(247,243,233,.84); font-weight:850; border:1px solid rgba(212,175,55,.14); border-radius:16px; padding:12px; background:rgba(0,0,0,.18)">
+# Runbook (Outline)
+- Daily checks
+- Recon workflow
+- Exceptions
+- Incident response
+- Evidence exports
+
+# Evidence Packet (Checklist)
+- Access/RBAC evidence
+- Change control evidence
+- Recon reports
+- Exception queue logs
+- Incident/postmortems
+
+# Acceptance Checklist
+- Criteria (measurable)
+- Test steps
+- Evidence required
+- Signoff
+          </pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="case">
+      <div class="sectionTitle">
+        <h2>Mini case study</h2>
+        <div class="small">Enterprise thinking in 10 minutes</div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 12">
+          <span class="pill red">Scenario</span>
+          <h2 style="margin-top:10px">Settlement mismatch at close of day</h2>
+          <p class="sub">
+            Your system shows a client position of 10,000 tokenized treasuries. The custodian reports 9,950.
+            The buyer asks: “How do you detect this, resolve it, and prove the result?”
+          </p>
+
+          <div class="grid" style="margin-top:12px">
+            <div class="card" style="grid-column: span 6">
+              <span class="pill">Your answer should include</span>
+              <ul style="margin:10px 0 0; color:var(--muted); font-weight:850; line-height:1.9">
+                <li>Recon trigger + owner</li>
+                <li>Exception queue + severity</li>
+                <li>Resolution workflow + approvals</li>
+                <li>Evidence packet items captured</li>
+                <li>Postmortem if SLA breach occurs</li>
+              </ul>
+            </div>
+            <div class="card" style="grid-column: span 6">
+              <span class="pill">Enterprise output</span>
+              <p class="sub" style="margin-top:10px">
+                Write a 6–10 line “Ops response” that you could hand to a bank.
+              </p>
+              <textarea class="inputBox" id="caseAnswer" placeholder="Write your ops response here..."></textarea>
+              <div class="btnrow" style="margin-top:10px">
+                <a class="btn" href="#" id="downloadCase">Download as .md</a>
+              </div>
+              <div class="hint">This is optional, but it turns “training” into a deliverable.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="worksheet">
+      <div class="sectionTitle">
+        <h2>Build your Proof Pack worksheet</h2>
+        <div class="small">This becomes your capstone foundation</div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 6">
+          <span class="pill red">Worksheet</span>
+          <p class="sub" style="margin-top:10px">Fill in the fields. Then download a ready-to-save Markdown file.</p>
+
+          <label class="hint">Runbook owners (roles)</label>
+          <textarea class="inputBox" id="owners" placeholder="- Operator on-call&#10;- Compliance reviewer&#10;- Custody liaison"></textarea>
+
+          <label class="hint" style="margin-top:10px">Top 5 alerts you must have</label>
+          <textarea class="inputBox" id="alerts" placeholder="- Recon mismatch > X&#10;- Redemption SLA breach&#10;- Limit violation..."></textarea>
+
+          <label class="hint" style="margin-top:10px">Evidence checklist (what you capture)</label>
+          <textarea class="inputBox" id="evidenceList" placeholder="- RBAC export weekly&#10;- Change approvals per release..."></textarea>
+
+          <div class="btnrow" style="margin-top:10px">
+            <a class="btn primary" href="#" id="downloadProofPack">Download Proof Pack Outline →</a>
+          </div>
+        </div>
+
+        <div class="card" style="grid-column: span 6">
+          <span class="pill">What “enterprise grade” means here</span>
+          <div class="lesson" style="margin-top:10px">
+            <h3>Not statements — outputs</h3>
+            <p>Every module must produce an artifact: checklist, runbook section, control matrix, or proof pack component.</p>
+          </div>
+          <div class="lesson" style="margin-top:10px">
+            <h3>Measurable gates</h3>
+            <p>Quizzes + capstone + exam. You don’t “complete” by clicking; you complete by passing gates.</p>
+          </div>
+          <div class="lesson" style="margin-top:10px">
+            <h3>Repeatable delivery</h3>
+            <p>Templates, owners, SLAs, and evidence. That’s what closes enterprise deals.</p>
+          </div>
+
+          <div class="btnrow" style="margin-top:12px">
+            <a class="btn" href="quiz.html?m=m1" data-requires-track>Take M1 Quiz →</a>
+            <a class="btn primary" href="m2.html" data-requires-track>Go to M2 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © 2026 MBCC FinternetOps™ • Enterprise modules produce deliverables.
+    </div>
+  </main>
+
+  <script src="../assets/js/app.js"></script>
+  <script>
+    // Module completion + downloads (client-side, no backend required)
+    document.addEventListener("DOMContentLoaded", function(){
+      var s = (window.MBCC && MBCC.load) ? MBCC.load() : null;
+      var done = s ? !!s.modules["m1"] : false;
+
+      var label = document.getElementById("doneLabel");
+      var btn = document.getElementById("markDone");
+      if(label) label.textContent = done ? "Complete" : "Not started";
+      if(btn){
+        if(done){ btn.textContent = "Completed ✓"; btn.classList.add("ghost"); }
+        btn.addEventListener("click", function(e){
+          e.preventDefault();
+          if(window.MBCC && MBCC.markModule) MBCC.markModule("m1", true);
+          if(label) label.textContent = "Complete";
+          btn.textContent = "Completed ✓";
+          btn.classList.add("ghost");
+        });
+      }
+
+      function download(filename, content){
+        var blob = new Blob([content], {type:"text/markdown;charset=utf-8"});
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(()=>URL.revokeObjectURL(url), 500);
+      }
+
+      var dc = document.getElementById("downloadCase");
+      if(dc){
+        dc.addEventListener("click", function(e){
+          e.preventDefault();
+          var txt = document.getElementById("caseAnswer").value.trim() || "(no answer provided)";
+          var md = "# M1 Case Study — Ops Response\n\n" + txt + "\n";
+          download("m1-case-ops-response.md", md);
+        });
+      }
+
+      var dp = document.getElementById("downloadProofPack");
+      if(dp){
+        dp.addEventListener("click", function(e){
+          e.preventDefault();
+          var owners = document.getElementById("owners").value.trim() || "- (add owners)";
+          var alerts = document.getElementById("alerts").value.trim() || "- (add alerts)";
+          var ev = document.getElementById("evidenceList").value.trim() || "- (add evidence items)";
+          var md =
+`# Proof Pack Outline (M1)\n
+## Track\n- ${(window.MBCC && MBCC.prettyTrack) ? MBCC.prettyTrack((MBCC.load().track||"")) : "—"}\n
+## Runbook Owners (Roles)\n${owners}\n
+## Top Alerts\n${alerts}\n
+## Evidence Checklist\n${ev}\n
+## Acceptance Checklist\n- Criteria (measurable)\n- Test steps\n- Evidence required\n- Signoff\n`;
+          download("m1-proof-pack-outline.md", md);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
