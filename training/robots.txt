@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://finternetops.moecommunitycloud.com/sitemap.xml
+Sitemap: https://finternetops.moecommunitycloud.com/training/sitemap.xml

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0b"/>
+  <title>M6 • AgentOps Operating Model • MBCC FinternetOps Training</title>
+  <meta name="description" content="Run agents like enterprise products: specs, guardrails, telemetry, incidents." />
+  <link rel="canonical" href="https://finternetops.moecommunitycloud.com/training/modules/m6.html" />
+  <meta property="og:title" content="M6 • AgentOps Operating Model • MBCC FinternetOps Training" />
+  <meta property="og:description" content="Run agents like enterprise products: specs, guardrails, telemetry, incidents." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://finternetops.moecommunitycloud.com/training/modules/m6.html" />
+  <meta property="og:image" content="https://finternetops.moecommunitycloud.com/assets/images/training-og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preload" href="../assets/css/styles.css" as="style" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <span class="brandMark" aria-hidden="true"></span>
+          <div>
+            <div>FinternetOps Training</div>
+            <small>Modules • Funnel → Certification</small>
+          </div>
+        </div>
+        <nav class="navlinks" aria-label="Training navigation">
+          <a href="../index.html">Portal</a>
+          <a href="../tracks.html">Tracks</a>
+          <a href="../path.html">Path</a>
+          <a class="active" href="index.html">Modules</a>
+          <a href="../certification.html">Certification</a>
+          <a href="../../agents.html">Agents</a>
+          <a href="../../playbooks.html">Playbooks</a>
+          <a href="../../index.html">Home</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hrow">
+        <div>
+          <span class="pill red">Module</span>
+          <h1>M6 • AgentOps Operating Model</h1>
+          <p class="sub">Run agents like enterprise products: specs, guardrails, telemetry, incidents.</p>
+          <div class="btnrow">
+            <a class="btn ghost" href="m5.html">← Previous</a>
+            <a class="btn" href="quiz.html?m=m6" data-requires-track>Take Quiz</a>
+            <a class="btn primary" id="markDone">Mark Module Complete</a>
+            <a class="btn" href="m7.html" data-requires-track>Next →</a>
+          </div>
+        </div>
+        <aside class="kpis">
+          <h2 style="margin:0 0 10px">Status</h2>
+          <div class="k"><div class="l">Track</div><div class="v" data-track-name>—</div></div>
+          <div class="k"><div class="l">Module</div><div class="v">M6</div></div>
+          <div class="k"><div class="l">Completion</div><div class="v" id="doneLabel">Not started</div></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="sectionTitle">
+        <h2>Objectives</h2>
+        <div class="small">This module is written to support enterprise delivery</div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 6">
+          <span class="pill">You will learn</span>
+          <ul style="margin:10px 0 0; color:var(--muted); font-weight:800; line-height:1.8">
+            <li>Key concepts and operating vocabulary</li>
+            <li>Trust boundaries and control points</li>
+            <li>Artifacts required for enterprise proof</li>
+            <li>How this connects to AgentOps + delivery playbooks</li>
+          </ul>
+        </div>
+        <div class="card" style="grid-column: span 6">
+          <span class="pill">Deliverable</span>
+          <p class="sub" style="margin-top:10px">
+            Produce a short artifact for your Proof Pack (outline + checklist). You’ll refine it in the Capstone.
+          </p>
+          <div class="adslot" style="margin-top:12px"><b>Notes:</b> Use your internal tools, then paste final outputs into your delivery repo.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © 2026 MBCC FinternetOps™ • Modules are page-based (no blades).
+    </div>
+  </main>
+
+  <script src="../assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      var s = MBCC.load();
+      var done = !!s.modules["m6"];
+      var label = document.getElementById("doneLabel");
+      if(label) label.textContent = done ? "Complete" : "Not started";
+      var btn = document.getElementById("markDone");
+      if(btn){
+        btn.addEventListener("click", function(e){
+          e.preventDefault();
+          MBCC.markModule("m6", true);
+          label.textContent = "Complete";
+          btn.textContent = "Completed ✓";
+          btn.classList.add("ghost");
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

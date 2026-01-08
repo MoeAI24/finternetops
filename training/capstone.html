@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0b"/>
+  <title>Capstone • MBCC FinternetOps Training</title>
+  <meta name="description" content="Create a proof artifact required for certification." />
+  <link rel="canonical" href="https://finternetops.moecommunitycloud.com/training/capstone.html" />
+  <meta property="og:title" content="Capstone • MBCC FinternetOps Training" />
+  <meta property="og:description" content="Create a proof artifact required for certification." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://finternetops.moecommunitycloud.com/training/capstone.html" />
+  <meta property="og:image" content="https://finternetops.moecommunitycloud.com/assets/images/training-og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- AdSense ready: paste your Google AdSense script below (once) -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <link rel="preload" href="assets/css/styles.css" as="style" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "MBCC FinternetOps", "url": "https://finternetops.moecommunitycloud.com/", "logo": "https://finternetops.moecommunitycloud.com/assets/images/mbcc-logo.png"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "FinternetOps Partner Enablement", "description": "Create a proof artifact required for certification.", "provider": {"@type": "Organization", "name": "MBCC FinternetOps", "sameAs": "https://finternetops.moecommunitycloud.com/"}}</script>
+
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <span class="brandMark" aria-hidden="true"></span>
+          <div>
+            <div>FinternetOps Training</div>
+            <small>MBCC Partner Enablement • Funnel → Certification</small>
+          </div>
+        </div>
+        <nav class="navlinks" aria-label="Training navigation">
+        <a class="" href="index.html">Portal</a>
+        <a class="" href="tracks.html">Tracks</a>
+        <a class="active" href="path.html">Path</a>
+        <a class="" href="modules/index.html">Modules</a>
+        <a class="" href="certification.html">Certification</a>
+        <a href="../agents.html">Agents</a>
+        <a href="../playbooks.html">Playbooks</a>
+        <a href="../index.html">Home</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hrow">
+        <div>
+          <span class="pill red">Capstone</span>
+          <h1>Proof Artifact</h1>
+          <p class="sub">
+            Create a single “Proof Artifact” you can show a buyer: <b>Runbook outline + Evidence Packet outline + Acceptance checklist</b>.
+          </p>
+          <div class="btnrow">
+            <a class="btn ghost" href="path.html">← Back to Path</a>
+            <a class="btn" href="modules/index.html" data-requires-track>Review Modules</a>
+            <a class="btn primary" id="markCapstone">Mark Capstone Complete</a>
+            <a class="btn" href="exam.html" data-requires-track>Next: Final Exam →</a>
+          </div>
+        </div>
+        <aside class="kpis">
+          <h2 style="margin:0 0 10px">Status</h2>
+          <div class="k"><div class="l">Track</div><div class="v" data-track-name>—</div></div>
+          <div class="k"><div class="l">Capstone</div><div class="v" id="capLabel">Not started</div></div>
+          <div class="k"><div class="l">Progress</div><div class="v" data-progress-percent>0%</div></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card" style="grid-column: span 6">
+          <span class="pill">What to include</span>
+          <ul style="margin:10px 0 0; color:var(--muted); font-weight:800; line-height:1.9">
+            <li>Daily Ops Runbook outline (owners, steps, exceptions)</li>
+            <li>Evidence Packet outline (what to capture + retention)</li>
+            <li>Acceptance checklist (measurable, testable criteria)</li>
+            <li>Incident response template (trigger, timeline, postmortem)</li>
+          </ul>
+        </div>
+        <div class="card" style="grid-column: span 6">
+          <span class="pill">Submission</span>
+          <p class="sub" style="margin-top:10px">
+            For now, store this in your delivery repo (PDF or Markdown). When you add accounts later, we can support uploads.
+          </p>
+          <div class="adslot" style="margin-top:12px"><b>Tip:</b> Keep it non-sensitive—no private keys, no customer PII.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © 2026 MBCC FinternetOps™ • Built as a clickable training funnel (no blades).<br/>
+      <a href="../docs.html">Docs</a> • <a href="../index.html">Main site</a>
+    </div>
+  </main>
+
+  <script src="assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      var s = MBCC.load();
+      var label = document.getElementById("capLabel");
+      if(label) label.textContent = s.capstone ? "Complete" : "Not started";
+      var btn = document.getElementById("markCapstone");
+      if(btn){
+        if(s.capstone){ btn.textContent = "Completed ✓"; btn.classList.add("ghost"); }
+        btn.addEventListener("click", function(e){
+          e.preventDefault();
+          MBCC.setCapstone(true);
+          if(label) label.textContent = "Complete";
+          btn.textContent = "Completed ✓";
+          btn.classList.add("ghost");
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

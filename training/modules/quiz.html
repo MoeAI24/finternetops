@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0b"/>
+  <title>Module Quiz • MBCC FinternetOps Training</title>
+  <meta name="description" content="Knowledge checks for each module in the certification funnel." />
+  <link rel="canonical" href="https://finternetops.moecommunitycloud.com/training/modules/quiz.html" />
+  <meta property="og:title" content="Module Quiz • MBCC FinternetOps Training" />
+  <meta property="og:description" content="Knowledge checks for each module in the certification funnel." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://finternetops.moecommunitycloud.com/training/modules/quiz.html" />
+  <meta property="og:image" content="https://finternetops.moecommunitycloud.com/assets/images/training-og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preload" href="../assets/css/styles.css" as="style" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <span class="brandMark" aria-hidden="true"></span>
+          <div>
+            <div>FinternetOps Training</div>
+            <small>Modules • Funnel → Certification</small>
+          </div>
+        </div>
+        <nav class="navlinks" aria-label="Training navigation">
+          <a href="../index.html">Portal</a>
+          <a href="../tracks.html">Tracks</a>
+          <a href="../path.html">Path</a>
+          <a class="active" href="index.html">Modules</a>
+          <a href="../certification.html">Certification</a>
+          <a href="../../agents.html">Agents</a>
+          <a href="../../playbooks.html">Playbooks</a>
+          <a href="../../index.html">Home</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hrow">
+        <div>
+          <span class="pill red">Knowledge Check</span>
+          <h1 id="quizTitle">Quiz</h1>
+          <p class="sub" id="quizSub">Answer 5 questions. You need 80%+ to pass.</p>
+          <div class="btnrow">
+            <a class="btn ghost" href="index.html">← Back to Modules</a>
+            <a class="btn" href="../path.html" data-requires-track>Back to Path</a>
+          </div>
+        </div>
+        <aside class="kpis">
+          <h2 style="margin:0 0 10px">Quiz status</h2>
+          <div class="k"><div class="l">Module</div><div class="v" id="modId">—</div></div>
+          <div class="k"><div class="l">Pass mark</div><div class="v">80%</div></div>
+          <div class="k"><div class="l">Track</div><div class="v" data-track-name>—</div></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card" style="grid-column: span 12">
+        <span class="pill">Questions</span>
+        <form id="quizForm" style="margin-top:12px; display:grid; gap:12px"></form>
+
+        <div class="btnrow" style="margin-top:14px">
+          <button class="btn primary" type="submit" form="quizForm">Submit Quiz</button>
+          <a class="btn" id="backToModule" href="m1.html">Back to Module</a>
+        </div>
+
+        <div id="result" style="margin-top:14px; display:none; border:1px solid rgba(212,175,55,.22); border-radius:16px; padding:12px 14px; background:rgba(0,0,0,.18)">
+          <b>Result:</b> <span id="scoreText"></span>
+          <div style="margin-top:6px; color:var(--muted)" id="resultHint"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © 2026 MBCC FinternetOps™ • Modules are page-based (no blades).
+    </div>
+  </main>
+
+  <script src="../assets/js/app.js"></script>
+
+  <script>
+    const bank = {
+      m1: [
+        {q:"Which is the BEST definition of an evidence packet in enterprise ops?", a:["Marketing brochure","Audit-friendly record of controls + outcomes","A private key backup"], c:1},
+        {q:"Trust boundaries are primarily used to…", a:["Increase TPS","Define where controls and monitoring must exist","Replace compliance"], c:1},
+        {q:"A tokenization lifecycle typically includes…", a:["Mint → transfer → redeem","Login → logout","Ping → pong"], c:0},
+        {q:"Settlement finality means…", a:["A UI is fast","A state can be considered irreversible under agreed rules","A wallet is cold"], c:1},
+        {q:"Enterprise readiness requires…", a:["No documentation","Repeatable ops + controls + evidence","Only a slide deck"], c:1}
+      ],
+      m2: [
+        {q:"Daily ops should prioritize…", a:["Chaos","Repeatability and exception handling","Only price charts"], c:1},
+        {q:"A runbook is used to…", a:["Track memes","Guide operations + incidents with steps and owners","Replace legal review"], c:1},
+        {q:"Recon is primarily…", a:["Reconciling expected vs actual states/positions","A new token standard","A marketing campaign"], c:0},
+        {q:"Exception queues exist to…", a:["Hide failures","Route non-standard cases for review/resolution","Increase fees"], c:1},
+        {q:"A good ops KPI is…", a:["Vibes","Time-to-resolve exceptions","Number of emojis"], c:1}
+      ],
+      m3: [
+        {q:"A settlement state machine describes…", a:["UI animations","Allowed transitions between settlement states","A token logo"], c:1},
+        {q:"Custody movement controls focus on…", a:["Randomness","Authorization, signing policy, and monitoring","Only performance"], c:1},
+        {q:"Finality is important because…", a:["It looks cool","It reduces disputes and defines completion","It increases volatility"], c:1},
+        {q:"Segregation of duties helps…", a:["One person controls everything","Reduce risk of fraud/errors","Remove evidence"], c:1},
+        {q:"Operational design should include…", a:["No alerts","Telemetry and exception handling","Only marketing"], c:1}
+      ],
+      m4: [
+        {q:"Limits protect against…", a:["Sunlight","Overexposure and uncontrolled flows","Usernames"], c:1},
+        {q:"Liquidity risk is…", a:["Color choice","Inability to meet obligations when due","A font"], c:1},
+        {q:"A control is effective when…", a:["No one checks it","It detects/prevents and leaves evidence","It’s secret"], c:1},
+        {q:"A risk register is…", a:["A meme list","A tracked list of risks + mitigations","A wallet"], c:1},
+        {q:"Stress tests are used to…", a:["Ignore problems","Evaluate behavior under extreme conditions","Pick colors"], c:1}
+      ],
+      m5: [
+        {q:"Evidence should be…", a:["Unstructured","Time-bound, attributable, and reviewable","Deleted"], c:1},
+        {q:"Audit-ready means…", a:["No logs","Clear trace from control to outcome","Only screenshots"], c:1},
+        {q:"Least privilege is…", a:["Everyone is admin","Access only what is needed","No authentication"], c:1},
+        {q:"Retention policies help…", a:["Lose data","Prove controls over time","Hide incidents"], c:1},
+        {q:"Compliance evidence should avoid…", a:["PII leakage","Documentation","Checklists"], c:0}
+      ],
+      m6: [
+        {q:"AgentOps treats agents as…", a:["Pets","Products with specs, guardrails, telemetry","Magic"], c:1},
+        {q:"Guardrails are…", a:["UI borders","Constraints to prevent unsafe actions","A logo"], c:1},
+        {q:"Change control ensures…", a:["Random deployments","Controlled releases with approvals and rollback","No testing"], c:1},
+        {q:"Telemetry is…", a:["A sticker","Operational data about behavior and outcomes","A payment"], c:1},
+        {q:"Incident response requires…", a:["Silence","Runbooks + owners + postmortems","Only tweets"], c:1}
+      ],
+      m7: [
+        {q:"Discovery is used to…", a:["Skip scope","Understand requirements, constraints, and success criteria","Replace contracts"], c:1},
+        {q:"Acceptance criteria should be…", a:["Vague","Measurable and testable","Secret"], c:1},
+        {q:"A SOW defines…", a:["A meme","Scope, deliverables, timeline, responsibilities","A wallet"], c:1},
+        {q:"Proof packs help buyers by…", a:["Confusing them","Reducing perceived risk with evidence","Removing controls"], c:1},
+        {q:"A weekly cadence supports…", a:["No updates","Predictable delivery and transparency","More chaos"], c:1}
+      ],
+      m8: [
+        {q:"Partner scale requires…", a:["No QA","Standardization + quality checks + training","Only branding"], c:1},
+        {q:"A playbook is…", a:["A contract","A repeatable method for delivery","A token"], c:1},
+        {q:"Quality gates do what?", a:["Block learning","Ensure standards are met before moving forward","Remove evidence"], c:1},
+        {q:"Enablement reduces…", a:["Revenue","Time-to-value and delivery inconsistency","Security"], c:1},
+        {q:"A partner program should track…", a:["Only vibes","Outcomes, incidents, and customer satisfaction","Fonts"], c:1}
+      ]
+    };
+
+    function el(tag, attrs={}, children=[]){
+      const n = document.createElement(tag);
+      Object.keys(attrs).forEach(k=>{
+        if(k === "class") n.className = attrs[k];
+        else n.setAttribute(k, attrs[k]);
+      });
+      children.forEach(c=>{
+        if(typeof c === "string") n.appendChild(document.createTextNode(c));
+        else n.appendChild(c);
+      });
+      return n;
+    }
+
+    document.addEventListener("DOMContentLoaded", function(){
+      const m = (MBCC.qs("m") || "m1").toLowerCase();
+      const set = bank[m] || bank.m1;
+
+      document.getElementById("modId").textContent = m.toUpperCase();
+      document.getElementById("quizTitle").textContent = "Quiz • " + m.toUpperCase();
+      document.getElementById("backToModule").href = m + ".html";
+
+      const form = document.getElementById("quizForm");
+      form.innerHTML = "";
+
+      set.forEach((qq, idx)=>{
+        const block = el("div", {class:"item", style:"display:block"});
+        const q = el("div", {class:"left"}, [el("b", {}, [(idx+1)+". "+qq.q]), el("small", {}, ["Pick one answer."])]);
+        block.appendChild(q);
+
+        const opts = el("div", {style:"margin-top:10px; display:grid; gap:8px"});
+        qq.a.forEach((ans, aidx)=>{
+          const id = `q${idx}_${aidx}`;
+          const label = el("label", {for:id, style:"display:flex; gap:10px; align-items:flex-start; color: var(--muted); font-weight:800; cursor:pointer"});
+          const input = el("input", {type:"radio", name:"q"+idx, id:id, value:String(aidx), required:"required"});
+          label.appendChild(input);
+          label.appendChild(el("span", {}, [ans]));
+          opts.appendChild(label);
+        });
+
+        block.appendChild(opts);
+        form.appendChild(block);
+      });
+
+      form.addEventListener("submit", function(e){
+        e.preventDefault();
+        let correct = 0;
+        set.forEach((qq, idx)=>{
+          const val = (new FormData(form).get("q"+idx) || "-1");
+          if(parseInt(val,10) === qq.c) correct += 1;
+        });
+        const score = Math.round((correct / set.length) * 100);
+
+        const result = document.getElementById("result");
+        const scoreText = document.getElementById("scoreText");
+        const hint = document.getElementById("resultHint");
+        result.style.display = "block";
+        scoreText.textContent = score + "% (" + correct + "/" + set.length + ")";
+
+        if(score >= 80){
+          MBCC.markQuiz(m, true);
+          hint.textContent = "Passed. Your path is updated. Go back to the Path and continue.";
+        }else{
+          MBCC.markQuiz(m, false);
+          hint.textContent = "Not passed. Review the module and retry.";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
