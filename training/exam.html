@@ -13,19 +13,7 @@
   <meta property="og:url" content="https://finternetops.moecommunitycloud.com/training/exam.html" />
   <meta property="og:image" content="https://finternetops.moecommunitycloud.com/assets/images/training-og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- AdSense ready: paste your Google AdSense script below (once) -->
-  <!--
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
-    crossorigin="anonymous"></script>
-  -->
-
-  <link rel="preload" href="assets/css/styles.css" as="style" />
   <link rel="stylesheet" href="assets/css/styles.css" />
-
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "MBCC FinternetOps", "url": "https://finternetops.moecommunitycloud.com/", "logo": "https://finternetops.moecommunitycloud.com/assets/images/mbcc-logo.png"}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "FinternetOps Partner Enablement", "description": "Scenario-based final exam for MBCC FinternetOps partner certification.", "provider": {"@type": "Organization", "name": "MBCC FinternetOps", "sameAs": "https://finternetops.moecommunitycloud.com/"}}</script>
-
 </head>
 <body>
   <header class="topbar">
@@ -39,29 +27,26 @@
           </div>
         </div>
         <nav class="navlinks" aria-label="Training navigation">
-        <a class="" href="index.html">Portal</a>
-        <a class="" href="tracks.html">Tracks</a>
-        <a class="" href="path.html">Path</a>
-        <a class="" href="modules/index.html">Modules</a>
-        <a class="active" href="certification.html">Certification</a>
-        <a href="../agents.html">Agents</a>
-        <a href="../playbooks.html">Playbooks</a>
-        <a href="../index.html">Home</a>
+          <a href="index.html">Portal</a>
+          <a href="tracks.html">Tracks</a>
+          <a href="path.html">Path</a>
+          <a href="modules/index.html">Modules</a>
+          <a class="active" href="certification.html">Certification</a>
+          <a href="../agents.html">Agents</a>
+          <a href="../playbooks.html">Playbooks</a>
+          <a href="../index.html">Home</a>
         </nav>
       </div>
     </div>
   </header>
 
   <main class="container">
-
     <section class="hero">
       <div class="hrow">
         <div>
           <span class="pill red">Final Exam</span>
           <h1>Scenario Assessment</h1>
-          <p class="sub">
-            10 questions. Pass with <b>80%+</b>. When you pass, your badge page unlocks.
-          </p>
+          <p class="sub">10 questions. Pass with <b>80%+</b>. When you pass, your badge page unlocks.</p>
           <div class="btnrow">
             <a class="btn ghost" href="certification.html">← Back to Certification</a>
             <a class="btn" href="path.html" data-requires-track>Back to Path</a>
@@ -81,12 +66,16 @@
     <section class="section">
       <div class="card" style="grid-column: span 12">
         <span class="pill">Exam</span>
-        <form id="examForm" style="margin-top:12px; display:grid; gap:12px"></form>
 
-        <div class="btnrow" style="margin-top:14px">
-          <button class="btn primary" type="submit" form="examForm">Submit Exam</button>
-          <a class="btn" href="badge.html" id="badgeLink">View Badge</a>
-        </div>
+        <!-- IMPORTANT: Submit button is inside the form (reliable in every browser) -->
+        <form id="examForm" style="margin-top:12px; display:grid; gap:12px">
+          <div id="examQuestions"></div>
+
+          <div class="btnrow" style="margin-top:14px">
+            <button class="btn primary" type="submit">Submit Exam</button>
+            <a class="btn" href="badge.html" id="badgeLink">View Badge</a>
+          </div>
+        </form>
 
         <div id="result" style="margin-top:14px; display:none; border:1px solid rgba(212,175,55,.22); border-radius:16px; padding:12px 14px; background:rgba(0,0,0,.18)">
           <b>Result:</b> <span id="scoreText"></span>
@@ -104,102 +93,185 @@
   <script src="assets/js/app.js"></script>
 
   <script>
-    const exam = [
-      {q:"A buyer asks: 'How do I know you run this safely?' Best response:", a:["Show only marketing","Provide controls + evidence packet outline + runbook","Hide logs"], c:1},
-      {q:"What unlocks certification in this portal?", a:["Just clicking pages","Modules + quizzes + capstone + 80%+ exam","Only a SOW"], c:1},
-      {q:"Change control primarily prevents:", a:["Documentation","Unapproved risky changes","Monitoring"], c:1},
-      {q:"Acceptance criteria should be:", a:["Measurable and testable","Vague and flexible","Secret"], c:0},
-      {q:"A key enterprise artifact is:", a:["A meme","Runbook + evidence checklist","A wallpaper"], c:1},
-      {q:"Limits are important because they:", a:["Look nice","Control exposure and reduce operational risk","Replace audits"], c:1},
-      {q:"Telemetry is used to:", a:["Hide incidents","Observe behavior and outcomes","Sell tokens"], c:1},
-      {q:"A proof pack is best described as:", a:["A discount","A set of artifacts reducing buyer risk","A private key"], c:1},
-      {q:"Segregation of duties helps:", a:["One person controls everything","Reduce fraud/errors","Avoid evidence"], c:1},
-      {q:"If your exam score is 80%+ you should:", a:["Ignore the badge","Claim certification","Earn and show the badge and artifacts"], c:2}
-    ];
+    // Fallback: if app.js didn't load for any reason, define minimal MBCC so the exam still works.
+    (function(){
+      if(window.MBCC) return;
 
-    function el(tag, attrs={}, children=[]){
-      const n = document.createElement(tag);
-      Object.keys(attrs).forEach(k=>{
-        if(k==="class") n.className = attrs[k];
-        else n.setAttribute(k, attrs[k]);
-      });
-      children.forEach(c=>{
-        if(typeof c==="string") n.appendChild(document.createTextNode(c));
-        else n.appendChild(c);
-      });
-      return n;
-    }
+      const KEY = "mbcc_training_v2";
+      const defaultState = {
+        track: "", startedAt: "",
+        modules: { m1:false, m2:false, m3:false, m4:false, m5:false, m6:false, m7:false, m8:false },
+        quizzes: { m1:false, m2:false, m3:false, m4:false, m5:false, m6:false, m7:false, m8:false },
+        capstone: false, examScore: null, certified: false
+      };
 
-    document.addEventListener("DOMContentLoaded", function(){
-      const s = MBCC.load();
-      const last = document.getElementById("lastScore");
-      if(last) last.textContent = (s.examScore==null) ? "—" : (s.examScore + "%");
+      function load(){
+        try{
+          const raw = localStorage.getItem(KEY);
+          if(!raw) return {...defaultState};
+          const p = JSON.parse(raw);
+          return {...defaultState, ...p,
+            modules: {...defaultState.modules, ...(p.modules||{})},
+            quizzes: {...defaultState.quizzes, ...(p.quizzes||{})}
+          };
+        }catch(e){ return {...defaultState}; }
+      }
+      function save(s){ try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){} }
+      function allDone(s){
+        const modsOk = Object.values(s.modules).every(Boolean);
+        const quizOk = Object.values(s.quizzes).every(Boolean);
+        return modsOk && quizOk && !!s.capstone;
+      }
+      function setExam(score){
+        const s = load();
+        s.examScore = score;
+        s.certified = (score >= 80) && allDone(s);
+        save(s);
+        return s;
+      }
+      function percentComplete(s){
+        const total = 17;
+        let done = 0;
+        done += Object.values(s.modules).filter(Boolean).length;
+        done += Object.values(s.quizzes).filter(Boolean).length;
+        if(s.capstone) done += 1;
+        return Math.round((done/total)*100);
+      }
+      function prettyTrack(t){
+        if(t==="operator") return "Operator";
+        if(t==="consultant") return "Consultant";
+        if(t==="sales") return "Sales/Partner";
+        return "—";
+      }
 
-      const form = document.getElementById("examForm");
-      form.innerHTML = "";
-
-      exam.forEach((qq, idx)=>{
-        const block = el("div", {class:"item", style:"display:block"});
-        const q = el("div", {class:"left"}, [el("b", {}, [(idx+1)+". "+qq.q]), el("small", {}, ["Pick one answer."])]);
-        block.appendChild(q);
-
-        const opts = el("div", {style:"margin-top:10px; display:grid; gap:8px"});
-        qq.a.forEach((ans, aidx)=>{
-          const id = `e${idx}_${aidx}`;
-          const label = el("label", {for:id, style:"display:flex; gap:10px; align-items:flex-start; color: var(--muted); font-weight:800; cursor:pointer"});
-          const input = el("input", {type:"radio", name:"e"+idx, id:id, value:String(aidx), required:"required"});
-          label.appendChild(input);
-          label.appendChild(el("span", {}, [ans]));
-          opts.appendChild(label);
-        });
-
-        block.appendChild(opts);
-        form.appendChild(block);
-      });
-
-      // Gate: if not ready, still allow viewing but message user
-      const ready = MBCC.allDone(MBCC.load());
-      const lockEls = document.querySelectorAll("[data-cert-lock]");
-      lockEls.forEach(el=>{
-        el.textContent = ready ? "Unlocked" : "Locked (finish modules + quizzes + capstone)";
-        el.classList.toggle("done", ready);
-      });
-
-      form.addEventListener("submit", function(e){
-        e.preventDefault();
-        const s2 = MBCC.load();
-        const ready2 = MBCC.allDone(s2);
-        if(!ready2){
-          const result = document.getElementById("result");
-          result.style.display = "block";
-          document.getElementById("scoreText").textContent = "Locked";
-          document.getElementById("resultHint").textContent = "Finish all modules, quizzes, and the capstone before taking the exam.";
-          return;
-        }
-
-        let correct = 0;
-        exam.forEach((qq, idx)=>{
-          const val = (new FormData(form).get("e"+idx) || "-1");
-          if(parseInt(val,10) === qq.c) correct += 1;
-        });
-        const score = Math.round((correct / exam.length) * 100);
-
-        MBCC.setExam(score);
-
-        const result = document.getElementById("result");
-        result.style.display = "block";
-        document.getElementById("scoreText").textContent = score + "% (" + correct + "/" + exam.length + ")";
-
-        if(score >= 80){
-          document.getElementById("resultHint").textContent = "Passed. Your badge is now available.";
-        }else{
-          document.getElementById("resultHint").textContent = "Not passed. Review modules and retry.";
-        }
-        const last = document.getElementById("lastScore");
-        if(last) last.textContent = score + "%";
-      });
-    });
+      window.MBCC = { load, save, allDone, setExam, percentComplete, prettyTrack };
+    })();
   </script>
 
+  <script>
+    (function(){
+      const exam = [
+        {q:"A buyer asks: 'How do I know you run this safely?' Best response:", a:["Show only marketing","Provide controls + evidence packet outline + runbook","Hide logs"], c:1},
+        {q:"What unlocks certification in this portal?", a:["Just clicking pages","Modules + quizzes + capstone + 80%+ exam","Only a SOW"], c:1},
+        {q:"Change control primarily prevents:", a:["Documentation","Unapproved risky changes","Monitoring"], c:1},
+        {q:"Acceptance criteria should be:", a:["Measurable and testable","Vague and flexible","Secret"], c:0},
+        {q:"A key enterprise artifact is:", a:["A meme","Runbook + evidence checklist","A wallpaper"], c:1},
+        {q:"Limits are important because they:", a:["Look nice","Control exposure and reduce operational risk","Replace audits"], c:1},
+        {q:"Telemetry is used to:", a:["Hide incidents","Observe behavior and outcomes","Sell tokens"], c:1},
+        {q:"A proof pack is best described as:", a:["A discount","A set of artifacts reducing buyer risk","A private key"], c:1},
+        {q:"Segregation of duties helps:", a:["One person controls everything","Reduce fraud/errors","Avoid evidence"], c:1},
+        {q:"If your exam score is 80%+ you should:", a:["Ignore the badge","Claim certification","Earn and show the badge and artifacts"], c:2}
+      ];
+
+      function render(){
+        const s = MBCC.load();
+        // header widgets
+        const trackEls = document.querySelectorAll("[data-track-name]");
+        trackEls.forEach(el=> el.textContent = MBCC.prettyTrack(s.track));
+
+        const lockEls = document.querySelectorAll("[data-cert-lock]");
+        const ready = MBCC.allDone(s);
+        lockEls.forEach(el=>{
+          el.textContent = ready ? "Unlocked" : "Locked (finish modules + quizzes + capstone)";
+          el.classList.toggle("done", ready);
+        });
+
+        const last = document.getElementById("lastScore");
+        if(last) last.textContent = (s.examScore==null) ? "—" : (s.examScore + "%");
+      }
+
+      function buildQuestions(){
+        const wrap = document.getElementById("examQuestions");
+        wrap.innerHTML = "";
+
+        exam.forEach((qq, idx)=>{
+          const block = document.createElement("div");
+          block.className = "item";
+          block.style.display = "block";
+
+          const left = document.createElement("div");
+          left.className = "left";
+          left.innerHTML = "<b>" + (idx+1) + ". " + qq.q + "</b><br/><small>Pick one answer.</small>";
+
+          const opts = document.createElement("div");
+          opts.style.marginTop = "10px";
+          opts.style.display = "grid";
+          opts.style.gap = "8px";
+
+          qq.a.forEach((ans, aidx)=>{
+            const id = "e" + idx + "_" + aidx;
+            const label = document.createElement("label");
+            label.setAttribute("for", id);
+            label.style.display = "flex";
+            label.style.gap = "10px";
+            label.style.alignItems = "flex-start";
+            label.style.color = "var(--muted)";
+            label.style.fontWeight = "800";
+            label.style.cursor = "pointer";
+
+            const input = document.createElement("input");
+            input.type = "radio";
+            input.name = "e" + idx;
+            input.id = id;
+            input.value = String(aidx);
+            input.required = true;
+
+            const span = document.createElement("span");
+            span.textContent = ans;
+
+            label.appendChild(input);
+            label.appendChild(span);
+            opts.appendChild(label);
+          });
+
+          block.appendChild(left);
+          block.appendChild(opts);
+          wrap.appendChild(block);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", function(){
+        buildQuestions();
+        render();
+
+        const form = document.getElementById("examForm");
+        const result = document.getElementById("result");
+        const scoreText = document.getElementById("scoreText");
+        const hint = document.getElementById("resultHint");
+
+        form.addEventListener("submit", function(e){
+          e.preventDefault();
+
+          const s = MBCC.load();
+          const ready = MBCC.allDone(s);
+          result.style.display = "block";
+
+          if(!ready){
+            scoreText.textContent = "Locked";
+            hint.textContent = "Finish all modules, quizzes, and the capstone before taking the exam.";
+            return;
+          }
+
+          const fd = new FormData(form);
+          let correct = 0;
+          exam.forEach((qq, idx)=>{
+            const val = fd.get("e"+idx);
+            if(val !== null && parseInt(val,10) === qq.c) correct += 1;
+          });
+          const score = Math.round((correct / exam.length) * 100);
+          MBCC.setExam(score);
+
+          scoreText.textContent = score + "% (" + correct + "/" + exam.length + ")";
+          hint.textContent = (score >= 80)
+            ? "Passed. Your badge is now available (and saved)."
+            : "Not passed. Review modules and retry.";
+
+          render();
+          // Scroll to result for visibility
+          result.scrollIntoView({behavior:"smooth", block:"start"});
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
