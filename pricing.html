@@ -6,17 +6,203 @@
   <meta name="description" content="MBCC Finternet Ops™ pricing — pilot packages for Agent Ops monitoring, compliance narratives, reporting, and stress scenarios." />
   <title>Pricing | MBCC Finternet Ops™</title>
   <link rel="stylesheet" href="site.css">
+
   <style>
+    :root{
+      --mbcc-red:#c1121f;
+      --mbcc-black:#0b0b0b;
+      --mbcc-gold:#d4af37;
+      --mbcc-gold-dark:#a8831e;
+      --mbcc-off:#f7f3e9;
+      --mbcc-off-2:rgba(247,243,233,.82);
+      --mbcc-off-3:rgba(247,243,233,.70);
+      --card: rgba(0,0,0,.32);
+      --stroke: rgba(255,255,255,.10);
+      --shadow: 0 18px 50px rgba(0,0,0,.55);
+      --radius: 16px;
+    }
+
+    *{box-sizing:border-box}
+    html{font-size:17px}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--mbcc-off);
+      background: var(--mbcc-black);
+      line-height:1.7;
+    }
+
+    .bg, .plaid, .grain{position:fixed; inset:0; pointer-events:none; z-index:-3;}
+    .bg{
+      background:
+        radial-gradient(900px 420px at 14% 8%, rgba(193,18,31,.22), transparent 60%),
+        radial-gradient(780px 420px at 86% 18%, rgba(212,175,55,.14), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.03), transparent 28%),
+        var(--mbcc-black);
+      z-index:-3;
+    }
+    .plaid{
+      opacity:.22; z-index:-2;
+      background:
+        repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 1px, transparent 1px 14px),
+        repeating-linear-gradient(45deg, rgba(193,18,31,.12) 0 2px, transparent 2px 18px);
+      mix-blend-mode: overlay;
+    }
+    .grain{
+      z-index:-1; opacity:.10;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+      background-size:220px 220px;
+      mix-blend-mode: soft-light;
+    }
+
+    .container{max-width:1100px; margin:0 auto; padding:20px 18px}
+    header{
+      position:sticky; top:0; z-index:20;
+      background: rgba(11,11,11,.78);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    main{padding:10px 0 24px}
+
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{
+      width:44px; height:44px; border-radius:14px;
+      background:
+        radial-gradient(22px 22px at 30% 30%, rgba(212,175,55,.55), transparent 60%),
+        linear-gradient(135deg, rgba(193,18,31,.95), rgba(11,11,11,.65));
+      border:1px solid rgba(212,175,55,.28);
+      box-shadow: 0 12px 30px rgba(0,0,0,.45);
+      position:relative; overflow:hidden;
+    }
+    .logo:after{
+      content:""; position:absolute; inset:-30%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.22), transparent);
+      transform: rotate(22deg) translateX(-70%);
+      animation: shine 3.1s ease-in-out infinite;
+      opacity:.65;
+    }
+    @keyframes shine{0%{transform:rotate(22deg) translateX(-70%)}55%{transform:rotate(22deg) translateX(70%)}100%{transform:rotate(22deg) translateX(70%)}}
+    .brand strong{letter-spacing:.08em; font-size:13px}
+    .brand span{display:block; font-size:12px; color:var(--mbcc-off-3)}
+
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 12px; border-radius:999px;
+      border:1px solid rgba(212,175,55,.28);
+      background: rgba(0,0,0,.22);
+      box-shadow: 0 12px 28px rgba(0,0,0,.35);
+      font-size:12px; color:var(--mbcc-off-2);
+    }
+    .dot{width:9px; height:9px; border-radius:99px; background: var(--mbcc-red); box-shadow: 0 0 0 5px rgba(193,18,31,.20)}
+    h1{margin:12px 0 8px; font-size:2.2rem; line-height:1.15}
+    .lead{max-width:72ch; font-size:1.08rem; color:var(--mbcc-off-2)}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px; padding:10px 12px; border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.24);
+      color: var(--mbcc-off);
+      text-decoration:none;
+      font-weight:650;
+      transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(212,175,55,.30); box-shadow: 0 14px 34px rgba(0,0,0,.38)}
+    .btn-primary{
+      background: linear-gradient(90deg, rgba(193,18,31,.95), rgba(193,18,31,.70));
+      border-color: rgba(212,175,55,.35);
+    }
+    .btn-primary:hover{border-color: rgba(212,175,55,.58)}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+    @media (max-width: 980px){.grid{grid-template-columns: repeat(2, minmax(0,1fr));}}
+    @media (max-width: 640px){.grid{grid-template-columns: 1fr;}}
+    .card{
+      border-radius: var(--radius);
+      border:1px solid var(--stroke);
+      background:
+        radial-gradient(520px 220px at 18% 10%, rgba(193,18,31,.16), transparent 62%),
+        radial-gradient(520px 240px at 84% 16%, rgba(212,175,55,.10), transparent 62%),
+        var(--card);
+      box-shadow: var(--shadow);
+      padding:16px 16px 14px;
+      position:relative;
+      overflow:hidden;
+      min-height: 320px;
+    }
+    .card:before{
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(90deg, rgba(193,18,31,0), rgba(193,18,31,.18), rgba(212,175,55,.12), rgba(193,18,31,0));
+      transform: translateX(-120%);
+      opacity:.65;
+    }
+    .card:hover:before{animation:sweep 2.6s ease-in-out infinite}
+    @keyframes sweep{0%{transform:translateX(-120%)}60%{transform:translateX(120%)}100%{transform:translateX(120%)}}
+
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; padding:6px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.22);
+      color: var(--mbcc-off-2);
+    }
+    .title{font-weight:850; font-size:18px; margin-top:10px}
+    .desc{color: var(--mbcc-off-2)}
+
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+
+    .card.recommended{
+      border-color: rgba(212,175,55,.55);
+      box-shadow: 0 24px 70px rgba(0,0,0,.62);
+    }
+    .card.recommended .tag{
+      border-color: rgba(212,175,55,.55);
+      background: rgba(212,175,55,.10);
+    }
+    .card.recommended .title:after{
+      content:"  ★ Recommended";
+      font-size:12px;
+      color: rgba(212,175,55,.92);
+      font-weight:800;
+      letter-spacing:.02em;
+    }
+
+    .banner{
+      margin-top:18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(212,175,55,.28);
+      background: rgba(0,0,0,.22);
+      padding:14px 16px;
+      color: var(--mbcc-off-2);
+      box-shadow: 0 18px 50px rgba(0,0,0,.40);
+    }
+
+    footer{
+      border-top: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.22);
+    }
+    .foot{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap}
+
+    /* Keep your pricing-specific typography */
     .price{
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 950;
       letter-spacing: -0.02em;
       margin: 10px 0 6px;
+      color:#fff;
     }
-    .small{ font-size: 12px; color: rgba(247,243,233,.68); line-height:1.5; }
-    .bul{ margin: 10px 0 0; padding-left: 18px; color: rgba(247,243,233,.76); font-size: 13px; line-height:1.75; }
+    .small{ font-size: 13px; color: rgba(247,243,233,.72); line-height:1.6; }
+    .bul{ margin: 10px 0 0; padding-left: 18px; color: rgba(247,243,233,.82); font-size: 13px; line-height:1.8; }
     .bul li{ margin: 6px 0; }
   </style>
+
 </head>
 
 <body>
@@ -73,7 +259,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card recommended">
           <div class="tag">⚙️ Ops</div>
           <div class="title">Ops Pilot+</div>
           <div class="price">$3,500</div>
