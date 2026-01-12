@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>MBCC Finternet Ops™ | Agent Ops for Tokenized Finance</title>
   <meta name="description" content="MBCC Finternet Ops™ is the operations layer for tokenized assets: monitoring, anomaly triage, incident timelines, governance narratives, and exportable reporting — built as Agent Ops." />
+  <meta name="theme-color" content="#0b0b0b"/>
+
+  <!-- ✅ AdSense loader (ONCE per page) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8387411349417007"
+    crossorigin="anonymous"></script>
+
   <style>
     :root{
       --bg:#0b0b0b; --fg:#f7f3e9; --muted:rgba(247,243,233,.78);
@@ -65,17 +71,29 @@
     }
     .links{display:flex; gap:12px; flex-wrap:wrap}
     @media (max-width: 900px){ .grid{grid-template-columns:1fr} header{flex-direction:column; align-items:flex-start} nav{justify-content:flex-start}}
+
+    /* ✅ AdSense container (keeps it clean + no layout shift) */
+    .adsense-slot{
+      margin:16px 0 10px;
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.02);
+      padding:12px;
+      min-height:250px; /* CLS stability */
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <div class="brand">MBCC FINTERNET OPS™ <span style="color:var(--gold2)">|</span> Agent Ops for Tokenized Finance</div>
+
+      <!-- ✅ NAV: all key pages linked + Agents page linked -->
       <nav>
         <a href="/docs/" class="primary">Docs</a>
-        <a href="/agents/" class="primary">Agent Ops</a>
-        <a href="/pricing/" class="primary">Pricing</a>
+        <a href="/agents.html" class="primary">Agents</a>
         <a href="/training/" class="primary">Training</a>
+        <a href="/pricing/" class="primary">Pricing</a>
         <a href="/pilot/" class="btn red">Start Pilot</a>
       </nav>
     </header>
@@ -88,38 +106,59 @@
         governance narratives, and exportable reporting — built as “Agent Ops” so teams can scale without adding headcount.
         <strong style="color:var(--fg)">Not custody. Not trading. Not investment advice.</strong>
       </p>
+
       <div class="cta">
         <a class="btn red" href="/pilot/">Request Pilot →</a>
-        <a class="btn" href="/agents/">Browse Agents</a>
+        <a class="btn" href="/agents.html">Browse Agents</a>
         <a class="btn" href="/docs/">Read Docs</a>
+        <a class="btn" href="/training/">Get Certified</a>
       </div>
+
+      <!-- ✅ AdSense unit (safe placement: AFTER hero copy + CTAs, BEFORE grid) -->
+      <section class="adsense-slot" aria-label="Sponsored">
+        <!-- Moecommunityadunit1 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8387411349417007"
+             data-ad-slot="2827463913"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </section>
 
       <div class="grid">
         <div class="card">
           <h3>⚙️ Agent Ops</h3>
           <p>Deploy 1–3 agents in a pilot. Start with monitoring + narratives. Add exec briefs, PDF reporting, and stress scenarios once signals are stable.</p>
-          <a href="/agents/">Agent Catalog →</a>
+          <a href="/agents.html">Agent Catalog →</a>
         </div>
+
         <div class="card">
           <h3>🛡️ Compliance</h3>
           <p>Explainability that governance can approve. Turn noisy events into plain-English summaries with consistent structure: what happened, why it matters, what changed.</p>
           <a href="/docs/how-it-works/">How it works →</a>
         </div>
+
         <div class="card">
           <h3>📉 Risk</h3>
           <p>Stress tests + response playbooks. Run liquidity and settlement scenarios, then generate a decision-ready playbook for ops and leadership.</p>
           <a href="/docs/stress/">Read stress docs →</a>
         </div>
+
         <div class="card">
           <h3>📡 Monitoring</h3>
           <p>Watch yields, spreads, settlement health. Alerts + anomaly triage to reduce noise. Focus on what matters now, not a thousand charts.</p>
-          <a href="/agents/#monitoring">See monitoring agents →</a>
+          <a href="/agents.html#monitoring">See monitoring agents →</a>
         </div>
+
         <div class="card">
           <h3>🧾 Reporting</h3>
           <p>Exportable outputs (PDF-ready). Weekly briefs, incident timelines, and governance artifacts — consistent formatting for audits and stakeholders.</p>
           <a href="/pricing/">See packages →</a>
         </div>
+
         <div class="card">
           <h3>🏗️ Architecture</h3>
           <p>Cloud-first, controls-first. Designed for modern stacks (Vertex AI/Gemini optional later), with policy-first thinking and role-based outputs.</p>
@@ -135,14 +174,19 @@
 
     <footer>
       <div>© 2026 Moe Community Cloud (MBCC). All rights reserved.</div>
+
+      <!-- ✅ FOOTER: all key pages linked -->
       <div class="links">
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
         <a href="/docs/">Docs</a>
+        <a href="/agents.html">Agents</a>
         <a href="/training/">Certification</a>
+        <a href="/pricing/">Pricing</a>
         <a href="/pilot/">Pilot</a>
       </div>
     </footer>
   </div>
 </body>
 </html>
+
