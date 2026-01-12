@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="MBCC Finternet Ops™ partner pricing — licensed delivery packages for Agent Ops monitoring, compliance narratives, reporting, and stress scenarios." />
-  <title>Partner Pricing | MBCC Finternet Ops™</title>
+  <meta name="description" content="MBCC FinternetOps™ enterprise delivery pricing for licensed partners. Governance-ready operational reporting, reconciliation visibility, and audit-friendly evidence outputs—delivered through MBCC standards." />
+  <title>Enterprise Delivery Pricing | MBCC FinternetOps™ (Partner-Locked)</title>
   <link rel="stylesheet" href="site.css">
 
   <style>
@@ -28,18 +28,22 @@
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--mbcc-off);
-      background: var(--mbcc-black);
+      background: radial-gradient(1200px 700px at 20% -10%, rgba(193,18,31,.22), transparent 60%),
+                  radial-gradient(900px 600px at 85% 0%, rgba(212,175,55,.10), transparent 55%),
+                  var(--mbcc-black);
       line-height:1.7;
     }
 
+    a{color:var(--mbcc-off);text-decoration:none}
+    a:hover{color:var(--mbcc-gold)}
     .container{max-width:1100px; margin:0 auto; padding:20px 18px}
+
     header{
       position:sticky; top:0; z-index:20;
       background: rgba(11,11,11,.78);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
-
     .nav{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap}
     .brand{display:flex; align-items:center; gap:12px}
     .logo{
@@ -50,25 +54,68 @@
       border:1px solid rgba(212,175,55,.28);
     }
 
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(212,175,55,.25);
+      background:rgba(212,175,55,.06);
+      color:var(--mbcc-off);
+      font-weight:800;
+      font-size:.85rem;
+      letter-spacing:.2px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(193,18,31,.55);
+      background:rgba(193,18,31,.14);
+      color:#fff;
+      font-weight:900;
+      font-size:.85rem;
+    }
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       gap:8px; padding:10px 12px; border-radius:14px;
       border:1px solid rgba(255,255,255,.10);
       background: rgba(0,0,0,.24);
       color: var(--mbcc-off);
+      font-weight:750;
       text-decoration:none;
-      font-weight:650;
+      white-space:nowrap;
     }
+    .btn:hover{border-color:rgba(212,175,55,.45); background:rgba(212,175,55,.08)}
     .btn-primary{
       background: linear-gradient(90deg, rgba(193,18,31,.95), rgba(193,18,31,.70));
       border-color: rgba(212,175,55,.35);
+    }
+    .btn-primary:hover{border-color:rgba(212,175,55,.70); background:rgba(212,175,55,.10)}
+
+    h1{margin:10px 0 8px; font-size:2.2rem; line-height:1.15}
+    h2{margin:0 0 10px; font-size:1.45rem}
+    h3{margin:0 0 8px; font-size:1.05rem}
+    p{margin:0 0 12px; color:var(--mbcc-off-2)}
+    .lead{font-size:1.05rem; color:var(--mbcc-off-2)}
+    .muted{color:var(--mbcc-off-3); font-size:.95rem}
+
+    .panel{
+      border-radius:var(--radius);
+      border:1px solid var(--stroke);
+      background:rgba(0,0,0,.20);
+      box-shadow: var(--shadow);
+      padding:16px;
+      margin-top:16px;
     }
 
     .grid{
       display:grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap:16px;
-      margin-top:18px;
+      margin-top:14px;
     }
     @media (max-width: 980px){.grid{grid-template-columns: repeat(2, minmax(0,1fr));}}
     @media (max-width: 640px){.grid{grid-template-columns: 1fr;}}
@@ -88,7 +135,32 @@
       margin: 10px 0;
       color:#fff;
     }
-    .bul{ padding-left: 18px; font-size: 13px; line-height:1.8; }
+    .bul{ padding-left: 18px; font-size: 13px; line-height:1.8; color:var(--mbcc-off-2) }
+
+    .kpis{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (max-width: 980px){.kpis{grid-template-columns:repeat(2, minmax(0,1fr));}}
+    @media (max-width: 640px){.kpis{grid-template-columns:1fr;}}
+    .kpi{
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.20);
+      padding:12px;
+    }
+    .kpi b{display:block; color:#fff; margin-bottom:4px}
+    .kpi span{display:block; color:var(--mbcc-off-3); font-size:.92rem}
+
+    footer{
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin-top:24px;
+      padding:18px 0;
+      color:var(--mbcc-off-3);
+      font-size:13px;
+    }
   </style>
 </head>
 
@@ -98,15 +170,17 @@
   <div class="container">
     <div class="nav">
       <div class="brand">
-        <div class="logo"></div>
+        <div class="logo" aria-hidden="true"></div>
         <div>
           <strong>MBCC FINTERNET OPS™</strong>
-          <span style="display:block;font-size:12px;opacity:.7">Partner Pricing</span>
+          <span style="display:block;font-size:12px;opacity:.75">Enterprise Delivery Pricing (Partner-Locked)</span>
         </div>
       </div>
+
       <div style="display:flex; gap:10px; flex-wrap:wrap;">
         <a class="btn" href="https://moecommunitycloud.com">MBCC Home</a>
         <a class="btn" href="https://moecommunitycloud.com/partners.html">Partners</a>
+        <a class="btn" href="agents.html">Agents</a>
         <a class="btn" href="training/index.html">Training</a>
         <a class="btn btn-primary" href="https://moecommunitycloud.com/partners/apply.html">Apply</a>
       </div>
@@ -116,72 +190,190 @@
 
 <main>
   <div class="container">
-    <h1>Partner-Only Pricing</h1>
-    <p class="lead">
-      FinternetOps is delivered through licensed MBCC partners.
-      Pricing below applies after application, training, and certification.
-    </p>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Starter Pilot</h3>
-        <div class="price">$1,250</div>
-        <ul class="bul">
-          <li>1 agent configuration</li>
-          <li>Signals & thresholds</li>
-          <li>Weekly reporting template</li>
-        </ul>
-        <a class="btn btn-primary" href="https://moecommunitycloud.com/partners/apply.html">Apply for Access</a>
+    <!-- Enterprise framing + partner lock -->
+    <section class="panel">
+      <span class="badge">Partner-Only Pricing</span>
+      <h1>Enterprise delivery pricing — protected by standards</h1>
+      <p class="lead">
+        FinternetOps deployments are delivered through the MBCC partner program to protect
+        <strong>governance</strong>, <strong>repeatability</strong>, and <strong>enterprise outcomes</strong>.
+        Pricing applies after partner review, training, and certification.
+      </p>
+
+      <div class="kpis" aria-label="Enterprise value signals">
+        <div class="kpi"><b>Governance-ready</b><span>Audit-friendly outputs and operational accountability</span></div>
+        <div class="kpi"><b>Operator-first</b><span>Exception visibility, escalation discipline, clean reporting</span></div>
+        <div class="kpi"><b>Procurement-safe</b><span>Clear scope boundaries & delivery expectations</span></div>
+        <div class="kpi"><b>Repeatable delivery</b><span>Designed for consistent client experience at scale</span></div>
       </div>
 
-      <div class="card">
-        <h3>Ops Pilot+</h3>
-        <div class="price">$3,500</div>
-        <ul class="bul">
-          <li>2 agents (monitor + triage)</li>
-          <li>Escalation workflow</li>
-          <li>PDF-ready ops report</li>
-        </ul>
-        <a class="btn btn-primary" href="https://moecommunitycloud.com/partners/apply.html">Apply for Access</a>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+        <a class="btn btn-primary" href="https://moecommunitycloud.com/partners/apply.html">Apply for Partner Review →</a>
+        <a class="btn" href="https://finternetops.moecommunitycloud.com/training/">Review Training First →</a>
+        <a class="btn" href="https://moecommunitycloud.com/consulting.html">Enterprise: Talk to Consulting →</a>
       </div>
 
-      <div class="card">
-        <h3>Governance Pilot</h3>
-        <div class="price">$6,500</div>
-        <ul class="bul">
-          <li>Compliance narratives</li>
-          <li>Change logs</li>
-          <li>Executive summaries</li>
-        </ul>
-        <a class="btn btn-primary" href="https://moecommunitycloud.com/partners/apply.html">Apply for Access</a>
+      <p class="muted" style="margin-top:10px;">
+        Enterprise buyers: we support evaluation and internal pilots through consulting while maintaining delivery standards and IP boundaries.
+      </p>
+    </section>
+
+    <!-- Enterprise qualification + routing -->
+    <section class="panel">
+      <span class="pill">Enterprise Buyer Routing</span>
+      <h2>Choose your enterprise path</h2>
+      <div class="grid">
+        <div class="card" style="min-height:auto;">
+          <h3>Option A — Enterprise Consulting (Recommended)</h3>
+          <p>
+            For regulated or high-stakes environments requiring governance, security alignment, and scoped delivery.
+            Best for organizations that need a structured evaluation and implementation plan.
+          </p>
+          <ul class="bul">
+            <li>Discovery + scope boundaries</li>
+            <li>Implementation phases + acceptance criteria</li>
+            <li>Governance-ready reporting expectations</li>
+          </ul>
+          <a class="btn btn-primary" href="https://moecommunitycloud.com/consulting.html">Talk to Consulting →</a>
+        </div>
+
+        <div class="card" style="min-height:auto;">
+          <h3>Option B — Become a Delivery Partner</h3>
+          <p>
+            For consulting firms and operators delivering FinternetOps as a service. Includes training, certification, and licensing pathways.
+          </p>
+          <ul class="bul">
+            <li>Apply → Training → Certification</li>
+            <li>Licensing boundaries and standards</li>
+            <li>Enterprise proof artifacts (no internal IP exposed)</li>
+          </ul>
+          <a class="btn btn-primary" href="https://moecommunitycloud.com/partners/apply.html">Apply for Partner Review →</a>
+        </div>
+
+        <div class="card" style="min-height:auto;">
+          <h3>Option C — Training First</h3>
+          <p>
+            For teams evaluating readiness before engaging. Training clarifies expectations and delivery discipline.
+          </p>
+          <ul class="bul">
+            <li>Operator workflows + outcomes</li>
+            <li>Quality gates + certification readiness</li>
+            <li>Clear deliverable expectations</li>
+          </ul>
+          <a class="btn btn-primary" href="https://finternetops.moecommunitycloud.com/training/">Review Training →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing grid (kept, but CTAs partner-locked) -->
+    <section class="panel">
+      <span class="pill">Partner Packages</span>
+      <h2>Pricing (authorized delivery partners)</h2>
+      <p class="muted">These packages support licensed delivery. Public “pilot” CTAs are intentionally locked to protect quality and governance.</p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Starter Delivery Package</h3>
+          <div class="price">$1,250</div>
+          <ul class="bul">
+            <li>Entry-level delivery scope for qualified partners</li>
+            <li>Operational reporting baseline (enterprise-safe)</li>
+            <li>Clean handoff expectations + cadence</li>
+          </ul>
+          <a class="btn btn-primary" href="https://moecommunitycloud.com/partners/apply.html">Apply for Access →</a>
+          <a class="btn" href="https://finternetops.moecommunitycloud.com/training/">Review Training</a>
+        </div>
+
+        <div class="card">
+          <h3>Ops Delivery Package</h3>
+          <div class="price">$3,500</div>
+          <ul class="bul">
+            <li>Expanded operational scope for partner delivery</li>
+            <li>Escalation expectations + reporting rhythm</li>
+            <li>PDF-ready reporting outputs (enterprise-friendly)</li>
+          </ul>
+          <a class="btn btn-primary" href="https://moecommunitycloud.com/partners/apply.html">Apply for Access →</a>
+          <a class="btn" href="https://finternetops.moecommunitycloud.com/training/">Review Training</a>
+        </div>
+
+        <div class="card">
+          <h3>Governance Delivery Package</h3>
+          <div class="price">$6,500</div>
+          <ul class="bul">
+            <li>Governance narratives and change visibility</li>
+            <li>Audit-friendly reporting expectations</li>
+            <li>Executive summary structure for stakeholders</li>
+          </ul>
+          <a class="btn btn-primary" href="https://moecommunitycloud.com/partners/apply.html">Apply for Access →</a>
+          <a class="btn" href="https://moecommunitycloud.com/consulting.html">Enterprise Consulting</a>
+        </div>
+
+        <div class="card">
+          <h3>Stress & Scenario Pack</h3>
+          <div class="price">$2,000</div>
+          <ul class="bul">
+            <li>Scenario framing for operator review</li>
+            <li>Decision-ready briefing format</li>
+            <li>Enterprise-safe outputs (no internal mechanics exposed)</li>
+          </ul>
+          <a class="btn btn-primary" href="https://moecommunitycloud.com/partners/apply.html">Apply for Access →</a>
+          <a class="btn" href="https://moecommunitycloud.com/consulting.html">Enterprise Consulting</a>
+        </div>
+
+        <div class="card">
+          <h3>Enterprise Custom</h3>
+          <div class="price">Custom</div>
+          <ul class="bul">
+            <li>Multi-team deployments and stakeholder reporting</li>
+            <li>Governance alignment + scoped phases</li>
+            <li>Procurement-friendly delivery plan</li>
+          </ul>
+          <a class="btn btn-primary" href="https://moecommunitycloud.com/consulting.html">Talk to Consulting →</a>
+          <a class="btn" href="https://moecommunitycloud.com/partners.html#partnerpath">Partner Program</a>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Stress & Scenario Pack</h3>
-        <div class="price">$2,000</div>
-        <ul class="bul">
-          <li>What-if scenarios</li>
-          <li>Risk briefing</li>
-        </ul>
-        <a class="btn btn-primary" href="https://moecommunitycloud.com/partners/apply.html">Apply for Access</a>
+      <p class="muted" style="margin-top:14px;">
+        <strong>Compliance note:</strong> MBCC FinternetOps™ provides software tooling and education only.
+        No custody. No trade execution. No investment advice.
+      </p>
+    </section>
+
+    <section class="panel">
+      <span class="pill">Enterprise FAQ (public-safe)</span>
+      <h2>Common enterprise questions</h2>
+      <div class="grid">
+        <div class="card" style="min-height:auto;">
+          <h3>Why partner-locked?</h3>
+          <p>
+            To maintain delivery quality, governance standards, and consistent outcomes.
+            This prevents uncontrolled deployments and protects both buyers and the ecosystem.
+          </p>
+        </div>
+        <div class="card" style="min-height:auto;">
+          <h3>Do you provide internal IP or source code?</h3>
+          <p>
+            No. Public pages describe outcomes and delivery expectations.
+            Internal playbooks and proprietary mechanics remain protected.
+          </p>
+        </div>
+        <div class="card" style="min-height:auto;">
+          <h3>How do enterprise buyers engage?</h3>
+          <p>
+            Through consulting discovery. We scope, define acceptance criteria, and align governance expectations.
+            Partners deliver under standards where appropriate.
+          </p>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Enterprise Custom</h3>
-        <div class="price">Custom</div>
-        <ul class="bul">
-          <li>Multi-team deployments</li>
-          <li>RBAC outputs</li>
-          <li>Security planning</li>
-        </ul>
-        <a class="btn btn-primary" href="https://moecommunitycloud.com/consulting.html">Talk to Consulting</a>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+        <a class="btn btn-primary" href="https://moecommunitycloud.com/consulting.html">Enterprise Discovery →</a>
+        <a class="btn" href="https://moecommunitycloud.com/partners/apply.html">Partner Application →</a>
+        <a class="btn" href="https://finternetops.moecommunitycloud.com/training/">Training →</a>
       </div>
-    </div>
+    </section>
 
-    <p style="margin-top:18px;font-size:13px;opacity:.75">
-      MBCC Finternet Ops™ provides software tooling and education only.
-      No custody. No trade execution. No investment advice.
-    </p>
   </div>
 </main>
 
@@ -193,4 +385,5 @@
 
 </body>
 </html>
+
 
