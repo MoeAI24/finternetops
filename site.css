@@ -252,11 +252,11 @@ h3{margin:0 0 8px;font-size:1.15rem;line-height:1.2}
 }
 .agentName{margin:8px 0 0}
 
-/* ✅ CRITICAL: These images will NEVER become big banners */
+/* ✅ images NEVER become banners */
 .agentImg{
   width:100%;
   height:auto;
-  max-height:220px;     /* hard cap */
+  max-height:220px;
   object-fit:cover;
   border-radius:12px;
   margin:10px 0 8px;
@@ -300,6 +300,16 @@ h3{margin:0 0 8px;font-size:1.15rem;line-height:1.2}
 .agentBtn.primary:hover{
   border-color:rgba(212,175,55,.60);
   background:rgba(212,175,55,.12);
+}
+
+/* ✅ AdSense slot stability (prevents layout jump) */
+.adsense-slot{
+  margin:14px 0;
+  min-height:250px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(0,0,0,.18);
+  padding:12px;
 }
 
 /* Footer */
