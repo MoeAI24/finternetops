@@ -14,25 +14,80 @@
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8387411349417007"
     crossorigin="anonymous"></script>
+
+  <style>
+    :root{
+      --mbcc-red:#c1121f;
+      --mbcc-black:#0b0b0b;
+      --mbcc-gold:#d4af37;
+      --mbcc-ivory:#f7f3e9;
+      --mbcc-line: rgba(212,175,55,.22);
+    }
+    body{
+      background:
+        radial-gradient(1100px 520px at 18% 0%, rgba(193,18,31,.18), transparent 55%),
+        radial-gradient(900px 520px at 92% 10%, rgba(212,175,55,.10), transparent 52%),
+        linear-gradient(180deg, #070707, var(--mbcc-black));
+      color: var(--mbcc-ivory);
+    }
+    body:before{
+      content:"";
+      position:fixed; inset:0;
+      background:
+        repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0px, rgba(255,255,255,.06) 1px, transparent 1px, transparent 12px),
+        repeating-linear-gradient(45deg, rgba(193,18,31,.08) 0px, rgba(193,18,31,.08) 2px, transparent 2px, transparent 18px);
+      opacity:.10;
+      pointer-events:none;
+      z-index:-1;
+    }
+    .topbar{border-bottom-color: var(--mbcc-line) !important;}
+    .badge{border-color: var(--mbcc-line) !important;}
+    .brandMark{color: var(--mbcc-gold) !important;}
+    .btn-primary, .agentBtn.primary{
+      background: linear-gradient(180deg, rgba(193,18,31,.85), rgba(193,18,31,.55)) !important;
+      border-color: rgba(193,18,31,.65) !important;
+    }
+    .agentCard{border-color: rgba(212,175,55,.18) !important;}
+    .agentPill{border-color: rgba(212,175,55,.25) !important;}
+    .agentImg{border:1px solid rgba(212,175,55,.18); border-radius: 12px;}
+  </style>
+
+
+  <style>
+    .agentsHeroBanner{
+      height: 170px;
+      border-radius: 16px;
+      border:1px solid rgba(212,175,55,.18);
+      background:
+        radial-gradient(700px 220px at 22% 40%, rgba(193,18,31,.30), transparent 60%),
+        radial-gradient(680px 240px at 82% 30%, rgba(212,175,55,.18), transparent 55%),
+        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,0));
+      box-shadow: 0 18px 44px rgba(0,0,0,.55);
+      margin-bottom: 14px;
+    }
+    @media (max-width: 640px){ .agentsHeroBanner{height: 120px;} }
+  </style>
+
 </head>
 <body>
 
 <header class="topbar">
   <div class="wrap topbarInner">
-    <a class="brand" href="../index.html">
+    <a class="brand" href="index.html">
       <span class="brandMark">MBCC</span>
       <span class="brandText">FinternetOps</span>
     </a>
     <nav class="topnav">
-      <a href="../training/index.html">Training</a>
-      <a href="../training/playbooks/index.html">Playbooks</a>
-      <a class="active" href="../agents.html">Agents</a>
+      <a href="training/index.html">Training</a>
+      <a href="training/playbooks/index.html">Playbooks</a>
+      <a class="active" href="agents.html">Agents</a>
     </nav>
   </div>
 </header>
 
 <main class="wrap" style="padding-top:16px;">
   <section class="hero" style="margin-top:18px;">
+    <div class="agentsHeroBanner" aria-hidden="true"></div>
     <div class="agentsHeroGrid">
       <div>
         <div class="badge">Agent Library • FinternetOps + AgentOps • Enterprise-ready</div>
@@ -204,6 +259,7 @@
           <h3 class="agentName">Signals & Data Intake Agent</h3>
         </div>
       </div>
+      <img class="agentImg" src="assets/img/signals-data-intake.png" alt="Signals &amp; Data Intake Agent" loading="lazy" decoding="async"/>
       <p class="agentDesc">Standardizes signals: market data, custodian files, event feeds, and internal metrics. Produces normalized event streams for downstream agents.</p>
       <div class="agentMeta"><span class="agentChip">Signals</span><span class="agentChip">Normalization</span><span class="agentChip">Pipelines</span></div>
       <div class="agentActions"><a class="agentBtn primary" href="docs.html">Docs</a><a class="agentBtn" href="training/playbooks/index.html">Playbooks</a></div>
@@ -233,8 +289,8 @@
       <div class="muted">Enterprise-grade training + agent operations for tokenized markets.</div>
     </div>
     <div class="footRight">
-      <a class="btn" href="../training/index.html">Training</a>
-      <a class="btn btn-primary" href="../training/playbooks/index.html">Playbooks</a>
+      <a class="btn" href="training/index.html">Training</a>
+      <a class="btn btn-primary" href="training/playbooks/index.html">Playbooks</a>
     </div>
   </div>
 </footer>
