@@ -6,7 +6,6 @@
   --red:#c1121f;
   --gold:#d4af37;
   --border:rgba(255,255,255,.08);
-  --borderGold:rgba(212,175,55,.25);
   --shadow:0 14px 40px rgba(0,0,0,.45);
   --r:16px;
 }
@@ -89,7 +88,7 @@ img{max-width:100%;height:auto;display:block}
   color:var(--text);
 }
 
-/* Hero + cards */
+/* Hero */
 .hero{
   border:1px solid var(--border);
   border-radius:var(--r);
@@ -116,7 +115,6 @@ img{max-width:100%;height:auto;display:block}
 h1{margin:0 0 10px;font-size:2.1rem;line-height:1.1}
 h2{margin:0 0 10px;font-size:1.55rem;line-height:1.15}
 h3{margin:0 0 8px;font-size:1.15rem;line-height:1.2}
-
 .sub{color:var(--muted);margin:0}
 
 .card{
@@ -127,7 +125,7 @@ h3{margin:0 0 8px;font-size:1.15rem;line-height:1.2}
   padding:14px;
 }
 
-/* CTA buttons */
+/* Buttons */
 .ctaRow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .btn{
   display:inline-flex;
@@ -154,7 +152,7 @@ h3{margin:0 0 8px;font-size:1.15rem;line-height:1.2}
   background:rgba(212,175,55,.12);
 }
 
-/* KPIs */
+/* Hero grid */
 .agentsHeroGrid{
   display:grid;
   grid-template-columns:1.3fr .7fr;
@@ -165,10 +163,7 @@ h3{margin:0 0 8px;font-size:1.15rem;line-height:1.2}
   .agentsHeroGrid{grid-template-columns:1fr}
 }
 
-.kpiTiles{
-  display:grid;
-  gap:10px;
-}
+.kpiTiles{display:grid;gap:10px}
 .kpi{
   border:1px solid rgba(255,255,255,.08);
   border-radius:14px;
@@ -178,7 +173,7 @@ h3{margin:0 0 8px;font-size:1.15rem;line-height:1.2}
 .kpi b{display:block;color:#fff;margin-bottom:4px}
 .kpi span{display:block;color:var(--muted);font-size:.92rem}
 
-/* Filter row */
+/* Filters */
 .filterRow{
   display:flex;
   flex-wrap:wrap;
@@ -205,11 +200,7 @@ h3{margin:0 0 8px;font-size:1.15rem;line-height:1.2}
   color:var(--text);
   font-size:1rem;
 }
-.filterPills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-}
+.filterPills{display:flex;flex-wrap:wrap;gap:8px}
 .filterPill{
   padding:8px 10px;
   border-radius:999px;
@@ -246,13 +237,8 @@ h3{margin:0 0 8px;font-size:1.15rem;line-height:1.2}
   padding:14px;
 }
 
-/* Top line */
-.agentTop{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:10px;
-}
+/* Agent top */
+.agentTop{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
 .agentPill{
   display:inline-flex;
   align-items:center;
@@ -266,28 +252,20 @@ h3{margin:0 0 8px;font-size:1.15rem;line-height:1.2}
 }
 .agentName{margin:8px 0 0}
 
-/* ✅ IMPORTANT: agent images are NOT banners */
+/* ✅ CRITICAL: These images will NEVER become big banners */
 .agentImg{
   width:100%;
   height:auto;
-  max-height:220px;          /* hard cap to prevent big ass banners */
+  max-height:220px;     /* hard cap */
   object-fit:cover;
   border-radius:12px;
   margin:10px 0 8px;
   display:block;
 }
 
-/* Card content */
-.agentDesc{
-  margin:0;
-  color:var(--muted);
-}
-.agentMeta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:10px;
-}
+/* Content */
+.agentDesc{margin:0;color:var(--muted)}
+.agentMeta{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .agentChip{
   padding:6px 10px;
   border-radius:999px;
@@ -298,12 +276,7 @@ h3{margin:0 0 8px;font-size:1.15rem;line-height:1.2}
   font-size:.85rem;
 }
 
-.agentActions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:12px;
-}
+.agentActions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
 .agentBtn{
   display:inline-flex;
   align-items:center;
