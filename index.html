@@ -179,6 +179,19 @@
     "sameAs":["https://moecommunitycloud.com/"]
   }
   </script>
+
+  <style>
+    /* Added: hero/credibility images (absolute URLs to moecommunitycloud.com assets) */
+    .mediaGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:start;margin-top:14px;}
+    @media(max-width:900px){.mediaGrid{grid-template-columns:1fr;}}
+    .imgCard{border:1px solid rgba(212,175,55,.18);border-radius:16px;overflow:hidden;background:rgba(16,16,16,.55);box-shadow:0 14px 34px rgba(0,0,0,.45);}
+    .imgCard img{width:100%;height:auto;display:block;object-fit:cover;}
+    .imgCap{padding:10px 12px;color:rgba(247,243,233,.84);font-size:13px;line-height:1.45;}
+    .imgCap b{color:#f7f3e9;}
+    .twoUp{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px;}
+    @media(max-width:900px){.twoUp{grid-template-columns:1fr;}}
+  </style>
+
 </head>
 
 <body>
@@ -204,6 +217,9 @@
 
     <!-- HERO -->
     <section class="pageHero">
+    <div class="mediaGrid">
+      <div>
+
       <div class="heroGrid">
         <div>
           <span class="pill">The Operating System for Governed Financial Operations</span>
@@ -252,7 +268,14 @@
           </p>
         </div>
       </div>
-    </section>
+    
+      </div>
+      <div class="imgCard" aria-label="FinternetOps architecture diagram">
+        <img src="https://moecommunitycloud.com/assets/images/governance/finternetops_architecture_diagram.png" alt="FinternetOps and AgentOps governance architecture diagram" loading="lazy" decoding="async" referrerpolicy="no-referrer"/>
+        <div class="imgCap"><b>Architecture overview:</b> FinternetOps agents → governance outputs under AgentOps control.</div>
+      </div>
+    </div>
+</section>
 
     <!-- ADSENSE SLOT (safe placement) -->
     <section class="adsense-slot" aria-label="Sponsored">
@@ -363,7 +386,25 @@
       <p class="muted" style="margin:0;"><strong>How do we start?</strong> Pilot → Agents → Docs → Training.</p>
     </section>
 
-  </main>
+  
+  <section class="section cardX" style="margin-top:16px;">
+    <h2 style="margin:0 0 10px;">Governance proof previews</h2>
+    <p class="muted" style="margin:0 0 10px;">
+      These are example artifacts the system produces for executive and audit review — designed to be forwardable, reviewable, and attributable.
+    </p>
+    <div class="twoUp">
+      <div class="imgCard" aria-label="Executive sign-off preview">
+        <img src="https://moecommunitycloud.com/assets/images/governance/finternetops_exec_signoff_preview.png" alt="Executive approval and sign-off preview" loading="lazy" decoding="async" referrerpolicy="no-referrer"/>
+        <div class="imgCap"><b>Executive sign-off record:</b> formal authorization and conditions captured.</div>
+      </div>
+      <div class="imgCard" aria-label="Architecture diagram preview">
+        <img src="https://moecommunitycloud.com/assets/images/governance/finternetops_architecture_diagram.png" alt="Governance architecture preview" loading="lazy" decoding="async" referrerpolicy="no-referrer"/>
+        <div class="imgCap"><b>Control plane view:</b> specs, guardrails, RBAC, logs, change control, and rollback.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
 
   <footer class="footer">
     <div class="wrap footerInner">
